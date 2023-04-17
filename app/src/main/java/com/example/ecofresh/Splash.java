@@ -38,5 +38,13 @@ public class Splash extends AppCompatActivity {
         Animation animAple = AnimationUtils.loadAnimation(this, R.anim.salto_manzana);
         aple.startAnimation(animAple);
 
+
+        ImageView logo = (ImageView) findViewById(R.id.logo);
+        Animation animLogo = AnimationUtils.loadAnimation(this, R.anim.desplegar_logo);
+        logo.startAnimation(animLogo);
+
+
+
+
     }
 }
