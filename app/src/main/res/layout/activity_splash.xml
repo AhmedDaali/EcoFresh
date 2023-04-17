@@ -46,14 +46,14 @@
 
 
     <ImageView
-        android:id="@+id/aple"
+        android:id="@+id/apple"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="256dp"
         android:layout_marginTop="360dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/aple" />
+        app:srcCompat="@drawable/apple" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
