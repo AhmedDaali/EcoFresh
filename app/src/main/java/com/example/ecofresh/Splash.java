@@ -34,9 +34,19 @@ public class Splash extends AppCompatActivity {
 
         // Esta es la parte del salto de la manzana
 
-        ImageView aple = (ImageView) findViewById(R.id.aple);
-        Animation animAple = AnimationUtils.loadAnimation(this, R.anim.salto_manzana);
-        aple.startAnimation(animAple);
+        ImageView apple = (ImageView) findViewById(R.id.apple);
+        Animation animApple = AnimationUtils.loadAnimation(this, R.anim.salto_manzana);
+        apple.startAnimation(animApple);
+
+
+       // Esta es la parte de la rotación y escalado del logo
+
+        ImageView logo = (ImageView) findViewById(R.id.logo);
+        Animation animLogo = AnimationUtils.loadAnimation(this, R.anim.desplegar_logo);
+        logo.startAnimation(animLogo);
+
+
+
 
     }
 }
