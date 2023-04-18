@@ -11,5 +11,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="center">#54CA59</color>
     <color name="verde">#229C26</color>
+    <color name="verde_email_login">#A6D6A7</color>
+    <color name="gris_text_boton">#666666</color>
+    <color name="dunkel_text_boton">#334234</color>
+    <color name="borde_boton">#3C3A3A</color>
+    <color name="texto_login1">#4A4A4A</color>
+    <color name="texto_login2">#05A70B</color>
+
 
 </resources>
