@@ -9,5 +9,7 @@
 
     <string name="texto_login1">¿Ya tienes cuenta?</string>
     <string name="texto_login2">Inicia sesión</string>
+    <string name="texto_registro">¡Únete a</string>
+    <string name="texto_registro2">Ecofresh!</string>
 
 </resources>
