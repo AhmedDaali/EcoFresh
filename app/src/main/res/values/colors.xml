@@ -15,10 +15,16 @@
     <color name="gris_text_boton">#666666</color>
     <color name="dunkel_text_boton">#334234</color>
     <color name="borde_boton">#3C3A3A</color>
+
     <color name="texto_login1">#4A4A4A</color>
     <color name="texto_login2">#05A70B</color>
+
     <color name="texto_registro">#4D6346</color>
 
+    <color name="hint_registro">#070606</color>
+
+    <color name="CheckBox_verde">#038008</color>
+    <color name="CheckBox_negro">#454545</color>
 
 
 </resources>
