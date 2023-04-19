@@ -21,7 +21,7 @@
         android:id="@+id/boton1"
         android:layout_width="318dp"
         android:layout_height="58dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="38dp"
         android:backgroundTint="@color/white"
         android:fontFamily="sans-serif-black"
         android:text="@string/boton_facebook"
@@ -31,7 +31,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo"
         app:strokeColor="@color/borde_boton"
-        app:strokeWidth="1sp" />
+        app:strokeWidth="1sp"
+        app:icon="@drawable/facebook"/>
 
     <Button
         android:id="@+id/boton2"
@@ -44,6 +45,7 @@
         android:textColor="@color/gris_text_boton"
         app:cornerRadius="32sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/boton1"
         app:strokeColor="@color/borde_boton"
@@ -90,8 +92,6 @@
         app:layout_constraintHorizontal_bias="0.733"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/boton3" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
