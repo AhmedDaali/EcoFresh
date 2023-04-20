@@ -10,10 +10,11 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="311dp"
-        android:layout_height="233dp"
-        android:layout_marginStart="32dp"
+        android:layout_width="349dp"
+        android:layout_height="308dp"
         android:layout_marginTop="176dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.741"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
@@ -22,8 +23,8 @@
         android:id="@+id/titulo_eco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="105dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="104dp"
         android:fontFamily="@font/sunfice"
         android:text="@string/ecologico"
         android:textColor="#5C633A"
@@ -35,8 +36,8 @@
         android:id="@+id/titulo_fresh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="105dp"
+        android:layout_marginStart="192dp"
+        android:layout_marginTop="104dp"
         android:fontFamily="@font/sunfice"
         android:text="@string/fresco"
         android:textColor="#5C633A"
@@ -44,13 +45,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <ImageView
         android:id="@+id/apple"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="256dp"
-        android:layout_marginTop="360dp"
+        android:layout_marginStart="308dp"
+        android:layout_marginTop="436dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/apple" />

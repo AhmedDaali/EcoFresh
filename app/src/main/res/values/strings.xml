@@ -9,18 +9,26 @@
 
     <string name="texto_login1">¿Ya tienes cuenta?</string>
     <string name="texto_login2">Inicia sesión</string>
+
+
     <string name="texto_registro">¡Únete a</string>
     <string name="texto_registro2">Ecofresh!</string>
-
     <string name="hintNombre">Nombre</string>
     <string name="hintApellidos">Apellidos</string>
     <string name="hintEmail">E-mail</string>
     <string name="hintContraseña">Password</string>
     <string name="boton_Enter">Entrar</string>
-
     <string name="CheckBox">He leído y acepto las</string>
     <string name="CheckBox2">Condiciones de uso</string>
     <string name="CheckBox3">y</string>
     <string name="CheckBox4"> Politica de privacidad</string>
     <string name="CheckBox5"> de Ecofresh</string>
+
+
+
+    <string name="texto_login">¡Bienvenido!</string>
+    <string name="texto_contraseña">¿Has olvidado tu contraseña?</string>
+
+
+
 </resources>

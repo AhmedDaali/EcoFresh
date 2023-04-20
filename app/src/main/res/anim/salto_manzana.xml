@@ -27,12 +27,12 @@
 
 
     <translate
-        android:duration="900"
+        android:duration="1200"
 
-        android:fromYDelta="-725"
+        android:fromYDelta="-955"
         android:toYDelta="0"
 
-        android:fromXDelta="-315"
+        android:fromXDelta="-400"
         android:toXDelta="0"
         />
 
