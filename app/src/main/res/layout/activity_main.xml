@@ -7,12 +7,30 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/texto_registro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="72dp"
+        android:fontFamily="@font/bright"
+        android:text="@string/text1_main"
+        android:textColor="@color/texto_registro"
+        android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.181"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/texto_registro2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bright"
+        android:text="@string/text2_main"
+        android:textColor="@color/texto_registro"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texto_registro" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
