@@ -21,29 +21,28 @@
         android:id="@+id/boton1"
         android:layout_width="318dp"
         android:layout_height="58dp"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="18dp"
         android:backgroundTint="@color/white"
+        android:drawableLeft="@drawable/facebook"
         android:fontFamily="sans-serif-black"
         android:text="@string/boton_facebook"
-        android:drawableLeft="@drawable/facebook"
         android:textColor="@color/gris_text_boton"
         app:cornerRadius="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo"
         app:strokeColor="@color/borde_boton"
-        app:strokeWidth="1sp"
-        />
+        app:strokeWidth="1sp" />
 
     <Button
         android:id="@+id/boton2"
         android:layout_width="318dp"
         android:layout_height="58dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="@color/white"
+        android:drawableLeft="@drawable/google"
         android:fontFamily="sans-serif-black"
         android:text="@string/boton_google"
-        android:drawableLeft="@drawable/google"
         android:textColor="@color/gris_text_boton"
         app:cornerRadius="32sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,15 +56,17 @@
         android:id="@+id/boton3"
         android:layout_width="318dp"
         android:layout_height="58dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="48dp"
         android:backgroundTint="@color/verde_email_login"
         android:fontFamily="sans-serif-black"
         android:text="@string/boton_email"
         android:textColor="@color/dunkel_text_boton"
         app:cornerRadius="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boton2" />
+        app:layout_constraintTop_toBottomOf="@+id/boton2"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/texto_login1"
@@ -76,10 +77,12 @@
         android:text="@string/texto_login1"
         android:textColor="@color/texto_login1"
         android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintHorizontal_bias="0.254"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boton3" />
+        app:layout_constraintTop_toBottomOf="@+id/boton3"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/texto_login2"
@@ -90,10 +93,12 @@
         android:text="@string/texto_login2"
         android:textColor="@color/texto_login2"
         android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.724"
+        app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boton3" />
+        app:layout_constraintTop_toBottomOf="@+id/boton3"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
