@@ -4,96 +4,104 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login">
+    tools:context=".registro">
+
+    <TextView
+        android:id="@+id/texto_registro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:text="@string/texto_login"
+        android:textColor="@color/texto_registro"
+        android:textSize="48sp"
+        android:fontFamily="@font/bright"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.201"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="268dp"
-        android:layout_height="227dp"
-        android:layout_marginTop="44dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        android:layout_width="282dp"
+        android:layout_height="275dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="80dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:layout_constraintTop_toBottomOf="@+id/texto_registro"
+        app:srcCompat="@drawable/logo_verde_si_fondo" />
 
-    <Button
-        android:id="@+id/boton1"
-        android:layout_width="318dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="38dp"
-        android:backgroundTint="@color/white"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/boton_facebook"
-        android:drawableLeft="@drawable/facebook"
-        android:textColor="@color/gris_text_boton"
-        app:cornerRadius="32sp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/LayoutEmail"
+        android:layout_width="320dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="120dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo"
-        app:strokeColor="@color/borde_boton"
-        app:strokeWidth="1sp"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/texto_registro">
 
-    <Button
-        android:id="@+id/boton2"
-        android:layout_width="318dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="48dp"
-        android:backgroundTint="@color/white"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/boton_google"
-        android:drawableLeft="@drawable/google"
-        android:textColor="@color/gris_text_boton"
-        app:cornerRadius="32sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boton1"
-        app:strokeColor="@color/borde_boton"
-        app:strokeWidth="1sp" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cajaEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:hint="@string/hintEmail"
+            android:textColorHint="@color/hint_registro"
+            android:textSize="16sp" />
 
-    <Button
-        android:id="@+id/boton3"
-        android:layout_width="318dp"
-        android:layout_height="58dp"
+        <requestFocus />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/LayoutContraseña"
+        android:layout_width="320dp"
+        android:layout_height="53dp"
         android:layout_marginTop="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LayoutEmail">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cajaContraseña"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:hint="@string/hintContraseña"
+            android:inputType="textPassword"
+            android:textColorHint="@color/hint_registro"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+    <Button
+        android:id="@+id/Enter"
+        android:layout_width="318dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="40dp"
         android:backgroundTint="@color/verde_email_login"
         android:fontFamily="sans-serif-black"
-        android:text="@string/boton_email"
+        android:text="@string/boton_Enter"
         android:textColor="@color/dunkel_text_boton"
         app:cornerRadius="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boton2" />
+        app:layout_constraintTop_toBottomOf="@+id/LayoutContraseña"
+        app:layout_constraintVertical_bias="0.985" />
 
     <TextView
-        android:id="@+id/texto_login1"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:fontFamily="sans-serif-black"
-        android:text="@string/texto_login1"
+        android:text="@string/texto_contraseña"
         android:textColor="@color/texto_login1"
         android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/texto_login2"
-        app:layout_constraintHorizontal_bias="0.648"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boton3" />
-
-    <TextView
-        android:id="@+id/texto_login2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/texto_login2"
-        android:textColor="@color/texto_login2"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.818"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boton3" />
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="531dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
