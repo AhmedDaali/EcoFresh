@@ -26,5 +26,8 @@
     <color name="CheckBox_verde">#038008</color>
     <color name="CheckBox_negro">#454545</color>
 
+    <color name="main_center">#F3E5C0</color>
+    <color name="main_start">#C9E8CA</color>
+
 
 </resources>

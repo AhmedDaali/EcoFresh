@@ -30,7 +30,9 @@
 
 
     <string name="text1_main">¡Adelante!</string>
-    <string name="text2_main">¿Que te gistaría hacer?</string>
-
-
+    <string name="text2_main">¿Que te gustaría hacer?</string>
+    <string name="boton1_main">Comprar</string>
+    <string name="boton2_main">Vender</string>
+    <string name="boton3_main">Mi cuenta</string>
+    <string name="boton4_main">salir</string>
 </resources>
