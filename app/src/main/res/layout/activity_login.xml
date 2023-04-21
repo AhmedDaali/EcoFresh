@@ -6,35 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".registro">
 
+
     <TextView
         android:id="@+id/texto_registro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="68dp"
+        android:fontFamily="@font/bright"
         android:text="@string/texto_login"
         android:textColor="@color/texto_registro"
-        android:textSize="48sp"
-        android:fontFamily="@font/bright"
+        android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.201"
+        app:layout_constraintHorizontal_bias="0.258"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <ImageView
         android:id="@+id/logo"
         android:layout_width="282dp"
         android:layout_height="275dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/texto_registro"
+        app:layout_constraintVertical_bias="0.005"
         app:srcCompat="@drawable/logo_verde_si_fondo" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/LayoutEmail"
-        android:layout_width="320dp"
-        android:layout_height="53dp"
+        android:layout_width="284dp"
+        android:layout_height="54dp"
         android:layout_marginTop="90dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,8 +56,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/LayoutContraseña"
-        android:layout_width="320dp"
-        android:layout_height="53dp"
+        android:layout_width="284dp"
+        android:layout_height="54dp"
         android:layout_marginTop="56dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,8 +75,6 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-
-
     <Button
         android:id="@+id/Enter"
         android:layout_width="318dp"
@@ -87,10 +87,10 @@
         app:cornerRadius="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LayoutContraseña"
-        app:layout_constraintVertical_bias="0.985" />
+        app:layout_constraintVertical_bias="0.525" />
 
     <TextView
         android:id="@+id/textView"
