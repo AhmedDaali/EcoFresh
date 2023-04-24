@@ -58,13 +58,13 @@
         android:layout_width="128dp"
         android:layout_height="128dp"
         android:layout_gravity="center"
-        android:layout_marginStart="76dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="64dp"
         android:background="@color/transparent_imageButton"
+        android:contentDescription="boton de Verdura"
         app:layout_constraintStart_toEndOf="@+id/boton_fruta"
         app:layout_constraintTop_toBottomOf="@+id/txt_auto"
-        app:srcCompat="@drawable/rounded_verdura"
-        android:contentDescription="boton de Verdura" />
+        app:srcCompat="@drawable/rounded_verdura" />
 
     <ImageButton
         android:id="@+id/boton_hortaliza"
@@ -72,12 +72,12 @@
         android:layout_height="128dp"
         android:layout_gravity="center"
         android:layout_marginEnd="36dp"
-        android:layout_marginBottom="164dp"
+        android:layout_marginBottom="84dp"
         android:background="@color/transparent_imageButton"
         android:contentDescription="Botón de hortaliza"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/boton_legumbre"
         app:srcCompat="@drawable/rounded_hortaliza" />
 
@@ -86,13 +86,13 @@
         android:layout_width="128dp"
         android:layout_height="128dp"
         android:layout_gravity="center"
-        android:layout_marginEnd="244dp"
-        android:layout_marginBottom="164dp"
+        android:layout_marginEnd="192dp"
+        android:layout_marginBottom="84dp"
         android:background="@color/transparent_imageButton"
+        android:contentDescription="Botón de legumbres"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/rounded_legumbre"
-        android:contentDescription="Botón de legumbres" />
+        app:srcCompat="@drawable/rounded_legumbre" />
 
     <TextView
         android:id="@+id/text_fruta"
@@ -132,7 +132,7 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/boton_hortaliza"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.837"
+        app:layout_constraintHorizontal_bias="0.82"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/boton_verdura"
         app:layout_constraintVertical_bias="1.0" />
@@ -146,7 +146,7 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/boton_legumbre"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintHorizontal_bias="0.183"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/boton_fruta"
         app:layout_constraintVertical_bias="1.0" />
