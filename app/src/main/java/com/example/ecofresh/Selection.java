@@ -11,7 +11,7 @@ public class Selection extends AppCompatActivity {
     AutoCompleteTextView auto;
     String[] palabras = {
 
-       "Frutas", "Verduras", "Hortalizas", "Leumbres"
+       "Frutas", "Verduras", "Hortalizas", "Legumbres"
 
     };
 

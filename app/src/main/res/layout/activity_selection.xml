@@ -44,26 +44,28 @@
         android:layout_width="128dp"
         android:layout_height="128dp"
         android:layout_gravity="center"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="4dp"
         android:background="@color/transparent_imageButton"
+        android:contentDescription="Botón de fruta"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_auto"
-        app:srcCompat="@drawable/rounded_fruta"
-        android:contentDescription="Botón de fruta" />
-
+        app:layout_constraintTop_toBottomOf="@+id/text_fruta"
+        app:srcCompat="@drawable/rounded_fruta" />
 
     <ImageButton
         android:id="@+id/boton_verdura"
         android:layout_width="128dp"
         android:layout_height="128dp"
         android:layout_gravity="center"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="32dp"
         android:background="@color/transparent_imageButton"
         android:contentDescription="boton de Verdura"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.916"
         app:layout_constraintStart_toEndOf="@+id/boton_fruta"
-        app:layout_constraintTop_toBottomOf="@+id/txt_auto"
+        app:layout_constraintTop_toBottomOf="@+id/text_verdura"
         app:srcCompat="@drawable/rounded_verdura" />
 
     <ImageButton
@@ -71,8 +73,8 @@
         android:layout_width="128dp"
         android:layout_height="128dp"
         android:layout_gravity="center"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="84dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="72dp"
         android:background="@color/transparent_imageButton"
         android:contentDescription="Botón de hortaliza"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -86,70 +88,68 @@
         android:layout_width="128dp"
         android:layout_height="128dp"
         android:layout_gravity="center"
-        android:layout_marginEnd="192dp"
-        android:layout_marginBottom="84dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="48dp"
         android:background="@color/transparent_imageButton"
         android:contentDescription="Botón de legumbres"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_legumbre"
+        app:layout_constraintVertical_bias="0.068"
         app:srcCompat="@drawable/rounded_legumbre" />
 
     <TextView
         android:id="@+id/text_fruta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="32dp"
         android:text="@string/button_fruta"
         android:textColor="@color/hint_registro"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/boton_fruta"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_auto"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_auto" />
 
     <TextView
         android:id="@+id/text_verdura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="46dp"
         android:text="@string/button_verdura"
         android:textColor="@color/hint_registro"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/boton_verdura"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_auto"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/text_fruta"
+        app:layout_constraintTop_toBottomOf="@+id/txt_auto" />
 
     <TextView
         android:id="@+id/text_hortaliza"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="42dp"
         android:text="@string/button_hortaliza"
         android:textColor="@color/hint_registro"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/boton_hortaliza"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.82"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/boton_verdura"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.933" />
 
     <TextView
         android:id="@+id/text_legumbre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="36dp"
         android:text="@string/button_legumbre"
         android:textColor="@color/hint_registro"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/boton_legumbre"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintEnd_toStartOf="@+id/text_hortaliza"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boton_fruta"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/boton_fruta" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
