@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Selection"
+    android:background="@drawable/bg_color2"
+    >
+
+
+    <TextView
+        android:id="@+id/texto_selection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:fontFamily="@font/bright"
+        android:text="@string/texto_selection"
+        android:textColor="@color/texto_registro"
+        android:textColorLink="#2C2828"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <AutoCompleteTextView
+        android:id="@+id/txt_auto"
+        android:layout_width="312dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/hint_auto"
+        android:padding="16dp"
+        android:textColorHint="@color/texto_autocomplete"
+        android:textColorLink="#3C3A3A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.365"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texto_selection" />
+
+
+    <ImageButton
+        android:id="@+id/boton_fruta"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="64dp"
+        android:background="@color/transparent_imageButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_auto"
+        app:srcCompat="@drawable/rounded_fruta"
+        android:contentDescription="Botón de fruta" />
+
+
+    <ImageButton
+        android:id="@+id/boton_verdura"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="64dp"
+        android:background="@color/transparent_imageButton"
+        app:layout_constraintStart_toEndOf="@+id/boton_fruta"
+        app:layout_constraintTop_toBottomOf="@+id/txt_auto"
+        app:srcCompat="@drawable/rounded_verdura"
+        android:contentDescription="boton de Verdura" />
+
+    <ImageButton
+        android:id="@+id/boton_hortaliza"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="164dp"
+        android:background="@color/transparent_imageButton"
+        android:contentDescription="Botón de hortaliza"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintStart_toEndOf="@+id/boton_legumbre"
+        app:srcCompat="@drawable/rounded_hortaliza" />
+
+    <ImageButton
+        android:id="@+id/boton_legumbre"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="244dp"
+        android:layout_marginBottom="164dp"
+        android:background="@color/transparent_imageButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/rounded_legumbre"
+        android:contentDescription="Botón de legumbres" />
+
+    <TextView
+        android:id="@+id/text_fruta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/button_fruta"
+        android:textColor="@color/hint_registro"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/boton_fruta"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_auto"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/text_verdura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/button_verdura"
+        android:textColor="@color/hint_registro"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/boton_verdura"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_auto"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/text_hortaliza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_hortaliza"
+        android:textColor="@color/hint_registro"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/boton_hortaliza"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.837"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boton_verdura"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/text_legumbre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_legumbre"
+        android:textColor="@color/hint_registro"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/boton_legumbre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boton_fruta"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
