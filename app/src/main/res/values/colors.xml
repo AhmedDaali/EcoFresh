@@ -29,5 +29,8 @@
     <color name="main_center">#F3E5C0</color>
     <color name="main_start">#C9E8CA</color>
 
+    <color name="texto_autocomplete">#4E4747</color>
+    <color name="transparent_imageButton">#00000000</color>
+
 
 </resources>

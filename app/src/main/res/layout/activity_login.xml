@@ -8,7 +8,7 @@
 
 
     <TextView
-        android:id="@+id/texto_registro"
+        android:id="@+id/texto_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
@@ -17,7 +17,7 @@
         android:textColor="@color/texto_registro"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.258"
+        app:layout_constraintHorizontal_bias="0.192"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,7 +29,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/texto_registro"
+        app:layout_constraintTop_toBottomOf="@+id/texto_login"
         app:layout_constraintVertical_bias="0.005"
         app:srcCompat="@drawable/logo_verde_si_fondo" />
 
@@ -40,7 +40,7 @@
         android:layout_marginTop="90dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/texto_registro">
+        app:layout_constraintTop_toBottomOf="@+id/texto_login">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/cajaEmail"
@@ -61,7 +61,9 @@
         android:layout_marginTop="56dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LayoutEmail">
+        app:layout_constraintTop_toBottomOf="@+id/LayoutEmail"
+        app:endIconMode="password_toggle"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/cajaContraseña"
