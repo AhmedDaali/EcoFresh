@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".Login">
 
+    <!-- A continuación indicamos que la ImageView contendrá la imagen del logo y sus características de posicionamiento -->
+
     <ImageView
         android:id="@+id/logo"
         android:layout_width="268dp"
@@ -16,6 +18,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
+
+    <!-- A continuación añadimos un botón que contendrá la imagen del logo  de facebook, junto con un texto y sus características de posicionamiento -->
 
     <Button
         android:id="@+id/boton1"
@@ -34,12 +38,13 @@
         app:strokeColor="@color/borde_boton"
         app:strokeWidth="1sp" />
 
+    <!-- A continuación añadimos un botón que contendrá la imagen del logo  de google, junto con un texto y sus características de posicionamiento -->
+
     <Button
         android:id="@+id/boton2"
         android:layout_width="318dp"
         android:layout_height="58dp"
         android:layout_marginTop="10dp"
-
         android:backgroundTint="@color/white"
         android:drawableLeft="@drawable/google"
         android:fontFamily="sans-serif-black"
@@ -53,13 +58,14 @@
         app:strokeColor="@color/borde_boton"
         app:strokeWidth="1sp" />
 
+    <!-- A continuación añadimos un botón con un texto y sus características de posicionamiento -->
+
     <Button
         android:id="@+id/boton3"
         android:layout_width="318dp"
         android:layout_height="58dp"
-
         android:layout_marginTop="10dp"
-        android:backgroundTint="@color/verde_email_login"
+        android:backgroundTint="@color/verde_email_cliente"
         android:fontFamily="sans-serif-black"
         android:text="@string/boton_email"
         android:textColor="@color/dunkel_text_boton"
@@ -70,35 +76,38 @@
         app:layout_constraintTop_toBottomOf="@+id/boton2"
         app:layout_constraintVertical_bias="0.0" />
 
+    <!-- A continuación añadimos texto y sus características de posicionamiento -->
+
     <TextView
-        android:id="@+id/texto_login1"
+        android:id="@+id/texto_cliente1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:fontFamily="sans-serif-black"
-        android:text="@string/texto_login1"
-        android:textColor="@color/texto_login1"
+        android:text="@string/texto_cliente1"
+        android:textColor="@color/texto_cliente1"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/texto_login2"
-        app:layout_constraintHorizontal_bias="0.865"
+        app:layout_constraintEnd_toStartOf="@+id/texto_cliente2"
+        app:layout_constraintHorizontal_bias="0.811"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/boton3"
         app:layout_constraintVertical_bias="0.0" />
 
+    <!-- A continuación añadimos otro texto que se podrá pulsar para acceder al activity_login y sus características de posicionamiento -->
+
     <TextView
-        android:id="@+id/texto_login2"
+        android:id="@+id/texto_cliente2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="52dp"
         android:fontFamily="sans-serif-black"
-        android:text="@string/texto_login2"
-        android:textColor="@color/texto_login2"
+        android:text="@string/texto_cliente2"
+        android:textColor="@color/texto_cliente2"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.683"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/boton3"
         app:layout_constraintVertical_bias="0.0" />
 

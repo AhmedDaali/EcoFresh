@@ -57,13 +57,11 @@
         android:layout_width="128dp"
         android:layout_height="128dp"
         android:layout_gravity="center"
-        android:layout_marginStart="80dp"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="32dp"
         android:background="@color/transparent_imageButton"
         android:contentDescription="boton de Verdura"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.916"
+        app:layout_constraintHorizontal_bias="0.583"
         app:layout_constraintStart_toEndOf="@+id/boton_fruta"
         app:layout_constraintTop_toBottomOf="@+id/text_verdura"
         app:srcCompat="@drawable/rounded_verdura" />
@@ -73,13 +71,12 @@
         android:layout_width="128dp"
         android:layout_height="128dp"
         android:layout_gravity="center"
-        android:layout_marginEnd="30dp"
         android:layout_marginBottom="72dp"
         android:background="@color/transparent_imageButton"
         android:contentDescription="Botón de hortaliza"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.583"
         app:layout_constraintStart_toEndOf="@+id/boton_legumbre"
         app:srcCompat="@drawable/rounded_hortaliza" />
 
@@ -95,7 +92,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_legumbre"
-        app:layout_constraintVertical_bias="0.068"
+        app:layout_constraintVertical_bias="0.076"
         app:srcCompat="@drawable/rounded_legumbre" />
 
     <TextView
@@ -115,12 +112,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="46dp"
         android:text="@string/button_verdura"
         android:textColor="@color/hint_registro"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.62"
         app:layout_constraintStart_toEndOf="@+id/text_fruta"
         app:layout_constraintTop_toBottomOf="@+id/txt_auto" />
 
