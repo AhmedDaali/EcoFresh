@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".registro">
 
+    <!-- Este es el primer texto inicial de esta activity -->
+
     <TextView
         android:id="@+id/texto_registro"
         android:layout_width="wrap_content"
@@ -20,6 +22,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Esta es el segundo texto inicial de esta activity -->
+
     <TextView
         android:id="@+id/texto_registro2"
         android:layout_width="wrap_content"
@@ -32,6 +36,8 @@
         app:layout_constraintHorizontal_bias="0.165"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/texto_registro" />
+
+    <!-- Esta es la entrada de texto del Nombre -->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/LayoutNombre"
@@ -52,7 +58,10 @@
             android:textSize="16sp" />
 
         <requestFocus />
+
     </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Esta es la entrada de texto del Apellidos -->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/LayoutApellidos"
@@ -72,6 +81,8 @@
             android:textColorHint="@color/hint_registro"
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Esta es la entrada de texto del e-mail -->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/LayoutEmail"
@@ -93,6 +104,8 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- Esta es la entrada de texto de la contraseña -->
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/LayoutContraseña"
         android:layout_width="284dp"
@@ -113,18 +126,20 @@
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- Este código es de tipo checkbox para poder seleccionarlo -->
 
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
         android:layout_marginTop="4dp"
         android:text="@string/CheckBox"
         android:textColor="@color/CheckBox_negro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.19"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LayoutContraseña" />
+
+    <!-- Los siguientes 4 TextViews son los textos que acompañarán al checkbox -->
 
     <TextView
         android:id="@+id/checkBox2"
@@ -174,12 +189,14 @@
         app:layout_constraintStart_toEndOf="@+id/checkBox4"
         app:layout_constraintTop_toBottomOf="@+id/logo" />
 
+    <!-- Este es el botón para acceder a la activity main -->
+
     <Button
         android:id="@+id/Enter"
         android:layout_width="318dp"
         android:layout_height="58dp"
         android:layout_marginBottom="40dp"
-        android:backgroundTint="@color/verde_email_login"
+        android:backgroundTint="@color/verde_email_cliente"
         android:fontFamily="sans-serif-black"
         android:text="@string/boton_Enter"
         android:textColor="@color/dunkel_text_boton"
@@ -191,6 +208,8 @@
         app:layout_constraintTop_toBottomOf="@+id/LayoutContraseña"
         app:layout_constraintVertical_bias="0.985" />
 
+    <!-- Esta es la imagen del logo posiconada de fondo -->
+
     <ImageView
         android:id="@+id/logo"
         android:layout_width="282dp"
@@ -201,7 +220,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/texto_registro2"
         app:layout_constraintVertical_bias="0.005"
-        app:srcCompat="@drawable/logo_verde_si_fondo" />
+        app:srcCompat="@drawable/logo_verde_sin_fondo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

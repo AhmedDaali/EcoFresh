@@ -1,33 +1,46 @@
 <resources>
+
+
     <string name="app_name">EcoFresh</string>
+
+    <!-- Texto de la activity_splash -->
+
     <string name="fresco">Fresh</string>
     <string name="ecologico">Eco</string>
+
+    <!-- Texto de la activity_cliente -->
 
     <string name="boton_google">Continuar con Google</string>
     <string name="boton_facebook">Continuar con Facebook</string>
     <string name="boton_email">Continuar con el e-mail</string>
 
-    <string name="texto_login1">¿Ya tienes cuenta?</string>
-    <string name="texto_login2">Inicia sesión</string>
+    <string name="texto_cliente1">¿Ya tienes cuenta?</string>
+    <string name="texto_cliente2">Inicia sesión</string>
 
+    <!-- Texto de la activity_registro -->
 
     <string name="texto_registro">¡Unete a</string>
     <string name="texto_registro2">Ecofresh!</string>
+
     <string name="hintNombre">Nombre</string>
     <string name="hintApellidos">Apellidos</string>
     <string name="hintEmail">E-mail</string>
     <string name="hintContraseña">Password</string>
-    <string name="boton_Enter">Entrar</string>
+
     <string name="CheckBox">He leído y acepto las</string>
     <string name="CheckBox2">Condiciones de uso</string>
     <string name="CheckBox3">y</string>
     <string name="CheckBox4"> Politica de privacidad</string>
     <string name="CheckBox5"> de Ecofresh</string>
 
+    <string name="boton_Enter">Entrar</string> <!-- activity_login -->
+
+    <!-- Texto de la activity_login -->
 
     <string name="texto_login">¡Bienvenido!</string>
     <string name="texto_contraseña">¿Has olvidado tu contraseña?</string>
 
+    <!-- Texto de la activity_main -->
 
     <string name="text1_main">¡Adelante!</string>
     <string name="text2_main">¿Que te gustaria hacer?</string>
@@ -35,6 +48,8 @@
     <string name="boton2_main">Vender</string>
     <string name="boton3_main">Mi cuenta</string>
     <string name="boton4_main">salir</string>
+
+    <!-- Texto de la activity_selection -->
 
     <string name="texto_selection">¡A tu eleccion!</string>
     <string name="hint_auto">Busca tu producto</string>

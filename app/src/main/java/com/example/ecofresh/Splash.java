@@ -17,8 +17,6 @@ public class Splash extends AppCompatActivity implements Animation.AnimationList
         setContentView(R.layout.activity_splash);
 
 
-
-
         // Esta es la parte de la entrada del titulo ECO
 
         TextView titulo_eco = (TextView) findViewById(R.id.titulo_eco);
@@ -46,9 +44,10 @@ public class Splash extends AppCompatActivity implements Animation.AnimationList
         Animation animLogo = AnimationUtils.loadAnimation(this, R.anim.desplegar_logo);
         logo.startAnimation(animLogo);
 
+
        // Esta es la escucha de la animación del splash para que el método  "onAnimationEnd" actúe
        // cuando esta finalice. Debe estar aquí dentro de estas llaves. Le tendremos que pasar
-       // el objeto de la clase implementa la interface, que es él mismo, splash.
+       // el objeto de la clase que implementa la interface, que es él mismo, splash.
        // Si fuera de otra clase, habría que escribir dentro del paréntesis un new de instanciar esa clase
        // Pero en este caso como es la misma utilizamos el this.
 
@@ -62,16 +61,19 @@ public class Splash extends AppCompatActivity implements Animation.AnimationList
 
     }
 
+    // ---------------------------------------------------------------------------------------------
+
+
     // Estos son los métodos que implementa la interface, de los cuales solo necesitamos uno de ellos
     // para que cambie de activity sin tocar en la pantalla. El método "onAnimationEnd".
     // Como empiezan por "on" quiere decir que son eventos que se producen en un determinado momento.
+
 
 
     @Override
     public void onAnimationStart(Animation animation) {
 
     }
-
 
 
 
@@ -83,7 +85,6 @@ public class Splash extends AppCompatActivity implements Animation.AnimationList
     // de qué activity a qué activity pasará.
     // Con el método "startActivity" se le pasa el intent. Con "finish();" indicamos que no se pueda
     // regresar desde la activity_login al activity_splash.
-
 
     @Override
     public void onAnimationEnd(Animation animation) {
@@ -98,6 +99,7 @@ public class Splash extends AppCompatActivity implements Animation.AnimationList
         finish();
 
     }
+
 
 
     @Override
