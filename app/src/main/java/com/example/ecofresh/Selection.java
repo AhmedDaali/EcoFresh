@@ -24,12 +24,15 @@ public class Selection extends AppCompatActivity {
         setContentView(R.layout.activity_selection);
 
 
+        // Con esta linea ocultamos el actionBar, la barra de acción situada arriba de todo
+
+        getSupportActionBar().hide();
 
 
         // Esto se hace para que se autocomplete la entrada de texto
+
         auto = (AutoCompleteTextView) findViewById(R.id.txt_auto);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, palabras);
-
         auto.setThreshold(3); // Indicamos con cuántas letras empezará a autocompletar
         auto.setAdapter(adapter);
 
