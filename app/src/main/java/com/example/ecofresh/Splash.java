@@ -89,13 +89,23 @@ public class Splash extends AppCompatActivity implements Animation.AnimationList
     @Override
     public void onAnimationEnd(Animation animation) {
 
+        // Con esto atrasamos el paso a la siguiente activity. Nos dice que debe ir dentro de un try catch
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
         // Para cambiar de activity, necesitamos la clase Intent y crear un objeto y tenemos que indicar
         // de qué activity a qué activity pasará.
+
         Intent intent = new Intent(Splash.this,Cliente.class);
 
         startActivity(intent);
 
         // regresar desde la activity_main al activity_splash.
+
         finish();
 
     }

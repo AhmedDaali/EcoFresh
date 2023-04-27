@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".registro">
+    tools:context=".Login">
 
     <!-- Este es el primer texto inicial de esta activity -->
 
@@ -84,8 +84,6 @@
 
     <!-- Este es el botón para acceder a la activity main -->
 
-    <!-- Este es el texto que permite corregir la contraseña -->
-
     <Button
         android:id="@+id/Enter"
         android:layout_width="318dp"
@@ -98,6 +96,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+    <!-- Este es el texto que permite corregir la contraseña -->
 
     <TextView
         android:id="@+id/textView"
