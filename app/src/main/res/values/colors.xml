@@ -24,7 +24,7 @@
     <color name="verde_email_cliente">#A6D6A7</color> <!-- activity_registro - activity_login -->
     <color name="dunkel_text_boton">#334234</color> <!-- activity_registro - activity_login -->
     <color name="texto_cliente1">#4A4A4A</color> <!-- activity_login -->
-    <color name="texto_cliente2">#05A70B</color>
+    <color name="textLogin">#05A70B</color>
 
     <!-- Paleta para la activity_registro -->
 

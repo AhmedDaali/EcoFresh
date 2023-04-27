@@ -15,7 +15,7 @@
     <string name="boton_email">Continuar con el e-mail</string>
 
     <string name="texto_cliente1">¿Ya tienes cuenta?</string>
-    <string name="texto_cliente2">Inicia sesión</string>
+    <string name="textLogin">Inicia sesión</string>
 
     <!-- Texto de la activity_registro -->
 
