@@ -85,7 +85,7 @@
     <!-- Este es el botón para acceder a la activity main -->
 
     <Button
-        android:id="@+id/Enter"
+        android:id="@+id/botonEnter"
         android:layout_width="318dp"
         android:layout_height="58dp"
         android:backgroundTint="@color/verde_email_cliente"
