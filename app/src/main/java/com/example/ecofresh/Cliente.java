@@ -51,7 +51,7 @@ public class Cliente extends AppCompatActivity {
             public void onClick(View view) {
 
             // De momento queremos que al hacer click en el botón pasemos a la siguiente activity_registro.
-            // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_registro (registro.class)
+            // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_registro (Registro.class)
 
                 Intent intent = new Intent (Cliente.this,Registro.class);
 

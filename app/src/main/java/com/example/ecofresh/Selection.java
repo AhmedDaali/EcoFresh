@@ -5,8 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 
 public class Selection extends AppCompatActivity {
+
+
+
+
+
+
+
+
+    // Esto es el código para la entrada de texto autocompletable
 
     AutoCompleteTextView auto;
     String[] palabras = {

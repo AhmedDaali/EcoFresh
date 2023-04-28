@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_color2"
-    tools:context=".Selection">
+    tools:context=".Selection"
+    android:background="@drawable/bg_color2">
 
 
     <TextView
@@ -98,7 +98,7 @@
         android:id="@+id/text_fruta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="20dp"
         android:text="@string/button_fruta"
         android:textColor="@color/hint_registro"
         android:textSize="24sp"
@@ -111,7 +111,7 @@
         android:id="@+id/text_verdura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="50dp"
         android:text="@string/button_verdura"
         android:textColor="@color/hint_registro"
@@ -123,7 +123,7 @@
         android:id="@+id/text_hortaliza"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="34dp"
         android:text="@string/button_hortaliza"
         android:textColor="@color/hint_registro"
         android:textSize="24sp"
@@ -136,7 +136,7 @@
         android:id="@+id/text_legumbre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="34dp"
         android:text="@string/button_legumbre"
         android:textColor="@color/hint_registro"
         android:textSize="24sp"
