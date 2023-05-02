@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Cliente extends AppCompatActivity {
+public class Inicial extends AppCompatActivity {
 
     // Esta parte de código será declarada para el botón de continuar con el e-mail
     // Obtendremos el botón y lo dejaremos guardado en una variable que será un atributo de la clase
@@ -26,7 +26,7 @@ public class Cliente extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cliente);
+        setContentView(R.layout.activity_inicial);
 
 
         // Con esta linea ocultamos el actionBar, la barra de acción situada arriba de todo
@@ -53,7 +53,7 @@ public class Cliente extends AppCompatActivity {
             // De momento queremos que al hacer click en el botón pasemos a la siguiente activity_registro.
             // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_registro (Registro.class)
 
-                Intent intent = new Intent (Cliente.this,Registro.class);
+                Intent intent = new Intent (Inicial.this,Registro.class);
 
             // Arrancamos el evento que acabamos de crear
 
@@ -82,7 +82,7 @@ public class Cliente extends AppCompatActivity {
                 // De momento queremos que al hacer click en el botón pasemos a la siguiente activity_login.
                 // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_registro (registro.class)
 
-                Intent intent = new Intent (Cliente.this,Login.class);
+                Intent intent = new Intent (Inicial.this,Login.class);
 
                 // Arrancamos el evento que acabamos de crear
 
