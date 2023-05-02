@@ -14,6 +14,10 @@ public class MainActivity extends AppCompatActivity {
 
     Button botonComprar;
 
+    Button botonVender;
+
+    Button botonCuenta;
+
     Button botonSalir;
 
 
@@ -63,7 +67,33 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        // 2
+        // Aquí daremos la referencia del botón "botonVender", mediante el identificador que está en la activity_main
+        // se llama: "bvender". Por tanto buscamos con findViewById ese identificador en la clase R, con id "bvender"
 
+        botonVender = findViewById(R.id.vender);
+
+
+        // Ahora debemos ponerlo a la escucha, para saber cuándo se clica sobre él, con el método setOnClickListener()
+        // Dentro del paréntesis que está vacío, debemos crear un nuevo objeto: new View.OnClickListener()
+        // Con la interface View.OnClickListener, sobreescribimos el método public void onClick.
+        // Al tener muchos botones, es mejor sacarlo del método onCreate.¿?
+
+        botonVender.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // De momento queremos que al hacer click en el botón pasemos a la siguiente activity_venta.
+                // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_venta (Venta.class)
+
+                Intent intent = new Intent (MainActivity.this,Venta.class);
+
+                // Arrancamos el evento que acabamos de crear
+
+                startActivity(intent);
+
+            }
+        });
 
 
 
@@ -87,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
                 // De momento queremos que al hacer click en el botón pasemos a la siguiente activity_selection.
                 // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_selection (Selection.class)
 
-                Intent intent = new Intent (MainActivity.this,Selection.class);
+                Intent intent = new Intent (MainActivity.this,Cliente.class);
 
                 // Arrancamos el evento que acabamos de crear
 
