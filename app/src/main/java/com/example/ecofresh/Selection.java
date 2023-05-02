@@ -11,15 +11,10 @@ public class Selection extends AppCompatActivity {
 
 
 
-
-
-
-
-
     // Esto es el código para la entrada de texto autocompletable
 
     AutoCompleteTextView auto;
-    String[] palabras = {
+    String[] productos = {
 
        "Frutas", "Verduras", "Hortalizas", "Legumbres"
 
@@ -42,7 +37,7 @@ public class Selection extends AppCompatActivity {
         // Esto se hace para que se autocomplete la entrada de texto
 
         auto = (AutoCompleteTextView) findViewById(R.id.txt_auto);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, palabras);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, productos);
         auto.setThreshold(3); // Indicamos con cuántas letras empezará a autocompletar
         auto.setAdapter(adapter);
 

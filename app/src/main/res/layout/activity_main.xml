@@ -53,27 +53,11 @@
         app:strokeColor="@color/borde_boton"
         app:strokeWidth="1sp" />
 
+
+
+
     <Button
         android:id="@+id/vender"
-        android:layout_width="318dp"
-        android:layout_height="74dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="@color/white"
-        android:drawableLeft="@drawable/user"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/boton3_main"
-        android:textColor="@color/gris_text_boton"
-        app:cornerRadius="32sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.547"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Mi_Cuenta"
-        app:strokeColor="@color/borde_boton"
-        app:strokeWidth="1sp" />
-
-
-    <Button
-        android:id="@+id/Mi_Cuenta"
         android:layout_width="318dp"
         android:layout_height="74dp"
         android:layout_marginTop="24dp"
@@ -87,6 +71,24 @@
         app:layout_constraintHorizontal_bias="0.547"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/comprar"
+        app:strokeColor="@color/borde_boton"
+        app:strokeWidth="1sp" />
+
+    <Button
+        android:id="@+id/MiCuenta"
+        android:layout_width="318dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/white"
+        android:drawableLeft="@drawable/user"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/boton3_main"
+        android:textColor="@color/gris_text_boton"
+        app:cornerRadius="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vender"
         app:strokeColor="@color/borde_boton"
         app:strokeWidth="1sp" />
 
@@ -105,7 +107,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.559"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vender"
+        app:layout_constraintTop_toBottomOf="@+id/MiCuenta"
         app:layout_constraintVertical_bias="0.406"
         app:strokeColor="@color/borde_boton" />
 

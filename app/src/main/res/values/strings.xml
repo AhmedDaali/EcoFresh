@@ -58,6 +58,20 @@
     <string name="button_legumbre">Legumbres</string>
     <string name="button_hortaliza">Hortalizas</string>
 
+    <!-- Texto de la activity_venta -->
 
+    <string name="text_venta">¡Consigue dinero Fresh!</string>
+
+    <string name="text_auto">Categoría*</string>
+
+    <string name="hintCantidad">Cantidad en Kg*</string>
+    <string name="hintPrecio">Precio/Kg*</string>
+    <string name="text2_auto">Producto*</string>
+
+
+    <string name="hintLocalidad">Localidad*</string>
+
+    <string name="subirFoto">Subir foto</string>
+    <string name="confirmar">Confirmar</string>
 
 </resources>
