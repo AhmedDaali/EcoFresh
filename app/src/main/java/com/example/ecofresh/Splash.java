@@ -100,7 +100,7 @@ public class Splash extends AppCompatActivity implements Animation.AnimationList
         // Para cambiar de activity, necesitamos la clase Intent y crear un objeto y tenemos que indicar
         // de qué activity a qué activity pasará.
 
-        Intent intent = new Intent(Splash.this,Cliente.class);
+        Intent intent = new Intent(Splash.this, Inicial.class);
 
         startActivity(intent);
 

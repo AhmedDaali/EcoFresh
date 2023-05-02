@@ -15,7 +15,7 @@
             android:name=".Selection"
             android:exported="false" />
         <activity
-            android:name=".Cliente"
+            android:name=".Inicial"
             android:exported="false" />
         <activity
             android:name=".Registro"
