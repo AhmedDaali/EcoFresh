@@ -46,6 +46,8 @@
     <color name="transparent_imageButton">#00000000</color>
     <color name="textColorLink">#3C3A3A</color>
 
+    <!-- Paleta para la activity_venta -->
 
+    <color name="datosVenta">#DCEDE2</color>
 
 </resources>
