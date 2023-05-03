@@ -22,10 +22,10 @@
     <string name="texto_registro">¡Unete a</string>
     <string name="texto_registro2">Ecofresh!</string>
 
-    <string name="hintNombre">Nombre</string>
-    <string name="hintApellidos">Apellidos</string>
-    <string name="hintEmail">E-mail</string>
-    <string name="hintContraseña">Password</string>
+    <string name="hintNombre">Nombre*</string>
+    <string name="hintApellidos">Apellidos*</string>
+    <string name="hintEmail">E-mail*</string>
+    <string name="hintContraseña">Password*</string>
 
     <string name="CheckBox">He leído y acepto las</string>
     <string name="CheckBox2">Condiciones de uso</string>
@@ -73,5 +73,14 @@
 
     <string name="subirFoto">Subir foto</string>
     <string name="confirmar">Confirmar</string>
+
+
+    <!-- Texto de la activity_venta -->
+
+    <string name="app_camara">MyCamara</string>
+    <string name="btn_camara">Camara</string>
+    <string name="iv_visor">visor</string>
+
+
 
 </resources>

@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
                 // De momento queremos que al hacer click en el botón pasemos a la siguiente activity_selection.
                 // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_selection (Selection.class)
 
-                Intent intent = new Intent (MainActivity.this,Cliente.class);
+                Intent intent = new Intent (MainActivity.this,Inicial.class);
 
                 // Arrancamos el evento que acabamos de crear
 
