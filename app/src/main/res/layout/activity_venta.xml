@@ -52,29 +52,36 @@
 
     <requestFocus />
 
-    <!-- Esta es la introducción de búsqueda de producto que se autocompleta-->
+    <!-- Esta es la entrada de texto de los productos -->
 
-    <AutoCompleteTextView
-        android:id="@+id/txt2_auto"
-        android:layout_width="312dp"
-        android:layout_height="51dp"
-        android:hint="@string/text2_auto"
-        android:padding="16dp"
-        android:textColorHint="@color/texto_autocomplete"
-        android:textColorLink="@color/textColorLink"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_auto" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/LayoutProductos"
+        android:layout_width="306dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/text_auto"
+        app:layout_constraintStart_toStartOf="@+id/text_auto"
+        app:layout_constraintTop_toBottomOf="@+id/text_auto">
 
-    <!-- Esta es la entrada de texto del Nombre -->
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cajaProductos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:hint="@string/text2_auto"
+            android:textColorHint="@color/hint_registro"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Esta es la entrada de texto de la cantidad -->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/LayoutCantidad"
         android:layout_width="160dp"
         android:layout_height="50dp"
         android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="@+id/txt2_auto"
-        app:layout_constraintTop_toBottomOf="@+id/txt2_auto">
+        app:layout_constraintStart_toStartOf="@+id/LayoutLocalidad"
+        app:layout_constraintTop_toBottomOf="@+id/LayoutProductos">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/cajaCantidad"
@@ -87,16 +94,16 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Esta es la entrada de texto del Apellidos -->
+    <!-- Esta es la entrada de texto del precio -->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/LayoutPrecio"
         android:layout_width="140dp"
         android:layout_height="50dp"
         android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="@+id/txt2_auto"
+        app:layout_constraintEnd_toEndOf="@+id/LayoutProductos"
         app:layout_constraintStart_toEndOf="@+id/LayoutCantidad"
-        app:layout_constraintTop_toBottomOf="@+id/txt2_auto">
+        app:layout_constraintTop_toBottomOf="@+id/LayoutProductos">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/cajaPrecio"
@@ -108,16 +115,15 @@
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-
-    <!-- Esta es la entrada de texto de la contraseña -->
+    <!-- Esta es la entrada de texto de la localidad -->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/LayoutLocalidad"
         android:layout_width="306dp"
         android:layout_height="50dp"
         android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="@+id/LayoutPrecio"
-        app:layout_constraintStart_toStartOf="@+id/LayoutCantidad"
+        app:layout_constraintEnd_toEndOf="@+id/subirFoto"
+        app:layout_constraintStart_toStartOf="@+id/subirFoto"
         app:layout_constraintTop_toBottomOf="@+id/LayoutCantidad">
 
         <com.google.android.material.textfield.TextInputEditText
