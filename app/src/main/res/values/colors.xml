@@ -50,4 +50,8 @@
 
     <color name="datosVenta">#DCEDE2</color>
 
+    <!-- Paleta para la activity_camara -->
+
+    <color name="btn_camera">#1A5E32</color>
+
 </resources>

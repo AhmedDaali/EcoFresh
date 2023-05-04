@@ -75,12 +75,11 @@
     <string name="confirmar">Confirmar</string>
 
 
-    <!-- Texto de la activity_venta -->
+    <!-- Texto de la activity_camara -->
 
     <string name="app_camara">MyCamara</string>
-    <string name="btn_camara">Camara</string>
+    <string name="btnCamara">Camara</string>
     <string name="iv_visor">visor</string>
 
 
-
-</resources>
+    </resources>
