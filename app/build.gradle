@@ -40,4 +40,25 @@ dependencies {
     //Material Design
     implementation 'com.google.android.material:material:1.2.0-alpha03'
 
+    // Dependencias de JPA y Hibernate
+    implementation 'javax.persistence:persistence-api:1.0.2'
+    //implementation 'org.hibernate:hibernate-core:5.4.31.Final'
+    //implementation 'org.hibernate:hibernate-entitymanager:5.4.31.Final'
+    //implementation 'org.hibernate:hibernate-c3p0:5.4.31.Final'
+
+    // Dependencia del controlador JDBC de MySQL
+    implementation 'mysql:mysql-connector-java:8.0.27'
+
+    // Dependencias de la base de datos
+    implementation 'com.android.support:support-annotations:28.0.0'
+    implementation 'androidx.appcompat:appcompat:1.4.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.material:material:1.5.0'
+
+    // Dependencias de JPA y EclipseLink
+    //implementation 'org.eclipse.persistence:eclipselink:2.7.7'
+    //implementation 'javax.xml.bind:jaxb-api:2.3.1'
+    //implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.1'
+
 }
