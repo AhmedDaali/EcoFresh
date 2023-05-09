@@ -1,5 +1,20 @@
 package com.example.ecofresh.modelo.entidad;
+/*
+ * Con esta anotación podemos decirle a JPA que esta clase será
+ * una tabla de base de datos, la tabla se llamará como la clase
+ * en LowerCase.
+ * LA CLASE DEBE SEGUIR LA CONVENCIÓN JABABEAN (atributos privados y
+ * getter y setter)
+ */
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+
+//Cambiamos el nombre de la tabla "Productor" por "Productores".
+
+@Table(name = "productores")
 public class Productor extends Usuario{
 
     private float gastos = 0;
