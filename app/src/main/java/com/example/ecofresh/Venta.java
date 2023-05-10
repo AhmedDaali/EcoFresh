@@ -54,7 +54,7 @@ public class Venta extends AppCompatActivity {
         // Aquí daremos la referencia del botón "botonSubirFoto", mediante el identificador que está en la activity_venta
         // se llama: "subirFoto". Por tanto buscamos con findViewById ese identificador en la clase R, con id "subirFoto"
 
-        botonSubirFoto = findViewById(R.id.subirFoto);
+        //botonSubirFoto = findViewById(R.id.subirFoto);
 
 
         // Ahora debemos ponerlo a la escucha, para saber cuándo se clica sobre él, con el método setOnClickListener()
@@ -62,7 +62,7 @@ public class Venta extends AppCompatActivity {
         // Con la interface View.OnClickListener, sobreescribimos el método public void onClick.
         // Al tener muchos botones, es mejor sacarlo del método onCreate.¿?
 
-        botonSubirFoto.setOnClickListener(new View.OnClickListener() {
+        /*botonSubirFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -76,7 +76,7 @@ public class Venta extends AppCompatActivity {
                 startActivity(intent);
 
             }
-        });
+        });*/
 
 
         // Esto se hace para que se autocomplete la entrada de texto de la categoría
