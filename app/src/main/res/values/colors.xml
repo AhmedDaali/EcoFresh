@@ -54,4 +54,8 @@
 
     <color name="btn_camera">#1A5E32</color>
 
+    <!-- Paleta para la activity_confirm_venta -->
+
+    <color name="fondoVerde">#F1F9F1</color>
+
 </resources>
