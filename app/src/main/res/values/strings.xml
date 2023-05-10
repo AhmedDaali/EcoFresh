@@ -81,5 +81,13 @@
     <string name="btnCamara">Camara</string>
     <string name="iv_visor">visor</string>
 
+    <!-- Texto de la activity_confirm_venta -->
+
+    <string name="text_ConfirmVenta">¡Ya está a la venta!</string>
+
+
+
+
+
 
 </resources>
