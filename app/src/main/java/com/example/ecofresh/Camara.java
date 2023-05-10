@@ -10,5 +10,10 @@ public class Camara extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camara);
+
+
+        // Con esta linea ocultamos el actionBar, la barra de acción situada arriba de todo
+
+        getSupportActionBar().hide();
     }
 }
