@@ -18,6 +18,13 @@ public class Venta extends AppCompatActivity {
 
     Button botonSubirFoto;
 
+    // Variable que guardará la referencia del botón Confirmar
+
+    Button botonConfirm;
+
+
+
+
 
 
 
@@ -31,7 +38,6 @@ public class Venta extends AppCompatActivity {
             "Frutas", "Verduras", "Hortalizas", "Legumbres"
 
     };
-
 
 
 
@@ -77,6 +83,41 @@ public class Venta extends AppCompatActivity {
 
             }
         });*/
+
+
+
+
+
+        // 2
+        // Aquí daremos la referencia del botón "botonConfirm", mediante el identificador que está en la activity_venta
+        // se llama: "Confirmar". Por tanto buscamos con findViewById ese identificador en la clase R, con id "Confirmar"
+
+        botonConfirm = findViewById(R.id.Confirmar);
+
+
+        // Ahora debemos ponerlo a la escucha, para saber cuándo se clica sobre él, con el método setOnClickListener()
+        // Dentro del paréntesis que está vacío, debemos crear un nuevo objeto: new View.OnClickListener()
+        // Con la interface View.OnClickListener, sobreescribimos el método public void onClick.
+        // Al tener muchos botones, es mejor sacarlo del método onCreate.¿?
+
+        botonConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // De momento queremos que al hacer click en el botón pasemos a la siguiente activity_confirm_venta.
+                // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_confirm_venta (ConfirmVenta.class)
+
+                Intent intent = new Intent (Venta.this,ConfirmVenta.class);
+
+                // Arrancamos el evento que acabamos de crear
+
+                startActivity(intent);
+
+            }
+        });
+
+
+
 
 
         // Esto se hace para que se autocomplete la entrada de texto de la categoría

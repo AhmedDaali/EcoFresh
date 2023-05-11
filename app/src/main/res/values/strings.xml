@@ -19,7 +19,7 @@
 
     <!-- Texto de la activity_registro -->
 
-    <string name="texto_registro">¡Unete a</string>
+    <string name="texto_registro">¡Únete a</string>
     <string name="texto_registro2">Ecofresh!</string>
 
     <string name="hintNombre">Nombre*</string>
@@ -30,7 +30,7 @@
     <string name="CheckBox">He leído y acepto las</string>
     <string name="CheckBox2">Condiciones de uso</string>
     <string name="CheckBox3">y</string>
-    <string name="CheckBox4"> Politica de privacidad</string>
+    <string name="CheckBox4"> Política de privacidad</string>
     <string name="CheckBox5"> de Ecofresh</string>
 
     <string name="boton_Enter">Entrar</string> <!-- activity_login -->
@@ -43,7 +43,7 @@
     <!-- Texto de la activity_main -->
 
     <string name="text1_main">¡Adelante!</string>
-    <string name="text2_main">¿Que te gustaria hacer?</string>
+    <string name="text2_main">¿Qué te gustaría hacer?</string>
     <string name="boton1_main">Comprar</string>
     <string name="boton2_main">Vender</string>
     <string name="boton3_main">Mi cuenta</string>
@@ -51,7 +51,7 @@
 
     <!-- Texto de la activity_selection -->
 
-    <string name="texto_selection">¡A tu eleccion!</string>
+    <string name="texto_selection">¡A tu elección!</string>
     <string name="hint_auto">Busca tu producto</string>
     <string name="button_fruta">Frutas</string>
     <string name="button_verdura">Verduras</string>
@@ -84,10 +84,12 @@
     <!-- Texto de la activity_confirm_venta -->
 
     <string name="text_ConfirmVenta">¡Ya está a la venta!</string>
-
-
-
-
-
+    <string name="text_vendedor">Vendedor: </string>
+    <string name="text_cantidad">Cantidad: </string>
+    <string name="text_producto">Producto: </string>
+    <string name="text_precio">Precio/Kg: </string>
+    <string name="text_localidad">Localidad: </string>
+    <string name="text_menu">Menú principal</string>
+    <string name="text_salir">Salir</string>
 
 </resources>

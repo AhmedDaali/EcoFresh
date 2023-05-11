@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
-        android:fontFamily="@font/bright"
+        android:fontFamily="@font/mangaka"
         android:text="@string/texto_login"
         android:textColor="@color/texto_registro"
         android:textSize="36sp"
