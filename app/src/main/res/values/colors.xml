@@ -54,6 +54,10 @@
 
     <color name="btn_camera">#1A5E32</color>
 
+    <!-- Paleta para la activity_camara -->
+
+    <color name="fondo_verde">#F1F9F1</color>
+
 
 
 </resources>

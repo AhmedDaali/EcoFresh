@@ -7,6 +7,127 @@
     tools:context=".ConfirmVenta">
 
 
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="300sp"
+        android:layout_height="300sp"
+        android:layout_centerInParent="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texto_confirmVenta"
+        app:layout_constraintVertical_bias="0.094"
+        android:background="@drawable/borde">
+
+        <!-- Este es el primer texto de Indcación de vendedor de esta activity -->
+
+        <TextView
+            android:id="@+id/textVendedor"
+            android:layout_width="78dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginEnd="211dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/text_vendedor"
+            android:textColor="@color/texto_cliente1"
+            android:textSize="16sp" />
+
+        <!-- Este es el segundo texto de indicación de cantidad de esta activity -->
+
+        <TextView
+            android:id="@+id/textCantidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textVendedor"
+            android:layout_alignStart="@+id/textVendedor"
+            android:layout_alignEnd="@+id/textVendedor"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/text_cantidad"
+            android:textColor="@color/texto_cliente1"
+            android:textSize="16sp" />
+
+        <!-- Este es el tercer texto de indicación del producto de esta activity -->
+
+        <TextView
+            android:id="@+id/textProducto"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_below="@+id/textCantidad"
+            android:layout_alignStart="@+id/textCantidad"
+            android:layout_alignEnd="@+id/textCantidad"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="-2dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/text_producto"
+            android:textColor="@color/texto_cliente1"
+            android:textSize="16sp" />
+
+        <!-- Este es el cuarto texto de indicación del precio de esta activity -->
+
+        <TextView
+            android:id="@+id/textPrecio"
+            android:layout_width="87dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textProducto"
+            android:layout_alignEnd="@+id/textProducto"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="-17dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/text_precio"
+            android:textColor="@color/texto_cliente1"
+            android:textSize="16sp" />
+
+        <!-- Este es el quinto texto de indicación de la localidad de esta activity -->
+
+        <TextView
+            android:id="@+id/textLocalidad"
+            android:layout_width="97dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textPrecio"
+            android:layout_alignStart="@+id/textPrecio"
+            android:layout_alignEnd="@+id/textPrecio"
+            android:layout_marginStart="-1dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="-10dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/text_localidad"
+            android:textColor="@color/texto_cliente1"
+            android:textSize="16sp" />
+
+        <!-- Este es la imagen del logo de esta activity -->
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="241dp"
+            android:layout_height="221dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="37dp"
+            android:layout_marginTop="78dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/texto_confirmVenta"
+            app:srcCompat="@drawable/logo_verde_sin_fondo" />
+
+    </RelativeLayout>
+
     <!-- Este es el primer texto inicial de esta activity -->
 
     <TextView
@@ -23,119 +144,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Este es la imagen de fondo verde de esta activity -->
-
-    <ImageView
-        android:id="@+id/fondoVerde"
-        android:layout_width="299dp"
-        android:layout_height="312dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/texto_confirmVenta"
-        app:srcCompat="@drawable/fondoverde" />
-
-    <!-- Este es la imagen del logo de esta activity -->
-
-    <!-- Este es el primer texto de Indcación de vendedor de esta activity -->
-
-    <!-- Este es el segundo texto de indicación de cantidad de esta activity -->
-
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="241dp"
-        android:layout_height="221dp"
-        android:layout_marginTop="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/texto_confirmVenta"
-        app:srcCompat="@drawable/logo_verde_sin_fondo" />
-
-    <TextView
-        android:id="@+id/textVendedor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/text_vendedor"
-        android:textColor="@color/texto_cliente1"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.307"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/texto_confirmVenta" />
-
-    <TextView
-        android:id="@+id/textCantidad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/text_cantidad"
-        android:textColor="@color/texto_cliente1"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textVendedor"
-        app:layout_constraintTop_toBottomOf="@+id/textVendedor" />
-
-    <!-- Este es el tercer texto de indicación del producto de esta activity -->
-
-    <TextView
-        android:id="@+id/textProducto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/text_producto"
-        android:textColor="@color/texto_cliente1"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textCantidad"
-        app:layout_constraintTop_toBottomOf="@+id/textCantidad" />
-
-    <!-- Este es el cuarto texto de indicación del precio de esta activity -->
-
-    <TextView
-        android:id="@+id/textPrecio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/text_precio"
-        android:textColor="@color/texto_cliente1"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textProducto"
-        app:layout_constraintTop_toBottomOf="@+id/textProducto" />
-
-    <!-- Este es el quinto texto de indicación de la localidad de esta activity -->
-
-    <TextView
-        android:id="@+id/textLocalidad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/text_localidad"
-        android:textColor="@color/texto_cliente1"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textPrecio"
-        app:layout_constraintTop_toBottomOf="@+id/textPrecio" />
-
     <!-- Este es el botón para regresar al Menú principal -->
-
-    <!-- Este es el botón para salir -->
 
     <Button
         android:id="@+id/btnMenu"
         android:layout_width="318dp"
         android:layout_height="58dp"
-        android:layout_marginTop="4dp"
         android:backgroundTint="@color/verde_email_cliente"
         android:fontFamily="sans-serif-black"
         android:text="@string/text_menu"
@@ -143,7 +157,9 @@
         app:cornerRadius="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fondoVerde" />
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+    <!-- Este es el botón para salir -->
 
     <Button
         android:id="@+id/salir"
