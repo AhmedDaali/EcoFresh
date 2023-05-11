@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ConfirmVenta">
 
-
-
+    <!-- layout dentro del layout principal -->
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
-        android:layout_width="300sp"
-        android:layout_height="300sp"
-        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="302dp"
+        android:layout_below="@+id/texto_confirmVenta"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="29dp"
+        android:background="@drawable/borde"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/texto_confirmVenta"
-        app:layout_constraintVertical_bias="0.094"
-        android:background="@drawable/borde">
+        app:layout_constraintVertical_bias="0.094">
 
-        <!-- Este es el primer texto de Indcación de vendedor de esta activity -->
-
-        <!-- Este es el segundo texto de indicación de cantidad de esta activity -->
+        <!-- Este es el primer texto de indicación de vendedor de esta activity -->
 
         <TextView
             android:id="@+id/textVendedor"
@@ -39,6 +41,8 @@
             android:text="@string/text_vendedor"
             android:textColor="@color/texto_cliente1"
             android:textSize="16sp" />
+
+        <!-- Este es el segundo texto de indicación de cantidad de esta activity -->
 
         <TextView
             android:id="@+id/textCantidad"
@@ -57,8 +61,6 @@
 
         <!-- Este es el tercer texto de indicación del producto de esta activity -->
 
-        <!-- Este es el cuarto texto de indicación del precio de esta activity -->
-
         <TextView
             android:id="@+id/textProducto"
             android:layout_width="wrap_content"
@@ -74,7 +76,7 @@
             android:textColor="@color/texto_cliente1"
             android:textSize="16sp" />
 
-        <!-- Este es el quinto texto de indicación de la localidad de esta activity -->
+        <!-- Este es el cuarto texto de indicación del precio de esta activity -->
 
         <TextView
             android:id="@+id/textPrecio"
@@ -91,7 +93,7 @@
             android:textColor="@color/texto_cliente1"
             android:textSize="16sp" />
 
-        <!-- Este es la imagen del logo de esta activity -->
+        <!-- Este es el quinto texto de indicación de la localidad de esta activity -->
 
         <TextView
             android:id="@+id/textLocalidad"
@@ -108,22 +110,22 @@
             android:textColor="@color/texto_cliente1"
             android:textSize="16sp" />
 
+        <!-- Este es la imagen del logo de esta activity -->
+
         <ImageView
             android:id="@+id/logo"
             android:layout_width="241dp"
             android:layout_height="221dp"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="37dp"
-            android:layout_marginTop="78dp"
             android:layout_marginEnd="22dp"
-            android:layout_marginBottom="1dp"
+            android:layout_marginBottom="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/texto_confirmVenta"
+            app:layout_constraintTop_toBottomOf="parent"
             app:srcCompat="@drawable/logo_verde_sin_fondo" />
 
     </RelativeLayout>
@@ -134,7 +136,12 @@
         android:id="@+id/texto_confirmVenta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="61dp"
         android:layout_marginTop="72dp"
+        android:layout_marginEnd="61dp"
         android:fontFamily="@font/mangaka"
         android:text="@string/text_ConfirmVenta"
         android:textColor="@color/texto_registro"
@@ -150,6 +157,12 @@
         android:id="@+id/btnMenu"
         android:layout_width="318dp"
         android:layout_height="58dp"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_alignStart="@+id/relativeLayout"
+        android:layout_alignEnd="@+id/relativeLayout"
+        android:layout_marginStart="-9dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="-8dp"
         android:backgroundTint="@color/verde_email_cliente"
         android:fontFamily="sans-serif-black"
         android:text="@string/text_menu"
@@ -165,7 +178,12 @@
         android:id="@+id/salir"
         android:layout_width="318dp"
         android:layout_height="58dp"
-        android:layout_marginTop="16dp"
+        android:layout_below="@+id/btnMenu"
+        android:layout_alignStart="@+id/btnMenu"
+        android:layout_alignEnd="@+id/btnMenu"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="0dp"
         android:backgroundTint="@color/verde_email_cliente"
         android:fontFamily="sans-serif-black"
         android:text="@string/text_salir"
@@ -177,4 +195,4 @@
         app:layout_constraintTop_toBottomOf="@+id/btnMenu" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
