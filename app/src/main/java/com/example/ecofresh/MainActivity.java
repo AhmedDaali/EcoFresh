@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -20,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
     Button botonSalir;
 
+    FirebaseAuth mAuth;
+
 
 
 
@@ -28,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        mAuth = FirebaseAuth.getInstance();
         // Con esta linea ocultamos el actionBar, la barra de acción situada arriba de todo
 
         getSupportActionBar().hide();
@@ -113,19 +118,34 @@ public class MainActivity extends AppCompatActivity {
         botonSalir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //Este método cierra la sesión y volvemos a la página de inicio de sesión.
+                logout();
                 // De momento queremos que al hacer click en el botón pasemos a la siguiente activity_selection.
                 // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_selection (Selection.class)
-
-                Intent intent = new Intent (MainActivity.this,Inicial.class);
-
+                //Intent intent = new Intent (MainActivity.this,Inicial.class);
                 // Arrancamos el evento que acabamos de crear
-
-                startActivity(intent);
-
+                //startActivity(intent);
             }
         });
+    }
+    @Override
+    protected void onStart(){
+        super.onStart();
+        FirebaseUser user = mAuth.getCurrentUser();
 
+        if (user == null){
+            Intent intent = new Intent(MainActivity.this, Inicial.class);
+            startActivity(intent);
+            finish();
+        }
+    }
+
+    private void logout(){
+        mAuth.signOut();
+        Intent intent = new Intent(MainActivity.this, Inicial.class);
+        startActivity(intent);
+        finish();
 
     }
+
 }
