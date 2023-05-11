@@ -132,7 +132,7 @@ public class Inicial extends AppCompatActivity {
                 // De momento queremos que al hacer click en el botón pasemos a la siguiente activity_login.
                 // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_registro (registro.class)
 
-                Intent intent = new Intent (Inicial.this,Login.class);
+                Intent intent = new Intent (Inicial.this,MainActivity.class);
 
                 // Arrancamos el evento que acabamos de crear
 
