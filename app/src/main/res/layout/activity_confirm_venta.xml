@@ -29,7 +29,7 @@
 
         <TextView
             android:id="@+id/textVendedor"
-            android:layout_width="78dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
@@ -64,7 +64,7 @@
         <TextView
             android:id="@+id/textProducto"
             android:layout_width="wrap_content"
-            android:layout_height="24dp"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/textCantidad"
             android:layout_alignStart="@+id/textCantidad"
             android:layout_alignEnd="@+id/textCantidad"
@@ -80,7 +80,7 @@
 
         <TextView
             android:id="@+id/textPrecio"
-            android:layout_width="87dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textProducto"
             android:layout_alignEnd="@+id/textProducto"
@@ -97,7 +97,7 @@
 
         <TextView
             android:id="@+id/textLocalidad"
-            android:layout_width="97dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textPrecio"
             android:layout_alignStart="@+id/textPrecio"
