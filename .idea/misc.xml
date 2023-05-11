@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectResources">
+    <resource url="http://java.sun.com/xml/ns/persistence" location="$PROJECT_DIR$" />
+    <resource url="http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd" location="$PROJECT_DIR$" />
     <resource url="http://schemas.android.com/apk/res/android" location="$PROJECT_DIR$" />
     <resource url="http://www.w3.org/2001/XMLSchema-instance" location="$PROJECT_DIR$" />
     <resource url="http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd" location="$PROJECT_DIR$" />
