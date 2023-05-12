@@ -1,12 +1,11 @@
 package com.example.ecofresh.modelo.entidad;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-@Entity
+
+
 
 //Cambiamos el nombre de la tabla "cliente" por "clientes".
 
-@Table(name = "clientes")
+
 public class Cliente extends Usuario{
 
     private String formaPago = "";

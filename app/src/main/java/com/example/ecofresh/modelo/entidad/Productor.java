@@ -7,14 +7,9 @@ package com.example.ecofresh.modelo.entidad;
  * getter y setter)
  */
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
-@Entity
 
 //Cambiamos el nombre de la tabla "Productor" por "Productores".
 
-@Table(name = "productores")
 public class Productor extends Usuario{
 
     private float gastos = 0;

@@ -1,28 +1,10 @@
 package com.example.ecofresh.modelo.entidad;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-/*
- * Con esta anotación podemos decirle a JPA que esta clase será
- * una tabla de base de datos, la tabla se llamará como la clase
- * en LowerCase.
- * LA CLASE DEBE SEGUIR LA CONVENCIÓN JABABEAN (atributos privados y
- * getter y setter)
- */
-
-@Entity
-
 //Cambiamos el nombre de la tabla "usuario" por "usuarios".
 
-@Table(name = "usuarios")
+
 public class Usuario {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id = 0;
     private String nombre = "";
     private String apillidos = "";
