@@ -100,10 +100,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
         // 4
         // Aquí daremos la referencia del botón "botonSalir", mediante el identificador que está en la activity_main
         // se llama: "salir". Por tanto buscamos con findViewById ese identificador en la clase R, con id "salir"
@@ -119,15 +115,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Este método cierra la sesión y volvemos a la página de inicio de sesión.
-                logout();
+                //logout();
                 // De momento queremos que al hacer click en el botón pasemos a la siguiente activity_selection.
                 // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_selection (Selection.class)
-                //Intent intent = new Intent (MainActivity.this,Inicial.class);
+                Intent intent = new Intent (MainActivity.this,Inicial.class);
                 // Arrancamos el evento que acabamos de crear
-                //startActivity(intent);
+                startActivity(intent);
             }
         });
     }
+    /*
     @Override
     protected void onStart(){
         super.onStart();
@@ -147,5 +144,5 @@ public class MainActivity extends AppCompatActivity {
         finish();
 
     }
-
+*/
 }
