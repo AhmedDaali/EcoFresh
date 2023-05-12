@@ -26,9 +26,9 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 public class Inicial extends AppCompatActivity {
 
-    private static final String TAG = "GoogleActivity";
-    private static final int RC_SIGN_IN = 1;
-    private GoogleSignInClient mGoogleSignInClient;
+    //private static final String TAG = "GoogleActivity";
+    //private static final int RC_SIGN_IN = 1;
+    //private GoogleSignInClient mGoogleSignInClient;
     //Inicializamos Firebase.
     private FirebaseAuth mAuth;
 
@@ -57,7 +57,7 @@ public class Inicial extends AppCompatActivity {
         // Con esta linea ocultamos el actionBar, la barra de acción situada arriba de todo
         getSupportActionBar().hide();
 
-        // [START initialize_auth] Initialize Firebase Auth
+       /* // [START initialize_auth] Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
         botonGoogle = findViewById(R.id.boton2);
@@ -69,14 +69,14 @@ public class Inicial extends AppCompatActivity {
                 .requestEmail()
                 .build();
 
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        //mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         botonGoogle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 signIn();
             }
-        });
+        });*/
 
 
 
@@ -144,7 +144,7 @@ public class Inicial extends AppCompatActivity {
 
 
     }
-
+/*
     // [START on_start_check_user]
     @Override
     public void onStart() {
@@ -221,7 +221,7 @@ public class Inicial extends AppCompatActivity {
         finish();
     }
 
-
+*/
 
 }
 
