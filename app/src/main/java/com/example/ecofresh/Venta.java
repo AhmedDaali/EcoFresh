@@ -68,12 +68,12 @@ public class Venta extends AppCompatActivity {
         // Con la interface View.OnClickListener, sobreescribimos el método public void onClick.
         // Al tener muchos botones, es mejor sacarlo del método onCreate.¿?
 
-        /*botonSubirFoto.setOnClickListener(new View.OnClickListener() {
+        botonSubirFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 // De momento queremos que al hacer click en el botón pasemos a la siguiente activity_camara.
-                // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_selection (Selection.class)
+                // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_camara (Camara.class)
 
                 Intent intent = new Intent (Venta.this,Camara.class);
 
@@ -82,7 +82,7 @@ public class Venta extends AppCompatActivity {
                 startActivity(intent);
 
             }
-        });*/
+        });
 
 
 
