@@ -59,4 +59,20 @@
 
     </ScrollView>
 
+    <!-- Este es el botón para regresar a activity_registro -->
+
+    <Button
+        android:id="@+id/botonRegresar"
+        android:layout_width="318dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="@color/verde_email_cliente"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/text_BotonRegresar"
+        android:textColor="@color/dunkel_text_boton"
+        app:cornerRadius="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scroll" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
