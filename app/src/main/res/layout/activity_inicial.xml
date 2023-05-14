@@ -8,8 +8,6 @@
 
     <!-- A continuación indicamos que la ImageView contendrá la imagen del logo y sus características de posicionamiento -->
 
-    <!-- A continuación añadimos un botón que contendrá la imagen del logo  de facebook, junto con un texto y sus características de posicionamiento -->
-
     <ImageView
         android:id="@+id/logo"
         android:layout_width="268dp"
@@ -19,6 +17,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
+
+    <!-- A continuación añadimos un botón que contendrá la imagen del logo  de facebook, junto con un texto y sus características de posicionamiento -->
 
     <Button
         android:id="@+id/boton1"
@@ -58,10 +58,6 @@
 
     <!-- A continuación añadimos un botón con un texto y sus características de posicionamiento -->
 
-    <!-- A continuación añadimos texto y sus características de posicionamiento -->
-
-    <!-- A continuación añadimos otro texto que se podrá pulsar para acceder al activity_login y sus características de posicionamiento -->
-
     <Button
         android:id="@+id/botonEmail"
         android:layout_width="318dp"
@@ -75,6 +71,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/boton2" />
+
+    <!-- A continuación añadimos texto y sus características de posicionamiento -->
 
     <TextView
         android:id="@+id/text_cliente1"
@@ -90,6 +88,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/botonEmail"
         app:layout_constraintVertical_bias="0.147" />
+
+    <!-- A continuación añadimos otro texto que se podrá pulsar para acceder al activity_login y sus características de posicionamiento -->
 
     <TextView
         android:id="@+id/textLogin"
