@@ -100,6 +100,38 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
+        // 3
+        // Aquí daremos la referencia del botón "botonCuenta", mediante el identificador que está en la activity_main
+        // se llama: "MiCuenta". Por tanto buscamos con findViewById ese identificador en la clase R, con id "MiCuenta"
+
+        botonCuenta = findViewById(R.id.MiCuenta);
+
+
+        // Ahora debemos ponerlo a la escucha, para saber cuándo se clica sobre él, con el método setOnClickListener()
+        // Dentro del paréntesis que está vacío, debemos crear un nuevo objeto: new View.OnClickListener()
+        // Con la interface View.OnClickListener, sobreescribimos el método public void onClick.
+        // Al tener muchos botones, es mejor sacarlo del método onCreate.¿?
+
+        botonCuenta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // De momento queremos que al hacer click en el botón pasemos a la siguiente activity_cuenta_usuario.
+                // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_cuenta_usuario (CuentaUsuario.class)
+
+                Intent intent = new Intent (MainActivity.this,CuentaUsuario.class);
+
+                // Arrancamos el evento que acabamos de crear
+
+                startActivity(intent);
+
+            }
+        });
+
+
+
         // 4
         // Aquí daremos la referencia del botón "botonSalir", mediante el identificador que está en la activity_main
         // se llama: "salir". Por tanto buscamos con findViewById ese identificador en la clase R, con id "salir"

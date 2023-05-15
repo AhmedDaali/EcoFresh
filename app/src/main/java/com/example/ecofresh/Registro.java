@@ -25,11 +25,10 @@ public class Registro extends AppCompatActivity {
     // Es de tipo Button
     Button botonEnter;
 
-
-    // Boton de las condiciones
+    // texto de las condiciones como botón
     TextView condiciones;
 
-    // Boton de la política
+    // texto de la política como botón
     TextView politica;
 
 
