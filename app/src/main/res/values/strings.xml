@@ -28,7 +28,7 @@
     <string name="hintContraseña">Password*</string>
 
     <string name="CheckBox">He leído y acepto las</string>
-    <string name="CheckBox2">Condiciones de uso</string>
+    <string name="CheckBox2"> Condiciones de uso</string>
     <string name="CheckBox3">y</string>
     <string name="CheckBox4"> Política de privacidad</string>
     <string name="CheckBox5"> de Ecofresh</string>
@@ -96,41 +96,41 @@
 
     <string name="text_InicialCondiciones">Condiciones de uso y política de privacidad</string>
 
-    <string name="text_CondicionesPrivacidad">Bienvenido a EcoFresh. Al utilizar la aplicación, usted acepta las siguientes condiciones de uso y política de privacidad:
+    <string name="text_CondicionesPrivacidad">Bienvenido a EcoFresh. Al utilizar la aplicación, usted acepta las siguientes condiciones de uso y política de privacidad:\n
 
-1. Condiciones de uso
+1. Condiciones de uso\n
 
-a. Usted es responsable de proporcionar información precisa y actualizada sobre su dirección de envío y los productos que desea comprar.
+a. Usted es responsable de proporcionar información precisa y actualizada sobre su dirección de envío y los productos que desea comprar.\n
 
-b. Usted se compromete a utilizar la aplicación solo para fines legales y de acuerdo con estos términos.
+b. Usted se compromete a utilizar la aplicación solo para fines legales y de acuerdo con estos términos.\n
 
-c. Usted acepta no utilizar la aplicación de ninguna manera que pueda dañar, deshabilitar, sobrecargar o comprometer la seguridad de la aplicación o interferir con el uso y disfrute de la aplicación por parte de otros usuarios.
+c. Usted acepta no utilizar la aplicación de ninguna manera que pueda dañar, deshabilitar, sobrecargar o comprometer la seguridad de la aplicación o interferir con el uso y disfrute de la aplicación por parte de otros usuarios.\n
 
-d. Usted acepta no utilizar la aplicación para enviar correo no solicitado o spam.
+d. Usted acepta no utilizar la aplicación para enviar correo no solicitado o spam.\n
 
-e. Usted acepta no utilizar la aplicación para recopilar información personal de otros usuarios sin su consentimiento.
+e. Usted acepta no utilizar la aplicación para recopilar información personal de otros usuarios sin su consentimiento.\n
 
-f. Nos reservamos el derecho de cancelar cualquier pedido en cualquier momento por cualquier motivo.
+f. Nos reservamos el derecho de cancelar cualquier pedido en cualquier momento por cualquier motivo.\n
 
-g. Nos reservamos el derecho de modificar o interrumpir la aplicación en cualquier momento sin previo aviso.
+g. Nos reservamos el derecho de modificar o interrumpir la aplicación en cualquier momento sin previo aviso.\n
 
-h. No somos responsables de ningún retraso o falla en la entrega de los productos debido a circunstancias fuera de nuestro control.
+h. No somos responsables de ningún retraso o falla en la entrega de los productos debido a circunstancias fuera de nuestro control.\n
 
 2. Política de privacidad
 
-a. Recopilamos información personal, como su nombre, dirección y dirección de correo electrónico, solo con su consentimiento.
+a. Recopilamos información personal, como su nombre, dirección y dirección de correo electrónico, solo con su consentimiento.\n
 
-b. Utilizamos esta información para procesar su pedido y para enviarle información sobre promociones y descuentos relacionados con la aplicación.
+b. Utilizamos esta información para procesar su pedido y para enviarle información sobre promociones y descuentos relacionados con la aplicación.\n
 
-c. No vendemos, alquilamos ni divulgamos su información personal a terceros sin su consentimiento, excepto en la medida en que sea necesario para procesar su pedido.
+c. No vendemos, alquilamos ni divulgamos su información personal a terceros sin su consentimiento, excepto en la medida en que sea necesario para procesar su pedido.\n
 
-d. Utilizamos medidas de seguridad adecuadas para proteger su información personal.
+d. Utilizamos medidas de seguridad adecuadas para proteger su información personal.\n
 
-e. No recopilamos ni almacenamos información de tarjetas de crédito en nuestra aplicación. Todas las transacciones de pago se realizan a través de un proveedor de pago seguro.
+e. No recopilamos ni almacenamos información de tarjetas de crédito en nuestra aplicación. Todas las transacciones de pago se realizan a través de un proveedor de pago seguro.\n
 
-f. Utilizamos cookies para mejorar su experiencia en la aplicación. Puede optar por desactivar las cookies en su navegador.
+f. Utilizamos cookies para mejorar su experiencia en la aplicación. Puede optar por desactivar las cookies en su navegador.\n
 
-g. Usted tiene derecho a acceder, rectificar y eliminar su información personal. Puede hacerlo enviando un correo electrónico a nuestro servicio de atención al cliente.
+g. Usted tiene derecho a acceder, rectificar y eliminar su información personal. Puede hacerlo enviando un correo electrónico a nuestro servicio de atención al cliente.\n
 
 Al utilizar la aplicación, usted acepta estas condiciones de uso y política de privacidad. Si tiene alguna pregunta o inquietud, no dude en ponerse en contacto con nuestro servicio de atención al cliente. Gracias por elegir EcoFresh.</string>
 
