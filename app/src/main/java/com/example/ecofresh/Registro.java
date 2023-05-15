@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 
@@ -17,6 +18,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.util.regex.Pattern;
 
 public class Registro extends AppCompatActivity {
 
@@ -61,27 +64,67 @@ public class Registro extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                //CREAMOS USUARIO EN FIREBASE CON Email y Contraseña.
                 String emailUser = email.getText().toString();
                 String passUser = password.getText().toString();
-                //CREAMOS USUARIO EN FIREBASE CON Email y Contraseña.
-                mAuth.createUserWithEmailAndPassword(emailUser, passUser)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    // Sign in success, update UI with the signed-in user's information
-                                    Toast.makeText(Registro.this, "Usuario registrado correctamente", Toast.LENGTH_LONG).show();
-                                    //Pasamos a la pagina principal al pulsar en añadir cuenta.
-                                    Intent intent = new Intent(Registro.this, MainActivity.class);
-                                    startActivity(intent);
+                String name = nombre.getText().toString();
+                String secondName = apellidos.getText().toString();
+                Pattern pattern = Pattern.compile("([a-z0-9]+(\\.?[a-z0-9])*)+@(([a-z]+)\\.([a-z]+))+");
 
-                                } else {
-                                    // If sign in fails, display a message to the user.
-                                    Toast.makeText(Registro.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
+
+                if(name.isEmpty()){
+                    //Si el campo del email está vacio, devuelve error.
+                    nombre.setError("Campo vacío.");
+                }else if(name.length() < 2){
+                    //Si el campo del email está vacio, devuelve error.
+                    nombre.setError("El nombre debe tener al menos 2 caracteres.");
+                }else if(secondName.length() < 2){
+                    nombre.setError("El apellido debe tener al menos 2 caracteres.");
+                }else if (secondName.isEmpty()) {
+                    apellidos.setError("Campo vacío.");
+                }else if (emailUser.isEmpty()) {
+                    email.setError("Campo vacío.");
+                }else if (!validarEmail(emailUser)){
+                    email.setError("Por favor ingrese una dirección de correo electrónico válida");
+                }else if (passUser.length() < 6) {
+                    password.setError("La contraseña debe tener al menos 6 caracteres.");
+                }else {
+                    //CREAMOS USUARIO EN FIREBASE CON Email y Contraseña.
+                    mAuth.createUserWithEmailAndPassword(emailUser, passUser)
+                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        // Sign in success, update UI with the signed-in user's information
+                                        Toast.makeText(Registro.this, "!Bienvenido " + name + "¡", Toast.LENGTH_LONG).show();
+                                        //Pasamos a la pagina principal al pulsar en añadir cuenta.
+                                        Intent intent = new Intent(Registro.this, MainActivity.class);
+                                        startActivity(intent);
+
+                                    } else {
+                                        // If sign in fails, display a message to the user.
+                                        Toast.makeText(Registro.this, "Authentication failed.",
+                                                Toast.LENGTH_SHORT).show();
+                                    }
                                 }
-                            }
-                        });
+                            });
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -156,5 +199,11 @@ public class Registro extends AppCompatActivity {
 
 
 
+    }
+
+    //Función para validar el formato del email.
+    private boolean validarEmail(String email) {
+        Pattern pattern = Patterns.EMAIL_ADDRESS;
+        return pattern.matcher(email).matches();
     }
 }
