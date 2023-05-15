@@ -31,7 +31,6 @@ public class Registro extends AppCompatActivity {
     // texto de la política como botón
     TextView politica;
 
-
     EditText nombre, apellidos, email, password;
     FirebaseAuth mAuth;
 
@@ -154,6 +153,8 @@ public class Registro extends AppCompatActivity {
 
             }
         });
+
+
 
     }
 }
