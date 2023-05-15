@@ -60,7 +60,7 @@ public class Venta extends AppCompatActivity {
         // Aquí daremos la referencia del botón "botonSubirFoto", mediante el identificador que está en la activity_venta
         // se llama: "subirFoto". Por tanto buscamos con findViewById ese identificador en la clase R, con id "subirFoto"
 
-        //botonSubirFoto = findViewById(R.id.subirFoto);
+        botonSubirFoto = findViewById(R.id.subirFoto);
 
 
         // Ahora debemos ponerlo a la escucha, para saber cuándo se clica sobre él, con el método setOnClickListener()
