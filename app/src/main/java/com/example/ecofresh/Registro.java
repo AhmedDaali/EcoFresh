@@ -79,13 +79,13 @@ public class Registro extends AppCompatActivity {
                     //Si el campo del email está vacio, devuelve error.
                     nombre.setError("El nombre debe tener al menos 2 caracteres.");
                 }else if(secondName.length() < 2){
-                    nombre.setError("El apellido debe tener al menos 2 caracteres.");
+                    apellidos.setError("El apellido debe tener al menos 2 caracteres.");
                 }else if (secondName.isEmpty()) {
                     apellidos.setError("Campo vacío.");
                 }else if (emailUser.isEmpty()) {
                     email.setError("Campo vacío.");
                 }else if (!validarEmail(emailUser)){
-                    email.setError("Por favor ingrese una dirección de correo electrónico válida");
+                    email.setError("Por favor ingrese una dirección de correo electrónico válida.");
                 }else if (passUser.length() < 6) {
                     password.setError("La contraseña debe tener al menos 6 caracteres.");
                 }else {
