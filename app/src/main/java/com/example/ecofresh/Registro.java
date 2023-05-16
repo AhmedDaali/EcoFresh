@@ -9,6 +9,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 
+import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -34,6 +35,8 @@ public class Registro extends AppCompatActivity {
     // texto de la política como botón
     TextView politica;
 
+    CheckBox checkBoxCondiciones;
+
     EditText nombre, apellidos, email, password;
     FirebaseAuth mAuth;
 
@@ -49,6 +52,7 @@ public class Registro extends AppCompatActivity {
         apellidos = findViewById(R.id.cajaApellidos);
         email = findViewById(R.id.cajaEmail);
         password = findViewById(R.id.cajaContraseña);
+        checkBoxCondiciones = findViewById(R.id.checkBox);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -88,7 +92,10 @@ public class Registro extends AppCompatActivity {
                     email.setError("Por favor ingrese una dirección de correo electrónico válida.");
                 }else if (passUser.length() < 6) {
                     password.setError("La contraseña debe tener al menos 6 caracteres.");
-                }else {
+                }else if (!checkBoxCondiciones.isChecked()){
+                    Toast.makeText(Registro.this, "Acepta los términos de condiciones y usos.", Toast.LENGTH_SHORT).show();
+                }
+                {
                     //CREAMOS USUARIO EN FIREBASE CON Email y Contraseña.
                     mAuth.createUserWithEmailAndPassword(emailUser, passUser)
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -96,7 +103,7 @@ public class Registro extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
                                         // Sign in success, update UI with the signed-in user's information
-                                        Toast.makeText(Registro.this, "!Bienvenido " + name + "¡", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(Registro.this, "¡Bienvenido " + name + "!", Toast.LENGTH_LONG).show();
                                         //Pasamos a la pagina principal al pulsar en añadir cuenta.
                                         Intent intent = new Intent(Registro.this, MainActivity.class);
                                         startActivity(intent);
