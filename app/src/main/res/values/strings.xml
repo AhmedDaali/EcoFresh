@@ -136,4 +136,19 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
 
     <string name="text_BotonRegresar">Regresar</string>
 
+    <!-- Texto de la activity_cuenta_usuario -->
+
+    <string name="text_User">Tus datos</string>
+    <string name="text_nombre">Nombre: </string>
+    <string name="text_apellidos">Apellidos: </string>
+    <string name="text_direccion">Dirección: </string>
+
+
+    <string name="text_guarda">Guardar</string>
+    <string name="text_deshacer">Deshacer</string>
+
+    <string name="text_compras">Tus compras     ></string>
+    <string name="text_ventas">Tus ventas         ></string>
+
+
 </resources>
