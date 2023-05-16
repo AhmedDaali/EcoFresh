@@ -6,4 +6,179 @@
     android:layout_height="match_parent"
     tools:context=".CuentaUsuario">
 
+
+    <TextView
+        android:id="@+id/text_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/mangaka"
+        android:text="@string/text_User"
+        android:textColor="@color/texto_registro"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.155"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!-- Este es el segundo texto de indicación de cantidad de esta activity -->
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="197dp"
+        android:layout_height="164dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/text_user"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/persona_ordenador" />
+
+    <TextView
+        android:id="@+id/textNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="100dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/text_nombre"
+        android:textColor="@color/texto_cliente1"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_user" />
+
+    <TextView
+        android:id="@+id/textApellidos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textNombre"
+        android:layout_alignStart="@+id/textNombre"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/text_apellidos"
+        android:textColor="@color/texto_cliente1"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/textNombre"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textNombre"
+        app:layout_constraintTop_toBottomOf="@+id/textNombre" />
+
+    <TextView
+        android:id="@+id/textDireccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textApellidos"
+        android:layout_alignStart="@+id/textApellidos"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/text_direccion"
+        android:textColor="@color/texto_cliente1"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/textApellidos"
+        app:layout_constraintStart_toStartOf="@+id/textApellidos"
+        app:layout_constraintTop_toBottomOf="@+id/textApellidos" />
+
+    <TextView
+        android:id="@+id/textLocalidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textDireccion"
+        android:layout_alignStart="@+id/textDireccion"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/text_localidad"
+        android:textColor="@color/texto_cliente1"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/textDireccion"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textDireccion"
+        app:layout_constraintTop_toBottomOf="@+id/textDireccion" />
+
+    <TextView
+        android:id="@+id/textCompras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textLocalidad"
+        android:layout_alignStart="@+id/textLocalidad"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/text_compras"
+        android:textColor="@color/texto_cliente1"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/textLocalidad"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textLocalidad"
+        app:layout_constraintTop_toBottomOf="@+id/textLocalidad" />
+
+
+
+    <TextView
+        android:id="@+id/textVentas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textCompras"
+        android:layout_alignStart="@+id/textCompras"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/text_ventas"
+        android:textColor="@color/texto_cliente1"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/textCompras"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textCompras"
+        app:layout_constraintTop_toBottomOf="@+id/textCompras" />
+
+    <!-- Este es el botón para regresar al Menú principal -->
+
+    <!-- Este es el botón para salir -->
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="213dp"
+        android:layout_height="197dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/logo_verde_sin_fondo" />
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="318dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/textLocalidad"
+        android:layout_alignStart="@+id/textLocalidad"
+        android:layout_alignEnd="@+id/textLocalidad"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/verde_email_cliente"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/text_guarda"
+        android:textColor="@color/dunkel_text_boton"
+        app:cornerRadius="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textVentas" />
+
+    <Button
+        android:id="@+id/btnDeshacer"
+        android:layout_width="318dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/btnGuardar"
+        android:layout_alignStart="@+id/btnGuardar"
+        android:layout_alignEnd="@+id/btnGuardar"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/verde_email_cliente"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/text_deshacer"
+        android:textColor="@color/dunkel_text_boton"
+        app:cornerRadius="32sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnGuardar"
+        app:layout_constraintStart_toStartOf="@+id/btnGuardar"
+        app:layout_constraintTop_toBottomOf="@+id/btnGuardar" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
