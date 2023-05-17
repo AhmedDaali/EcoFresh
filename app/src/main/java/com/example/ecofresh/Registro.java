@@ -21,6 +21,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.SignInMethodQueryResult;
 
 import java.util.regex.Pattern;
 
@@ -106,36 +107,42 @@ public class Registro extends AppCompatActivity {
                     Toast.makeText(Registro.this, "¡Por favor, acepta los términos de condiciones y uso!", Toast.LENGTH_SHORT).show();
 
                 }else {
-                    //CREAMOS USUARIO EN FIREBASE CON Email y Contraseña.
-                    mAuth.createUserWithEmailAndPassword(emailUser, passUser)
-                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
+                    mAuth.fetchSignInMethodsForEmail(emailUser).addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
+                            if (task.isSuccessful()) {
+                                SignInMethodQueryResult result = task.getResult();
+                                boolean isEmailRegistered = result.getSignInMethods().size() > 0;
+                                if (isEmailRegistered) {
+                                    // El correo electrónico ya está registrado
+                                    Toast.makeText(Registro.this, "El correo electrónico ya está registrado", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    //CREAMOS USUARIO EN FIREBASE CON Email y Contraseña.
+                                    mAuth.createUserWithEmailAndPassword(emailUser, passUser)
+                                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<AuthResult> task) {
 
-                                        if (task.isSuccessful()) {
-                                            // Sign in success, update UI with the signed-in user's information
-                                            Toast.makeText(Registro.this, "¡Bienvenido " + name + "!", Toast.LENGTH_LONG).show();
-                                            //Pasamos a la pagina principal al pulsar en añadir cuenta.
-                                            Intent intent = new Intent(Registro.this, MainActivity.class);
-                                            startActivity(intent);
+                                                    if (task.isSuccessful()) {
+                                                        // Sign in success, update UI with the signed-in user's information
+                                                        Toast.makeText(Registro.this, "¡Bienvenido " + name + "!", Toast.LENGTH_LONG).show();
+                                                        //Pasamos a la pagina principal al pulsar en añadir cuenta.
+                                                        Intent intent = new Intent(Registro.this, MainActivity.class);
+                                                        startActivity(intent);
 
-                                        } else {
-                                            // If sign in fails, display a message to the user.
-                                            Toast.makeText(Registro.this, "Authentication failed.",
-                                                    Toast.LENGTH_SHORT).show();
-                                        }
+                                                    } else {
+                                                        // If sign in fails, display a message to the user.
+                                                        Toast.makeText(Registro.this, "Authentication failed.",
+                                                                Toast.LENGTH_SHORT).show();
+                                                    }
+                                                }
+                                            });
                                 }
-                            });
-
+                            }
+                        }
+                    });
+                    
                 }
-
-                // De momento queremos que al hacer click en el botón pasemos a la siguiente activity_main.
-                // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_main (MainActivity.class)
-
-               // Intent intent = new Intent (Registro.this,MainActivity.class);
-                // Arrancamos el evento que acabamos de crear
-                //startActivity(intent);
-
             }
         });
 
