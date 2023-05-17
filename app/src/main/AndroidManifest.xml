@@ -18,6 +18,12 @@
             android:name=".ForgotPassword"
             android:exported="false" />
         <activity
+            android:name=".Edicion"
+            android:exported="false" />
+        <activity
+            android:name="com.example.ecofresh.ShowPhotoActivity" />
+        <activity
+
             android:name=".Condiciones"
             android:exported="false" />
         <activity

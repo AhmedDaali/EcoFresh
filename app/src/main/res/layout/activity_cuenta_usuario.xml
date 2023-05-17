@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".CuentaUsuario">
 
+    <!-- Este es el texto de inicio de activity -->
 
     <TextView
         android:id="@+id/text_user"
@@ -21,19 +22,171 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Este es la imagen inicial -->
 
-    <!-- Este es el segundo texto de indicación de cantidad de esta activity -->
+    <!-- Este es el contenedor de transacciones, de separación -->
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="197dp"
-        android:layout_height="164dp"
-        android:layout_marginTop="28dp"
+        android:id="@+id/persona"
+        android:layout_width="155dp"
+        android:layout_height="124dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.361"
         app:layout_constraintStart_toEndOf="@+id/text_user"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/persona_ordenador" />
+
+    <RelativeLayout
+        android:id="@+id/separador2"
+        android:layout_width="360dp"
+        android:layout_height="19dp"
+        android:layout_below="@+id/persona"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="29dp"
+        android:background="@color/separaciones_cuenta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/persona">
+
+
+        <TextView
+            android:id="@+id/textTransfer"
+            android:layout_width="138dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="214dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/text_trans"
+            android:textColor="@color/btn_camera"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.127"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </RelativeLayout>
+
+    <!-- Este es el contenedor de compras realizadas -->
+
+    <RelativeLayout
+        android:id="@+id/marcador1"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/persona"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="29dp"
+        android:background="@color/marcadores_compras_ventas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/separador2"
+        >
+
+
+        <TextView
+            android:id="@+id/textCompras"
+            android:layout_width="126dp"
+            android:layout_height="22dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="217dp"
+            android:layout_marginBottom="14dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/text_compras"
+            android:textColor="@color/texto_cliente1"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.067"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </RelativeLayout>
+
+    <!-- Este es el contenedor de ventas realizadas -->
+
+    <RelativeLayout
+        android:id="@+id/marcador2"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/persona"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="29dp"
+        android:background="@color/marcadores_compras_ventas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/marcador1"
+        >
+
+        <TextView
+            android:id="@+id/textVentas"
+            android:layout_width="129dp"
+            android:layout_height="22dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="214dp"
+            android:layout_marginBottom="14dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/text_ventas"
+            android:textColor="@color/texto_cliente1"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <!-- Este es el contenedor de cuenta, de separación con respecto a las transacciones -->
+
+    <RelativeLayout
+        android:id="@+id/separador1"
+        android:layout_width="360dp"
+        android:layout_height="19dp"
+        android:layout_below="@+id/persona"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="29dp"
+        android:background="@color/separaciones_cuenta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/marcador2">
+
+
+        <TextView
+            android:id="@+id/textDatos"
+            android:layout_width="89dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="248dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/text_datos"
+            android:textColor="@color/btn_camera"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.127"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </RelativeLayout>
+
+    <!-- Estos son los textos de los datos personales -->
 
     <TextView
         android:id="@+id/textNombre"
@@ -41,15 +194,15 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-black"
         android:text="@string/text_nombre"
         android:textColor="@color/texto_cliente1"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_user" />
+        app:layout_constraintTop_toBottomOf="@+id/separador1" />
 
     <TextView
         android:id="@+id/textApellidos"
@@ -68,6 +221,38 @@
         app:layout_constraintTop_toBottomOf="@+id/textNombre" />
 
     <TextView
+        android:id="@+id/textEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textDireccion"
+        android:layout_alignStart="@+id/textDireccion"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/text_email"
+        android:textColor="@color/texto_cliente1"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/textApellidos"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textApellidos"
+        app:layout_constraintTop_toBottomOf="@+id/textApellidos" />
+
+    <TextView
+        android:id="@+id/textTelephone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textDireccion"
+        android:layout_alignStart="@+id/textDireccion"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/text_telefono"
+        android:textColor="@color/texto_cliente1"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/textEmail"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textEmail"
+        app:layout_constraintTop_toBottomOf="@+id/textEmail" />
+
+    <TextView
         android:id="@+id/textDireccion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -78,9 +263,12 @@
         android:text="@string/text_direccion"
         android:textColor="@color/texto_cliente1"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/textApellidos"
-        app:layout_constraintStart_toStartOf="@+id/textApellidos"
-        app:layout_constraintTop_toBottomOf="@+id/textApellidos" />
+        app:layout_constraintEnd_toEndOf="@+id/textTelephone"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textTelephone"
+        app:layout_constraintTop_toBottomOf="@+id/textTelephone" />
+
+
 
     <TextView
         android:id="@+id/textLocalidad"
@@ -98,87 +286,38 @@
         app:layout_constraintStart_toStartOf="@+id/textDireccion"
         app:layout_constraintTop_toBottomOf="@+id/textDireccion" />
 
-    <TextView
-        android:id="@+id/textCompras"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textLocalidad"
-        android:layout_alignStart="@+id/textLocalidad"
-        android:layout_marginTop="20dp"
+    <!-- Este es el botón para editar -->
+
+    <!-- Este es el botón para regresar al Menú selección -->
+
+    <Button
+        android:id="@+id/btnEditar"
+        android:layout_width="318dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/verde_email_cliente"
         android:fontFamily="sans-serif-black"
-        android:text="@string/text_compras"
-        android:textColor="@color/texto_cliente1"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/textLocalidad"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textLocalidad"
+        android:text="@string/text_editar"
+        android:textColor="@color/dunkel_text_boton"
+        app:cornerRadius="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.619"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textLocalidad" />
 
-
-
-    <TextView
-        android:id="@+id/textVentas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textCompras"
-        android:layout_alignStart="@+id/textCompras"
-        android:layout_marginTop="16dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/text_ventas"
-        android:textColor="@color/texto_cliente1"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/textCompras"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textCompras"
-        app:layout_constraintTop_toBottomOf="@+id/textCompras" />
-
-    <!-- Este es el botón para regresar al Menú principal -->
-
-    <!-- Este es el botón para salir -->
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="213dp"
-        android:layout_height="197dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:srcCompat="@drawable/logo_verde_sin_fondo" />
-
     <Button
-        android:id="@+id/btnGuardar"
+        android:id="@+id/btnMenuSel"
         android:layout_width="318dp"
         android:layout_height="58dp"
-        android:layout_below="@+id/textLocalidad"
-        android:layout_alignStart="@+id/textLocalidad"
-        android:layout_alignEnd="@+id/textLocalidad"
-        android:layout_marginTop="40dp"
         android:backgroundTint="@color/verde_email_cliente"
         android:fontFamily="sans-serif-black"
-        android:text="@string/text_guarda"
+        android:text="@string/text_menu"
         android:textColor="@color/dunkel_text_boton"
         app:cornerRadius="32sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.619"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textVentas" />
-
-    <Button
-        android:id="@+id/btnDeshacer"
-        android:layout_width="318dp"
-        android:layout_height="58dp"
-        android:layout_below="@+id/btnGuardar"
-        android:layout_alignStart="@+id/btnGuardar"
-        android:layout_alignEnd="@+id/btnGuardar"
-        android:layout_marginTop="5dp"
-        android:backgroundTint="@color/verde_email_cliente"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/text_deshacer"
-        android:textColor="@color/dunkel_text_boton"
-        app:cornerRadius="32sp"
-        app:layout_constraintEnd_toEndOf="@+id/btnGuardar"
-        app:layout_constraintStart_toStartOf="@+id/btnGuardar"
-        app:layout_constraintTop_toBottomOf="@+id/btnGuardar" />
+        app:layout_constraintTop_toBottomOf="@+id/btnEditar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

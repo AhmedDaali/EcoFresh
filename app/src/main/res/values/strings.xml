@@ -142,16 +142,26 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
     <string name="text_nombre">Nombre: </string>
     <string name="text_apellidos">Apellidos: </string>
     <string name="text_direccion">Dirección: </string>
+    <string name="text_telefono">Telefono: </string>
+    <string name="text_email">Email: </string>
 
 
     <string name="text_guarda">Guardar</string>
     <string name="text_deshacer">Deshacer</string>
+    <string name="text_editar">Editar</string>
+
 
     <string name="text_compras">Tus compras     ></string>
     <string name="text_ventas">Tus ventas         ></string>
     <string name="ingresa_tu_correo">INGRESA TU CORREO</string>
     <string name="recupera_tu_contrase_a">RECUPERA TU CONTRASEÑA</string>
     <string name="recuperar">RECUPERAR</string>
+
+
+    <string name="text_compras">Mis compras     ></string>
+    <string name="text_ventas">Mis ventas         ></string>
+    <string name="text_datos">CUENTA</string>
+    <string name="text_trans">TRANSACCIONES</string>
 
 
 </resources>
