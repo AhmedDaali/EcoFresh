@@ -44,7 +44,7 @@ public class ShowPhotoActivity extends AppCompatActivity {
         // Puedes usar Firebase Storage o Firestore para almacenar la imagen
 
         // Una vez que hayas guardado la foto, puedes volver a la actividad principal
-        Intent intent = new Intent(this, Venta.class);
+        Intent intent = new Intent(ShowPhotoActivity.this, Venta.class);
         startActivity(intent);
     }
 
@@ -52,7 +52,7 @@ public class ShowPhotoActivity extends AppCompatActivity {
         // Aquí puedes agregar el código para borrar la foto de Firebase
 
         // Una vez que hayas borrado la foto, puedes volver a la actividad principal
-        Intent intent = new Intent(this, Venta.class);
+        Intent intent = new Intent(ShowPhotoActivity.this, Venta.class);
         startActivity(intent);
     }
 }

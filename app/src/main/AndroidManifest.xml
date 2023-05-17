@@ -15,6 +15,8 @@
         android:theme="@style/Theme.EcoFresh"
         tools:targetApi="31">
         <activity
+            android:name="com.example.ecofresh.ShowPhotoActivity" />
+        <activity
             android:name=".Condiciones"
             android:exported="false" />
         <activity

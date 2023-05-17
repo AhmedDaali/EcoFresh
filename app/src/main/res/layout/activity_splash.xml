@@ -41,12 +41,14 @@
         android:textColor="@color/text_ecofresh"
         android:textSize="48sp"
         app:layout_constraintBottom_toTopOf="@+id/logo"
-        app:layout_constraintEnd_toStartOf="@+id/titulo_fresh"
-        app:layout_constraintHorizontal_bias="0.692"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.28"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.741" />
+        app:layout_constraintVertical_bias="0.752" />
 
+    <!-- A continuación indicamos que la TextView contendrá
+     la palabra Fresh y sus características de posicionamiento -->
     <TextView
         android:id="@+id/titulo_fresh"
         android:layout_width="wrap_content"
@@ -57,11 +59,13 @@
         android:textSize="48sp"
         app:layout_constraintBottom_toTopOf="@+id/logo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.719"
+        app:layout_constraintHorizontal_bias="0.673"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.741" />
 
+    <!-- A continuación indicamos que la ImageView contendrá la
+     imagen de la manzana y sus características de posicionamiento -->
     <ImageView
         android:id="@+id/apple"
         android:layout_width="wrap_content"
