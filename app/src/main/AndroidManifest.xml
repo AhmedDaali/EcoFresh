@@ -15,12 +15,10 @@
         android:theme="@style/Theme.EcoFresh"
         tools:targetApi="31">
         <activity
-<<<<<<< HEAD
             android:name=".Edicion"
             android:exported="false" />
-=======
+        <activity
             android:name="com.example.ecofresh.ShowPhotoActivity" />
->>>>>>> 179328557a190cb7485301f30db9409148444d25
         <activity
             android:name=".Condiciones"
             android:exported="false" />
