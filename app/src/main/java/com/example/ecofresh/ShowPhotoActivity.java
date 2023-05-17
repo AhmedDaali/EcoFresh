@@ -23,6 +23,9 @@ public class ShowPhotoActivity extends AppCompatActivity {
         imageView.setImageBitmap(photo);
 
         Button btnSave = findViewById(R.id.btnSave);
+        // Con esta linea ocultamos el actionBar, la barra de acción situada arriba de todo
+
+        getSupportActionBar().hide();
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
