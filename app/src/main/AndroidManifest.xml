@@ -21,16 +21,14 @@
             android:name=".Edicion"
             android:exported="false" />
         <activity
-            android:name="com.example.ecofresh.ShowPhotoActivity" />
+            android:name=".ShowPhotoActivity"
+            android:exported="false"/>
         <activity
 
             android:name=".Condiciones"
             android:exported="false" />
         <activity
             android:name=".CuentaUsuario"
-            android:exported="false" />
-        <activity
-            android:name=".Camara"
             android:exported="false" />
         <activity
             android:name=".ConfirmVenta"
