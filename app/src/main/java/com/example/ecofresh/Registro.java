@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -39,6 +41,7 @@ public class Registro extends AppCompatActivity {
 
     EditText nombre, apellidos, email, password;
     FirebaseAuth mAuth;
+    Boolean checkBoxState = false;
 
 
     @Override
@@ -54,7 +57,15 @@ public class Registro extends AppCompatActivity {
         password = findViewById(R.id.cajaContraseña);
         checkBoxCondiciones = findViewById(R.id.checkBox);
 
+
         mAuth = FirebaseAuth.getInstance();
+
+        checkBoxCondiciones.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                checkBoxState = isChecked;
+            }
+        });
 
         // 1
         // Aquí daremos la referencia del botón "botonEnter", mediante el identificador que está en la activity_registro
@@ -75,7 +86,6 @@ public class Registro extends AppCompatActivity {
                 String secondName = apellidos.getText().toString();
                 Pattern pattern = Pattern.compile("([a-z0-9]+(\\.?[a-z0-9])*)+@(([a-z]+)\\.([a-z]+))+");
 
-
                 if(name.isEmpty()){
                     //Si el campo del email está vacio, devuelve error.
                     nombre.setError("Campo vacío.");
@@ -92,49 +102,32 @@ public class Registro extends AppCompatActivity {
                     email.setError("Por favor ingrese una dirección de correo electrónico válida.");
                 }else if (passUser.length() < 6) {
                     password.setError("La contraseña debe tener al menos 6 caracteres.");
-                }else if (!checkBoxCondiciones.isChecked()){
-                    Toast.makeText(Registro.this, "Acepta los términos de condiciones y usos.", Toast.LENGTH_SHORT).show();
-                }
-                {
+                }else if (!checkBoxState){
+                    Toast.makeText(Registro.this, "¡Por favor, acepta los términos de condiciones y uso!", Toast.LENGTH_SHORT).show();
+
+                }else {
                     //CREAMOS USUARIO EN FIREBASE CON Email y Contraseña.
                     mAuth.createUserWithEmailAndPassword(emailUser, passUser)
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if (task.isSuccessful()) {
-                                        // Sign in success, update UI with the signed-in user's information
-                                        Toast.makeText(Registro.this, "¡Bienvenido " + name + "!", Toast.LENGTH_LONG).show();
-                                        //Pasamos a la pagina principal al pulsar en añadir cuenta.
-                                        Intent intent = new Intent(Registro.this, MainActivity.class);
-                                        startActivity(intent);
 
-                                    } else {
-                                        // If sign in fails, display a message to the user.
-                                        Toast.makeText(Registro.this, "Authentication failed.",
-                                                Toast.LENGTH_SHORT).show();
-                                    }
+                                        if (task.isSuccessful()) {
+                                            // Sign in success, update UI with the signed-in user's information
+                                            Toast.makeText(Registro.this, "¡Bienvenido " + name + "!", Toast.LENGTH_LONG).show();
+                                            //Pasamos a la pagina principal al pulsar en añadir cuenta.
+                                            Intent intent = new Intent(Registro.this, MainActivity.class);
+                                            startActivity(intent);
+
+                                        } else {
+                                            // If sign in fails, display a message to the user.
+                                            Toast.makeText(Registro.this, "Authentication failed.",
+                                                    Toast.LENGTH_SHORT).show();
+                                        }
                                 }
                             });
 
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                 // De momento queremos que al hacer click en el botón pasemos a la siguiente activity_main.
                 // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_main (MainActivity.class)
