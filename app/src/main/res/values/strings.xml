@@ -149,6 +149,9 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
 
     <string name="text_compras">Tus compras     ></string>
     <string name="text_ventas">Tus ventas         ></string>
+    <string name="ingresa_tu_correo">INGRESA TU CORREO</string>
+    <string name="recupera_tu_contrase_a">RECUPERA TU CONTRASEÑA</string>
+    <string name="recuperar">RECUPERAR</string>
 
 
 </resources>

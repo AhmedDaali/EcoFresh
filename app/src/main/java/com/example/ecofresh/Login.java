@@ -27,6 +27,8 @@ public class Login extends AppCompatActivity {
     // Es de tipo Button
     Button botonEntrar;
     EditText emailText, passwordText;
+
+    TextView olvidasteContraseña;
     FirebaseAuth mAuth;
 
 
@@ -47,6 +49,7 @@ public class Login extends AppCompatActivity {
         botonEntrar = findViewById(R.id.botonEnter);
         emailText = findViewById(R.id.cajaEmail);
         passwordText = findViewById(R.id.cajaContraseña);
+        olvidasteContraseña = findViewById(R.id.textView);
 
         // Ahora debemos ponerlo a la escucha, para saber cuándo se clica sobre él, con el método setOnClickListener()
         // Dentro del paréntesis que está vacío, debemos crear un nuevo objeto: new View.OnClickListener()
@@ -93,6 +96,15 @@ public class Login extends AppCompatActivity {
                 }
             }
 
+        });
+
+        olvidasteContraseña.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this,ForgotPassword.class);
+                startActivity(intent);
+                finish();
+            }
         });
 
     }
