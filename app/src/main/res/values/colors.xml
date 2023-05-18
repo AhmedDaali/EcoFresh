@@ -60,7 +60,7 @@
 
     <!-- Paleta para la activity_cuenta_usuario -->
 
-    <color name="separaciones_cuenta">#1ACCFA28</color>
-    <color name="marcadores_compras_ventas">#080AF487</color>
+    <color name="separaciones_cuenta">#80CCFA28</color>
+    <color name="marcadores_compras_ventas">#3C06EA80</color>
 
 </resources>
