@@ -87,8 +87,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/separador2"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/separador2">
 
 
         <TextView
@@ -128,8 +127,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/marcador1"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/marcador1">
 
         <TextView
             android:id="@+id/textVentas"
@@ -199,8 +197,7 @@
         android:text="@string/text_nombre"
         android:textColor="@color/texto_cliente1"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintEnd_toStartOf="@+id/textViewNombre"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/separador1" />
 
@@ -269,7 +266,6 @@
         app:layout_constraintTop_toBottomOf="@+id/textTelephone" />
 
 
-
     <TextView
         android:id="@+id/textLocalidad"
         android:layout_width="wrap_content"
@@ -287,6 +283,97 @@
         app:layout_constraintTop_toBottomOf="@+id/textDireccion" />
 
     <!-- Este es el botón para editar -->
+
+
+    <TextView
+        android:id="@+id/textViewNombre"
+        android:layout_width="261dp"
+        android:layout_height="22dp"
+        android:layout_below="@+id/textDireccion"
+        android:layout_alignStart="@+id/textDireccion"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-black"
+        android:text=""
+        android:textColor="@color/texto_cliente1"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/separador1" />
+
+    <TextView
+        android:id="@+id/textViewNombre2"
+        android:layout_width="261dp"
+        android:layout_height="22dp"
+        android:layout_below="@+id/textDireccion"
+        android:layout_alignStart="@+id/textDireccion"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-black"
+        android:text=""
+        android:textColor="@color/texto_cliente1"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNombre" />
+
+    <TextView
+        android:id="@+id/textViewNombre3"
+        android:layout_width="261dp"
+        android:layout_height="22dp"
+        android:layout_below="@+id/textDireccion"
+        android:layout_alignStart="@+id/textDireccion"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-black"
+        android:text=""
+        android:textColor="@color/texto_cliente1"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNombre2" />
+
+    <TextView
+        android:id="@+id/textViewNombre4"
+        android:layout_width="261dp"
+        android:layout_height="22dp"
+        android:layout_below="@+id/textDireccion"
+        android:layout_alignStart="@+id/textDireccion"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-black"
+        android:text=""
+        android:textColor="@color/texto_cliente1"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNombre3" />
+
+    <TextView
+        android:id="@+id/textViewNombre5"
+        android:layout_width="261dp"
+        android:layout_height="22dp"
+        android:layout_below="@+id/textDireccion"
+        android:layout_alignStart="@+id/textDireccion"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-black"
+        android:text=""
+        android:textColor="@color/texto_cliente1"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNombre4" />
+
+    <TextView
+        android:id="@+id/textViewNombre6"
+        android:layout_width="261dp"
+        android:layout_height="22dp"
+        android:layout_below="@+id/textDireccion"
+        android:layout_alignStart="@+id/textDireccion"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-black"
+        android:text=""
+        android:textColor="@color/texto_cliente1"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNombre5" />
 
     <Button
         android:id="@+id/btnEditar"
@@ -318,6 +405,20 @@
         app:layout_constraintHorizontal_bias="0.619"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnEditar" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="99dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="294dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

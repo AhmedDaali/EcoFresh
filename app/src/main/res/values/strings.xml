@@ -138,6 +138,14 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
 
     <!-- Texto de la activity_cuenta_usuario -->
 
+    <string name="text_trans">TRANSACCIONES</string>
+
+    <string name="text_compras">Mis compras        ></string>
+    <string name="text_ventas">Mis ventas           ></string>
+
+
+    <string name="text_datos">CUENTA</string>
+
     <string name="text_User">Tus datos</string>
     <string name="text_nombre">Nombre: </string>
     <string name="text_apellidos">Apellidos: </string>
@@ -145,23 +153,24 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
     <string name="text_telefono">Telefono: </string>
     <string name="text_email">Email: </string>
 
-
-    <string name="text_guarda">Guardar</string>
-    <string name="text_deshacer">Deshacer</string>
     <string name="text_editar">Editar</string>
 
+    <!-- Texto de la activity_forgot_password -->
 
-    <!--string name="text_compras">Tus compras     ></string-->
-    <!--string name="text_ventas">Tus ventas         ></string-->
     <string name="ingresa_tu_correo">INGRESA TU CORREO</string>
     <string name="recupera_tu_contrase_a">RECUPERA TU CONTRASEÑA</string>
     <string name="recuperar">RECUPERAR</string>
 
+    <!-- Texto de la activity_edicion -->
 
-    <string name="text_compras">Mis compras        ></string>
-    <string name="text_ventas">Mis ventas           ></string>
-    <string name="text_datos">CUENTA</string>
-    <string name="text_trans">TRANSACCIONES</string>
+    <string name="text_modifica">Modifica tus datos</string>
 
+    <string name="text_guarda">Guardar</string>
 
+    <string name="text_nomb">Nombre:</string>
+    <string name="text_apel">Apellidos:</string>
+    <string name="text_emai">Email:</string>
+    <string name="text_tele">Teléfono:</string>
+    <string name="text_dire">Dirección:</string>
+    <string name="text_loca">Localidad:</string>
 </resources>
