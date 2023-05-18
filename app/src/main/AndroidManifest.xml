@@ -15,6 +15,12 @@
         android:theme="@style/Theme.EcoFresh"
         tools:targetApi="31">
         <activity
+            android:name=".Ventas"
+            android:exported="false" />
+        <activity
+            android:name=".Compras"
+            android:exported="false" />
+        <activity
             android:name=".ForgotPassword"
             android:exported="false" />
         <activity
@@ -22,9 +28,8 @@
             android:exported="false" />
         <activity
             android:name=".ShowPhotoActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
-
             android:name=".Condiciones"
             android:exported="false" />
         <activity
