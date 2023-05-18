@@ -40,14 +40,9 @@ public class CuentaUsuario extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                // De momento queremos que al hacer click en el botón pasemos a la siguiente activity_confirm_venta.
-                // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_confirm_venta (ConfirmVenta.class)
+                 Intent intent = new Intent(CuentaUsuario.this, Edicion.class);
 
-                Intent intent = new Intent(CuentaUsuario.this, Edicion.class);
-
-                // Arrancamos el evento que acabamos de crear
-
-                startActivity(intent);
+                 startActivity(intent);
 
             }
         });
