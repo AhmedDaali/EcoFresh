@@ -1,136 +1,96 @@
 package com.example.ecofresh.modelo.entidad;
 
-//Cambiamos el nombre de la tabla "usuario" por "usuarios".
+import com.example.ecofresh.Venta;
+import com.example.ecofresh.modelo.entidad.Compra;
 
+import java.util.HashMap;
 
 public class Usuario {
 
-    private int id = 0;
-    private String nombre = "";
-    private String apillidos = "";
-    private String email = "";
-    private String password = "";
-    private String direccion = "";
-    private String Ciudad = "";
-    private String codigoPostal = "";
-    private String telefono = "";
-    private String dni = "";
+    private HashMap<String, Object> usuarioData = new HashMap<>();
 
-
-    public Usuario(int id, String nombre, String apillidos, String email, String password, String direccion,
-                   String ciudad, String codigoPostal, String telefono, String dni) {
-        super();
-        this.id = id;
-        this.nombre = nombre;
-        this.apillidos = apillidos;
-        this.email = email;
-        this.password = password;
-        this.direccion = direccion;
-        Ciudad = ciudad;
-        this.codigoPostal = codigoPostal;
-        this.telefono = telefono;
-        this.dni = dni;
+    public Usuario(int id, String nombre, String apellidos, String email, String direccion,
+                   String ciudad, String telefono, Venta venta, Compra compra) {
+        usuarioData.put("id", id);
+        usuarioData.put("nombre", nombre);
+        usuarioData.put("apellidos", apellidos);
+        usuarioData.put("email", email);
+        usuarioData.put("direccion", direccion);
+        usuarioData.put("ciudad", ciudad);
+        usuarioData.put("telefono", telefono);
+        usuarioData.put("venta", venta);
+        usuarioData.put("compra", compra);
     }
 
-
-    public int getId() {
-        return id;
+    public HashMap<String, Object> getUsuarioData() {
+        return usuarioData;
     }
 
-
-    public void setId(int id) {
-        this.id = id;
+    public void setUsuarioData(HashMap<String, Object> usuarioData) {
+        this.usuarioData = usuarioData;
     }
-
 
     public String getNombre() {
-        return nombre;
+        return (String) usuarioData.get("nombre");
     }
-
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        usuarioData.put("nombre", nombre);
     }
 
-
-    public String getApillidos() {
-        return apillidos;
+    public String getApellidos() {
+        return (String) usuarioData.get("apellidos");
     }
 
-
-    public void setApillidos(String apillidos) {
-        this.apillidos = apillidos;
+    public void setApellidos(String apellidos) {
+        usuarioData.put("apellidos", apellidos);
     }
-
 
     public String getEmail() {
-        return email;
+        return (String) usuarioData.get("email");
     }
-
 
     public void setEmail(String email) {
-        this.email = email;
+        usuarioData.put("email", email);
     }
-
-
-    public String getPassword() {
-        return password;
-    }
-
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
 
     public String getDireccion() {
-        return direccion;
+        return (String) usuarioData.get("direccion");
     }
-
 
     public void setDireccion(String direccion) {
-        this.direccion = direccion;
+        usuarioData.put("direccion", direccion);
     }
-
 
     public String getCiudad() {
-        return Ciudad;
+        return (String) usuarioData.get("ciudad");
     }
-
 
     public void setCiudad(String ciudad) {
-        Ciudad = ciudad;
+        usuarioData.put("ciudad", ciudad);
     }
 
-
-    public String getCodigoPostal() {
-        return codigoPostal;
+    public Compra getCompra() {
+        return (Compra) usuarioData.get("compra");
     }
 
-
-    public void setCodigoPostal(String codigoPostal) {
-        this.codigoPostal = codigoPostal;
+    public void setCompra(Compra compra) {
+        usuarioData.put("compra", compra);
     }
-
 
     public String getTelefono() {
-        return telefono;
+        return (String) usuarioData.get("telefono");
     }
-
 
     public void setTelefono(String telefono) {
-        this.telefono = telefono;
+        usuarioData.put("telefono", telefono);
     }
 
-
-    public String getDni() {
-        return dni;
+    public Venta getVenta() {
+        return (Venta) usuarioData.get("venta");
     }
 
-
-    public void setDni(String dni) {
-        this.dni = dni;
+    public void setVenta(Venta venta) {
+        usuarioData.put("venta", venta);
     }
-
-
 }
