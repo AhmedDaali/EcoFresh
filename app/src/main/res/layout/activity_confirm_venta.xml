@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -48,8 +48,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textVendedor"
-            android:layout_alignStart="@+id/textVendedor"
-            android:layout_marginStart="0dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
             android:fontFamily="sans-serif-black"
             android:text="@string/text_cantidad"
@@ -63,8 +63,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textCantidad"
-            android:layout_alignStart="@+id/textCantidad"
-            android:layout_marginStart="0dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
             android:fontFamily="sans-serif-black"
             android:text="@string/text_producto"
@@ -93,8 +93,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textPrecio"
-            android:layout_alignStart="@+id/textPrecio"
-            android:layout_marginStart="0dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
             android:fontFamily="sans-serif-black"
             android:text="@string/text_localidad"
@@ -118,6 +118,66 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="parent"
             app:srcCompat="@drawable/logo_verde_sin_fondo" />
+
+        <TextView
+            android:id="@+id/textViewN"
+            android:layout_width="153dp"
+            android:layout_height="22dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:layout_toEndOf="@+id/textVendedor"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/textViewC"
+            android:layout_width="153dp"
+            android:layout_height="22dp"
+            android:layout_below="@+id/textViewN"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="16dp"
+            android:layout_toEndOf="@+id/textCantidad"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/textViewProducto"
+            android:layout_width="154dp"
+            android:layout_height="22dp"
+            android:layout_below="@+id/textViewC"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_toEndOf="@+id/textProducto"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/textViewPrecio"
+            android:layout_width="153dp"
+            android:layout_height="22dp"
+            android:layout_below="@+id/textViewProducto"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_toEndOf="@+id/textPrecio"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/textViewPrecio2"
+            android:layout_width="153dp"
+            android:layout_height="22dp"
+            android:layout_below="@+id/textViewPrecio"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="16dp"
+            android:layout_toEndOf="@+id/textLocalidad"
+            android:text="" />
 
     </RelativeLayout>
 
@@ -184,6 +244,13 @@
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnMenu" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="169dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
