@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "744495400271",
+    "firebase_url": "https://ecofresh-project-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "ecofresh-project",
     "storage_bucket": "ecofresh-project.appspot.com"
   },
@@ -14,7 +15,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "744495400271-77age7ugvrj4iiv5qq3lvlktnqumsu7t.apps.googleusercontent.com",
+          "client_id": "744495400271-3u5b83rie7j3l8iosi7r9pnrsce22nf1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ecofresh",
+            "certificate_hash": "929117ac4162167f3e82efabf053ebe6256a46a6"
+          }
+        },
+        {
+          "client_id": "744495400271-70rggl8ssjltjoh1krt4mf4q0lpvma6e.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -27,7 +36,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "744495400271-77age7ugvrj4iiv5qq3lvlktnqumsu7t.apps.googleusercontent.com",
+              "client_id": "744495400271-70rggl8ssjltjoh1krt4mf4q0lpvma6e.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

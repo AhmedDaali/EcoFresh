@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -26,14 +27,11 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 public class Inicial extends AppCompatActivity {
 
-    //private static final String TAG = "GoogleActivity";
-    //private static final int RC_SIGN_IN = 1;
-    //private GoogleSignInClient mGoogleSignInClient;
+    private static final String TAG = "GoogleActivity";
+    private static final int RC_SIGN_IN = 9001;
+    private GoogleSignInClient mGoogleSignInClient;
     //Inicializamos Firebase.
     private FirebaseAuth mAuth;
-
-
-
 
     // Esta parte de código será declarada para el botón de continuar con el e-mail
     // Obtendremos el botón y lo dejaremos guardado en una variable que será un atributo de la clase
@@ -41,49 +39,34 @@ public class Inicial extends AppCompatActivity {
     Button botonEmail;
     Button botonGoogle;
 
-
-
-
     // Como el texto de login (Iniciar sesión) realiza la misma función que un botón, hacemos exactamente lo  mismo que el anterior
-
     TextView botonLogin;
 
 
-    @SuppressLint("MissingInflatedId")
+    //@SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicial);
-        // Con esta linea ocultamos el actionBar, la barra de acción situada arriba de todo
         getSupportActionBar().hide();
 
-       /* // [START initialize_auth] Initialize Firebase Auth
+        // [START initialize_auth] Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
-
-        botonGoogle = findViewById(R.id.boton2);
-
-
-        // [START config_signin] Configure Google Sign In
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build();
-
-        //mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        botonGoogle = findViewById(R.id.botonGoogle);
 
         botonGoogle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 signIn();
             }
-        });*/
+        });
 
-
-
-
-
-
-
+        // [START config_signin] Configure Google Sign In
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
 
 
@@ -99,20 +82,10 @@ public class Inicial extends AppCompatActivity {
         botonEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-            // De momento queremos que al hacer click en el botón pasemos a la siguiente activity_registro.
-            // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_registro (Registro.class)
-
                 Intent intent = new Intent (Inicial.this,Registro.class);
-
-            // Arrancamos el evento que acabamos de crear
-
                 startActivity(intent);
-
             }
         });
-
-
 
         // 2
         // Aquí daremos la referencia del botón "botonLogin", mediante el identificador que está en la activity_cliente
@@ -144,7 +117,7 @@ public class Inicial extends AppCompatActivity {
 
 
     }
-/*
+
     // [START on_start_check_user]
     @Override
     public void onStart() {
@@ -176,7 +149,7 @@ public class Inicial extends AppCompatActivity {
                 firebaseAuthWithGoogle(account.getIdToken());
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
-
+                Log.e(TAG,"Google sign in failed",e);
             }
         }
     }
@@ -191,7 +164,8 @@ public class Inicial extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            irMain();
+                            //irMain();
+                            Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
                         } else {
@@ -208,20 +182,23 @@ public class Inicial extends AppCompatActivity {
 
     //Este método manda al usuario si está bien loggeado, a la mainActivity.
     private void updateUI(FirebaseUser user) {
-    user = mAuth.getCurrentUser();
-    if (user != null){
-        irMain();
+        FirebaseUser user1 = FirebaseAuth.getInstance().getCurrentUser();
+        if (user1 != null){
+            Intent intent = new Intent(Inicial.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+            Toast.makeText(Inicial.this,"Ingreso con google correcto",Toast.LENGTH_SHORT).show();
+        }
     }
 
-    }
-
-    private void irMain(){
+    /*private void irMain(){
         Intent intent = new Intent(Inicial.this, MainActivity.class);
         startActivity(intent);
         finish();
-    }
+        Toast.makeText(Inicial.this,"Ingreso con google correcto",Toast.LENGTH_SHORT).show();
+    }*/
 
-*/
+
 
 }
 
