@@ -197,7 +197,6 @@
         android:text="@string/text_nombre"
         android:textColor="@color/texto_cliente1"
         android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/textViewNombre"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/separador1" />
 
@@ -297,7 +296,8 @@
         android:textColor="@color/texto_cliente1"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.563"
+        app:layout_constraintStart_toEndOf="@+id/textNombre"
         app:layout_constraintTop_toBottomOf="@+id/separador1" />
 
     <TextView
@@ -312,7 +312,7 @@
         android:textColor="@color/texto_cliente1"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toEndOf="@+id/textApellidos"
         app:layout_constraintTop_toBottomOf="@+id/textViewNombre" />
 
     <TextView
@@ -327,7 +327,8 @@
         android:textColor="@color/texto_cliente1"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.638"
+        app:layout_constraintStart_toEndOf="@+id/textEmail"
         app:layout_constraintTop_toBottomOf="@+id/textViewNombre2" />
 
     <TextView
@@ -342,7 +343,8 @@
         android:textColor="@color/texto_cliente1"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toEndOf="@+id/textTelephone"
         app:layout_constraintTop_toBottomOf="@+id/textViewNombre3" />
 
     <TextView
@@ -357,7 +359,7 @@
         android:textColor="@color/texto_cliente1"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toEndOf="@+id/textDireccion"
         app:layout_constraintTop_toBottomOf="@+id/textViewNombre4" />
 
     <TextView
@@ -372,7 +374,8 @@
         android:textColor="@color/texto_cliente1"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toEndOf="@+id/textLocalidad"
         app:layout_constraintTop_toBottomOf="@+id/textViewNombre5" />
 
     <Button
@@ -405,13 +408,6 @@
         app:layout_constraintHorizontal_bias="0.619"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnEditar" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="99dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
