@@ -9,17 +9,30 @@ public class Usuario {
 
     private HashMap<String, Object> usuarioData = new HashMap<>();
 
-    public Usuario(int id, String nombre, String apellidos, String email, String direccion,
-                   String ciudad, String telefono, Venta venta, Compra compra) {
-        usuarioData.put("id", id);
+    public Usuario(String nombre, String apellidos, String email, String direccion,
+                   String localidad, String telefono, Venta venta, Compra compra) {
+
         usuarioData.put("nombre", nombre);
         usuarioData.put("apellidos", apellidos);
         usuarioData.put("email", email);
         usuarioData.put("direccion", direccion);
-        usuarioData.put("ciudad", ciudad);
+        usuarioData.put("localidad", localidad);
         usuarioData.put("telefono", telefono);
         usuarioData.put("venta", venta);
         usuarioData.put("compra", compra);
+    }
+
+    public Usuario() {
+
+    }
+
+    public Usuario(String nombre, String apellidos, String email, String direccion, String localidad, String telefono) {
+        usuarioData.put("nombre", nombre);
+        usuarioData.put("apellidos", apellidos);
+        usuarioData.put("email", email);
+        usuarioData.put("direccion", direccion);
+        usuarioData.put("localidad", localidad);
+        usuarioData.put("telefono", telefono);
     }
 
     public HashMap<String, Object> getUsuarioData() {
@@ -62,12 +75,12 @@ public class Usuario {
         usuarioData.put("direccion", direccion);
     }
 
-    public String getCiudad() {
-        return (String) usuarioData.get("ciudad");
+    public String getLocalidad() {
+        return (String) usuarioData.get("localidad");
     }
 
-    public void setCiudad(String ciudad) {
-        usuarioData.put("ciudad", ciudad);
+    public void setLocalidad(String localidad) {
+        usuarioData.put("localidad", localidad);
     }
 
     public Compra getCompra() {

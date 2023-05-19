@@ -17,6 +17,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.auth.FirebaseAuth;
@@ -50,7 +55,7 @@ public class CuentaUsuario extends AppCompatActivity {
     private TextView textLocalidad;
 
     FirebaseFirestore db;
-    FirebaseAuth mAuth;
+    private FirebaseUser currentUser;
 
 
     @Override
@@ -62,16 +67,20 @@ public class CuentaUsuario extends AppCompatActivity {
         // Con esta linea ocultamos el actionBar, la barra de acción situada arriba de todo
         getSupportActionBar().hide();
 
-        // Inicializar Firestore
+        // Inicializar Firebase Firestore
         db = FirebaseFirestore.getInstance();
 
+        // Obtener usuario actual
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
+
         // Referencias a los elementos de la interfaz
-        textNombre = findViewById(R.id.textNombre);
-        textApellidos = findViewById(R.id.textApellidos);
-        textEmail = findViewById(R.id.textEmail);
-        textTelefono = findViewById(R.id.textTelephone);
-        textDireccion = findViewById(R.id.textDireccion);
-        textLocalidad = findViewById(R.id.textLocalidad);
+        textNombre = findViewById(R.id.textViewNombre);
+        textApellidos = findViewById(R.id.textViewNombre2);
+        textEmail = findViewById(R.id.textViewNombre3);
+        textTelefono = findViewById(R.id.textViewNombre4);
+        textDireccion = findViewById(R.id.textViewNombre5);
+        textLocalidad = findViewById(R.id.textViewNombre6);
 
         // Obtener los datos del usuario desde Firestore
         obtenerDatosUsuario();
@@ -146,33 +155,37 @@ public class CuentaUsuario extends AppCompatActivity {
             }
         });
     }
-        private void obtenerDatosUsuario() {
-            // Aquí debes reemplazar "nombre_de_tu_coleccion" y "documento_del_usuario" con los nombres correctos en tu base de datos
-            db.collection("usuarios").document("documento_del_usuario")
-                    .get()
-                    .addOnCompleteListener(task -> {
-                        if (task.isSuccessful()) {
-                            DocumentSnapshot document = task.getResult();
-                            if (document.exists()) {
-                                // Obtener los datos del documento y actualizar los TextView correspondientes
-                                String nombre = document.getString("nombre");
-                                String apellidos = document.getString("apellidos");
-                                String email = document.getString("email");
-                                String telefono = document.getString("telefono");
-                                String direccion = document.getString("direccion");
-                                String localidad = document.getString("localidad");
+// ...
 
-                                textNombre.setText(nombre);
-                                textApellidos.setText(apellidos);
-                                textEmail.setText(email);
-                                textTelefono.setText(telefono);
-                                textDireccion.setText(direccion);
-                                textLocalidad.setText(localidad);
-                            }
-                        } else {
-                            // Error al obtener los datos
-                        }
-                    });
+    private void obtenerDatosUsuario() {
+        // Obtener referencia al documento del usuario en Firestore
+        DocumentReference usuarioRef = db.collection("usuarios").document(currentUser.getUid());
 
+        usuarioRef.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                DocumentSnapshot document = task.getResult();
+                if (document.exists()) {
+                    // Obtener los datos del documento y actualizar los TextView correspondientes
+                    String nombre = document.getString("nombre");
+                    String apellidos = document.getString("apellidos");
+                    String email = document.getString("email");
+                    String telefono = document.getString("telefono");
+                    String direccion = document.getString("direccion");
+                    String localidad = document.getString("localidad");
+
+                    textNombre.setText(nombre);
+                    textApellidos.setText(apellidos);
+                    textEmail.setText(email);
+                    textTelefono.setText(telefono);
+                    textDireccion.setText(direccion);
+                    textLocalidad.setText(localidad);
+                }
+            } else {
+                // Error al obtener los datos
+            }
+        });
     }
+
+// ...
+
 }
