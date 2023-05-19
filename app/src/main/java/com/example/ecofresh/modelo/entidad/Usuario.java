@@ -35,6 +35,13 @@ public class Usuario {
         usuarioData.put("telefono", telefono);
     }
 
+    public Usuario(String nombre, String apellidos, String email) {
+        usuarioData.put("nombre", nombre);
+        usuarioData.put("apellidos", apellidos);
+        usuarioData.put("email", email);
+    }
+
+
     public HashMap<String, Object> getUsuarioData() {
         return usuarioData;
     }

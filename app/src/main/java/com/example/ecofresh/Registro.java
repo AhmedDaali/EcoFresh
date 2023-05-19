@@ -85,7 +85,7 @@ public class Registro extends AppCompatActivity {
                 String passUser = password.getText().toString();
                 String name = nombre.getText().toString();
                 String secondName = apellidos.getText().toString();
-               // Pattern pattern = Pattern.compile("([a-z0-9]+(\\.?[a-z0-9])*)+@(([a-z]+)\\.([a-z]+))+");
+                // Pattern pattern = Pattern.compile("([a-z0-9]+(\\.?[a-z0-9])*)+@(([a-z]+)\\.([a-z]+))+");
 
                 if(name.isEmpty()){
                     //Si el campo del email está vacio, devuelve error.
