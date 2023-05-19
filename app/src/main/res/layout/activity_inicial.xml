@@ -26,7 +26,7 @@
         app:srcCompat="@drawable/logo" />
 
     <Button
-        android:id="@+id/boton2"
+        android:id="@+id/botonGoogle"
         android:layout_width="318dp"
         android:layout_height="58dp"
         android:layout_marginTop="36dp"
@@ -54,7 +54,7 @@
         app:cornerRadius="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boton2" />
+        app:layout_constraintTop_toBottomOf="@+id/botonGoogle" />
 
     <!-- A continuación añadimos texto y sus características de posicionamiento -->
 
