@@ -24,8 +24,6 @@
 
     <!-- Este es la imagen inicial -->
 
-    <!-- Este es el contenedor de transacciones, de separación -->
-
     <ImageView
         android:id="@+id/persona"
         android:layout_width="155dp"
@@ -36,6 +34,8 @@
         app:layout_constraintStart_toEndOf="@+id/text_user"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/persona_ordenador" />
+
+    <!-- Este es el contenedor de transacciones, de separación -->
 
     <RelativeLayout
         android:id="@+id/separador2"
@@ -54,7 +54,7 @@
 
 
         <TextView
-            android:id="@+id/textTransfer"
+            android:id="@+id/textTransac"
             android:layout_width="138dp"
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
@@ -92,7 +92,7 @@
 
         <TextView
             android:id="@+id/textCompras"
-            android:layout_width="156dp"
+            android:layout_width="300dp"
             android:layout_height="22dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
@@ -100,7 +100,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="17dp"
             android:layout_marginTop="14dp"
-            android:layout_marginEnd="187dp"
+            android:layout_marginEnd="0dp"
             android:layout_marginBottom="14dp"
             android:fontFamily="sans-serif-black"
             android:text="@string/text_compras"
@@ -131,7 +131,7 @@
 
         <TextView
             android:id="@+id/textVentas"
-            android:layout_width="154dp"
+            android:layout_width="300dp"
             android:layout_height="24dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
@@ -139,7 +139,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="17dp"
             android:layout_marginTop="14dp"
-            android:layout_marginEnd="189dp"
+            android:layout_marginEnd="0dp"
             android:layout_marginBottom="14dp"
             android:fontFamily="sans-serif-black"
             android:text="@string/text_ventas"
@@ -409,13 +409,6 @@
         app:layout_constraintHorizontal_bias="0.619"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnEditar" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
