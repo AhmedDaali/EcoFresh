@@ -136,6 +136,8 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
 
     <string name="text_BotonRegresar">Regresar</string>
 
+
+
     <!-- Texto de la activity_cuenta_usuario -->
 
     <string name="text_trans">TRANSACCIONES</string>
@@ -155,11 +157,15 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
 
     <string name="text_editar">Editar</string>
 
+
+
     <!-- Texto de la activity_forgot_password -->
 
     <string name="ingresa_tu_correo">INGRESA TU CORREO</string>
-    <string name="recupera_tu_contrase_a">RECUPERA TU CONTRASEÑA</string>
+    <string name="recupera_tu_contrase_a">Recupera tu contraseña</string>
     <string name="recuperar">RECUPERAR</string>
+
+
 
     <!-- Texto de la activity_edicion -->
 
