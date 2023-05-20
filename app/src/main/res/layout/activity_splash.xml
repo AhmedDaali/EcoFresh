@@ -32,6 +32,12 @@
 
     <!-- A continuación indicamos que la ImageView contendrá la imagen de la manzana y sus características de posicionamiento -->
 
+    <!-- A continuación indicamos que la TextView contendrá
+     la palabra Fresh y sus características de posicionamiento -->
+
+    <!-- A continuación indicamos que la ImageView contendrá la
+     imagen de la manzana y sus características de posicionamiento -->
+
     <TextView
         android:id="@+id/titulo_eco"
         android:layout_width="wrap_content"
@@ -42,13 +48,11 @@
         android:textSize="48sp"
         app:layout_constraintBottom_toTopOf="@+id/logo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintHorizontal_bias="0.354"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.752" />
+        app:layout_constraintVertical_bias="0.756" />
 
-    <!-- A continuación indicamos que la TextView contendrá
-     la palabra Fresh y sus características de posicionamiento -->
     <TextView
         android:id="@+id/titulo_fresh"
         android:layout_width="wrap_content"
@@ -59,13 +63,11 @@
         android:textSize="48sp"
         app:layout_constraintBottom_toTopOf="@+id/logo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.673"
+        app:layout_constraintHorizontal_bias="0.687"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.741" />
+        app:layout_constraintVertical_bias="0.756" />
 
-    <!-- A continuación indicamos que la ImageView contendrá la
-     imagen de la manzana y sus características de posicionamiento -->
     <ImageView
         android:id="@+id/apple"
         android:layout_width="wrap_content"
