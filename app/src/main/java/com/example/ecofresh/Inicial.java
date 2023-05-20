@@ -187,18 +187,10 @@ public class Inicial extends AppCompatActivity {
             Intent intent = new Intent(Inicial.this, MainActivity.class);
             startActivity(intent);
             finish();
-            Toast.makeText(Inicial.this,"Ingreso con google correcto",Toast.LENGTH_SHORT).show();
+
+            Toast.makeText(Inicial.this,"Usuario: " + user1.getEmail(),Toast.LENGTH_SHORT).show();
         }
     }
-
-    /*private void irMain(){
-        Intent intent = new Intent(Inicial.this, MainActivity.class);
-        startActivity(intent);
-        finish();
-        Toast.makeText(Inicial.this,"Ingreso con google correcto",Toast.LENGTH_SHORT).show();
-    }*/
-
-
 
 }
 
