@@ -1,12 +1,19 @@
 package com.example.ecofresh;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -24,10 +31,8 @@ public class MainActivity extends AppCompatActivity {
     Button botonSalir;
 
     FirebaseAuth mAuth;
-
-
-
-
+    private GoogleSignInClient mGoogleSignInClient;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,12 +40,16 @@ public class MainActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         // Con esta linea ocultamos el actionBar, la barra de acción situada arriba de todo
+       //FirebaseUser user = mAuth.getCurrentUser();
+
+        // [START config_signin] Configure Google Sign In
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         getSupportActionBar().hide();
-
-
-
-
 
 
         // 1
@@ -130,8 +139,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
         // 4
         // Aquí daremos la referencia del botón "botonSalir", mediante el identificador que está en la activity_main
         // se llama: "salir". Por tanto buscamos con findViewById ese identificador en la clase R, con id "salir"
@@ -146,39 +153,23 @@ public class MainActivity extends AppCompatActivity {
         botonSalir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Este método cierra la sesión y volvemos a la página de inicio de sesión.
-                //logout();
-                // De momento queremos que al hacer click en el botón pasemos a la siguiente activity_selection.
-                // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_selection (Selection.class)
-
-                //Cerramos sesión del usuario cuando da al botón salir.
-                FirebaseAuth.getInstance().signOut();
+                mAuth.signOut(); //Cierra la sesión si entras con email y contraseña.
+                logOutGoogle(); //Cierra la sesión si entras con Google.
 
                 Intent intent = new Intent (MainActivity.this,Inicial.class);
-                // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
+                finish();
+
             }
         });
     }
-    /*
-    @Override
-    protected void onStart(){
-        super.onStart();
-        FirebaseUser user = mAuth.getCurrentUser();
 
-        if (user == null){
-            Intent intent = new Intent(MainActivity.this, Inicial.class);
-            startActivity(intent);
-            finish();
-        }
+    private void logOutGoogle(){
+        mGoogleSignInClient.signOut().addOnCompleteListener(this, new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+
+            }
+        });
     }
-
-    private void logout(){
-        mAuth.signOut();
-        Intent intent = new Intent(MainActivity.this, Inicial.class);
-        startActivity(intent);
-        finish();
-
-    }
-*/
 }
