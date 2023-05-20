@@ -151,12 +151,12 @@ public class CuentaUsuario extends AppCompatActivity {
                     String direccion = document.getString("direccion");
                     String localidad = document.getString("localidad");
 
-                    textNombre.setText(nombre);
-                    textApellidos.setText(apellidos);
-                    textEmail.setText(email);
-                    textTelefono.setText(telefono);
-                    textDireccion.setText(direccion);
-                    textLocalidad.setText(localidad);
+                    textNombre.setText("Nombre:     "+nombre);
+                    textApellidos.setText("Apellidos:   "+apellidos);
+                    textEmail.setText("Email:          "+email);
+                    textTelefono.setText("Teléfono:   "+telefono);
+                    textDireccion.setText("Dirección:  "+direccion);
+                    textLocalidad.setText("Localidad:  "+localidad);
                 }
             } else {
                 Toast.makeText(CuentaUsuario.this, "Error al obtener los datos", Toast.LENGTH_SHORT).show();
