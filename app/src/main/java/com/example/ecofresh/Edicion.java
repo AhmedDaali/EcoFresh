@@ -60,24 +60,7 @@ public class Edicion extends AppCompatActivity {
         }
 
         // Obtener referencia al documento del usuario en Firestore
-
-        DocumentReference usuarioRef = db.collection("usuarios").document(currentUser.getUid());
-        // Comprobar si la colección "usuarios" existe, y crearla si no existe
-        db.collection("usuarios").document("dummy").get().addOnFailureListener(e -> {
-            if (e.getMessage() != null && e.getMessage().contains("No document exists")) {
-                // La colección "usuarios" no existe, se crea el documento dummy
-                db.collection("usuarios").document("dummy").set(new Usuario()).addOnSuccessListener(aVoid -> {
-                    // El documento dummy se creó correctamente
-                    Toast.makeText(Edicion.this, "Se creó la colección 'usuarios'", Toast.LENGTH_SHORT).show();
-                }).addOnFailureListener(error -> {
-                    // Error al crear el documento dummy
-                    Toast.makeText(Edicion.this, "Error al crear la colección 'usuarios'", Toast.LENGTH_SHORT).show();
-                });
-            } else {
-                // Otro error al acceder a la colección "usuarios"
-                Toast.makeText(Edicion.this, "Error al acceder a la colección 'usuarios'", Toast.LENGTH_SHORT).show();
-            }
-        });
+        DocumentReference usuarioRef = db.collection("usuarios").document(currentUser.getEmail());
 
         // Obtener datos actuales del usuario
         usuarioRef.get().addOnSuccessListener(documentSnapshot -> {

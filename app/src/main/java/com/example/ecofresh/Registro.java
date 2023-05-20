@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.InputType;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -16,12 +15,14 @@ import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.ecofresh.modelo.entidad.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.SignInMethodQueryResult;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 
 import java.util.regex.Pattern;
 
@@ -41,8 +42,13 @@ public class Registro extends AppCompatActivity {
     CheckBox checkBoxCondiciones;
 
     EditText nombre, apellidos, email, password;
+
     FirebaseAuth mAuth;
     Boolean checkBoxState = false;
+
+    private FirebaseFirestore db;
+
+
 
 
     @Override
@@ -52,15 +58,21 @@ public class Registro extends AppCompatActivity {
         // Con esta linea ocultamos el actionBar, la barra de acción situada arriba de todo
         getSupportActionBar().hide();
 
+        // Inicializar Firebase Firestore
+        db = FirebaseFirestore.getInstance();
+
+        mAuth = FirebaseAuth.getInstance();
+
+
+        // Obtener usuario actual
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
+        // Obtener referencias de los EditText
         nombre = findViewById(R.id.cajaNombre);
         apellidos = findViewById(R.id.cajaApellidos);
         email = findViewById(R.id.cajaEmail);
         password = findViewById(R.id.cajaContraseña);
         checkBoxCondiciones = findViewById(R.id.checkBox);
-
-
-        mAuth = FirebaseAuth.getInstance();
-
         checkBoxCondiciones.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -81,8 +93,8 @@ public class Registro extends AppCompatActivity {
             public void onClick(View view) {
 
                 //CREAMOS USUARIO EN FIREBASE CON Email y Contraseña.
-                String emailUser = email.getText().toString();
-                String passUser = password.getText().toString();
+                String emailUser = email.getText().toString().trim();
+                String passUser = password.getText().toString().trim();;
                 String name = nombre.getText().toString();
                 String secondName = apellidos.getText().toString();
                 // Pattern pattern = Pattern.compile("([a-z0-9]+(\\.?[a-z0-9])*)+@(([a-z]+)\\.([a-z]+))+");
@@ -136,6 +148,43 @@ public class Registro extends AppCompatActivity {
                                                                 Toast.LENGTH_SHORT).show();
                                                     }
                                                 }
+                                            });
+                                    // Comprobar si la colección "usuarios" existe, y crearla si no existe
+                                    db.collection("usuarios").document("dummy").get().addOnFailureListener(e -> {
+                                        if (e.getMessage() != null && e.getMessage().contains("No document exists")) {
+                                            // La colección "usuarios" no existe, se crea el documento dummy
+                                            db.collection("usuarios").document("dummy").set(new Usuario()).addOnSuccessListener(aVoid -> {
+                                                // El documento dummy se creó correctamente
+                                                Toast.makeText(Registro.this, "Se creó la colección 'usuarios'", Toast.LENGTH_SHORT).show();
+                                            }).addOnFailureListener(error -> {
+                                                // Error al crear el documento dummy
+                                                Toast.makeText(Registro.this, "Error al crear la colección 'usuarios'", Toast.LENGTH_SHORT).show();
+                                            });
+                                        } else {
+                                            // Otro error al acceder a la colección "usuarios"
+                                            Toast.makeText(Registro.this, "Error al acceder a la colección 'usuarios'", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+
+                                    // Crear un nuevo objeto Usuario con los datos actualizados
+                                    Usuario usuarioCreado = new Usuario(name, secondName, emailUser);
+
+                                    // Actualizar los datos del usuario en Firestore
+                                    db.collection("usuarios").document(emailUser).set(usuarioCreado)
+                                            .addOnSuccessListener(aVoid -> {
+                                                // Datos actualizados correctamente
+                                                Toast.makeText(Registro.this, "Datos creados correctamente", Toast.LENGTH_SHORT).show();
+
+                                                // Iniciar la actividad CuentaUsuario
+                                                Intent intent = new Intent(Registro.this, MainActivity.class);
+                                                startActivity(intent);
+
+                                                // Finalizar la actividad actual
+                                                finish();
+                                            })
+                                            .addOnFailureListener(e -> {
+                                                // Error al actualizar los datos del usuario
+                                                Toast.makeText(Registro.this, "Error al crear los datos del usuario", Toast.LENGTH_SHORT).show();
                                             });
                                 }
                             }

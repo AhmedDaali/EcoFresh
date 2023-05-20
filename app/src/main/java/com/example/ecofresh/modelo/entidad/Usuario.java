@@ -1,5 +1,7 @@
 package com.example.ecofresh.modelo.entidad;
 
+import android.widget.EditText;
+
 import com.example.ecofresh.Venta;
 import com.example.ecofresh.modelo.entidad.Compra;
 
@@ -40,7 +42,6 @@ public class Usuario {
         usuarioData.put("apellidos", apellidos);
         usuarioData.put("email", email);
     }
-
 
     public HashMap<String, Object> getUsuarioData() {
         return usuarioData;
