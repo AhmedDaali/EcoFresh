@@ -140,8 +140,8 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
 
     <string name="text_trans">TRANSACCIONES</string>
 
-    <string name="text_compras">Mis compras        ></string>
-    <string name="text_ventas">Mis ventas           ></string>
+    <string name="text_compras">Mis compras                                                                        ></string>
+    <string name="text_ventas">Mis ventas                                                                            ></string>
 
 
     <string name="text_datos">CUENTA</string>
