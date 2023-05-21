@@ -55,7 +55,7 @@ public class Registro extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
-        // Con esta linea ocultamos el actionBar, la barra de acción situada arriba de todo
+        // Con esta linea ocultamos el actionBar, la barra de acción situada arriba  de
         getSupportActionBar().hide();
 
         // Inicializar Firebase Firestore
