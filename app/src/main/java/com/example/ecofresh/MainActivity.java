@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     private GoogleSignInClient mGoogleSignInClient;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
