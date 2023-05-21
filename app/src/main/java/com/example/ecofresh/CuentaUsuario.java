@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -19,7 +20,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 
 
 public class CuentaUsuario extends AppCompatActivity {
-
 
     Button botonEditar;
 
@@ -58,11 +58,11 @@ public class CuentaUsuario extends AppCompatActivity {
 
         // Referencias a los elementos de la interfaz
         textNombre = findViewById(R.id.textViewNombre);
-        textApellidos = findViewById(R.id.textViewNombre2);
-        textEmail = findViewById(R.id.textViewNombre3);
-        textTelefono = findViewById(R.id.textViewNombre4);
-        textDireccion = findViewById(R.id.textViewNombre5);
-        textLocalidad = findViewById(R.id.textViewNombre6);
+        textApellidos = findViewById(R.id.textViewApelli2);
+        textEmail = findViewById(R.id.textViewEmail3);
+        textTelefono = findViewById(R.id.textViewTelefono4);
+        textDireccion = findViewById(R.id.textViewDireccion5);
+        textLocalidad = findViewById(R.id.textViewLocalidad6);
 
         // Obtener los datos del usuario desde Firestore
         obtenerDatosUsuario();
@@ -89,11 +89,9 @@ public class CuentaUsuario extends AppCompatActivity {
 
                 // De momento queremos que al hacer click en el botón pasemos a la siguiente activity_confirm_venta.
                 // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_confirm_venta (ConfirmVenta.class)
-
                 Intent intent = new Intent(CuentaUsuario.this, MainActivity.class);
 
                 // Arrancamos el evento que acabamos de crear
-
                 startActivity(intent);
 
             }
@@ -112,7 +110,6 @@ public class CuentaUsuario extends AppCompatActivity {
                 Intent intent = new Intent(CuentaUsuario.this, Compras.class);
 
                 // Arrancamos el evento que acabamos de crear
-
                 startActivity(intent);
 
             }
@@ -131,7 +128,6 @@ public class CuentaUsuario extends AppCompatActivity {
                 Intent intent = new Intent(CuentaUsuario.this, Ventas.class);
 
                 // Arrancamos el evento que acabamos de crear
-
                 startActivity(intent);
 
             }
@@ -141,7 +137,7 @@ public class CuentaUsuario extends AppCompatActivity {
 
     private void obtenerDatosUsuario() {
         // Obtener referencia al documento del usuario en Firestore
-        DocumentReference usuarioRef = db.collection("usuarios").document(currentUser.getUid());
+        DocumentReference usuarioRef = db.collection("usuarios").document(currentUser.getEmail());
 
         usuarioRef.get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
@@ -155,19 +151,17 @@ public class CuentaUsuario extends AppCompatActivity {
                     String direccion = document.getString("direccion");
                     String localidad = document.getString("localidad");
 
-                    textNombre.setText(nombre);
-                    textApellidos.setText(apellidos);
-                    textEmail.setText(email);
-                    textTelefono.setText(telefono);
-                    textDireccion.setText(direccion);
-                    textLocalidad.setText(localidad);
+                    textNombre.setText("Nombre:     "+nombre);
+                    textApellidos.setText("Apellidos:   "+apellidos);
+                    textEmail.setText("Email:          "+email);
+                    textTelefono.setText("Teléfono:   "+telefono);
+                    textDireccion.setText("Dirección:  "+direccion);
+                    textLocalidad.setText("Localidad:  "+localidad);
                 }
             } else {
-                // Error al obtener los datos
+                Toast.makeText(CuentaUsuario.this, "Error al obtener los datos", Toast.LENGTH_SHORT).show();
             }
         });
     }
-
-// ...
 
 }
