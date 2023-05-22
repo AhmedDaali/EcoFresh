@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -15,7 +14,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -100,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                 // De momento queremos que al hacer click en el botón pasemos a la siguiente activity_venta.
                 // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_venta (Venta.class)
 
-                Intent intent = new Intent (MainActivity.this,Venta.class);
+                Intent intent = new Intent (MainActivity.this, VentaAguardar.class);
 
                 // Arrancamos el evento que acabamos de crear
 

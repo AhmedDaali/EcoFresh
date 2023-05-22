@@ -1,38 +1,44 @@
 package com.example.ecofresh.modelo.entidad;
 
+import com.example.ecofresh.VentaAguardar;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class Venta {
 
-    private float cantidad = 0;
-    private Producto Producto =null;
-    private Usuario usuario =  null;
+    Map<String, Object> venta = new HashMap<>();
 
-    public Venta(float cantidad, com.example.ecofresh.modelo.entidad.Producto producto, Usuario usuario) {
-        this.cantidad = cantidad;
-        Producto = producto;
-        this.usuario = usuario;
+    public Venta(String cantidad, Producto producto, String emailUsuario) {
+        venta.put("cantidad", cantidad);
+        venta.put("producto", producto);
+        venta.put("usuario", emailUsuario);
     }
 
-    public float getCantidad() {
-        return cantidad;
+    public String getCantidad() {
+        return (String) venta.get("cantidad");
     }
 
-    public void setCantidad(float cantidad) {
-        this.cantidad = cantidad;
+    public void setCantidad(String cantidad) {
+
+        venta.put("cantidad", cantidad);
     }
 
-    public com.example.ecofresh.modelo.entidad.Producto getProducto() {
-        return Producto;
+    public Producto getProducto() {
+
+        return (Producto)  venta.get("producto");
     }
 
-    public void setProducto(com.example.ecofresh.modelo.entidad.Producto producto) {
-        Producto = producto;
+    public void setProducto(Producto producto) {
+        venta.put("producto", producto);
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public String getEmailUsuario() {
+        return (String) venta.get("emailUsuario");
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setEmailUsuario(String emailUsuario) {
+
+        venta.put("usuario", emailUsuario);
     }
 }

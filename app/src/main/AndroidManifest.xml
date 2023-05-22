@@ -39,7 +39,7 @@
             android:name=".ConfirmVenta"
             android:exported="false" />
         <activity
-            android:name=".Venta"
+            android:name=".VentaAguardar"
             android:exported="false" />
         <activity
             android:name=".Selection"

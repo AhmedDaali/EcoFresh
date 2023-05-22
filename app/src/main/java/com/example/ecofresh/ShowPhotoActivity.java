@@ -9,9 +9,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
+
 public class ShowPhotoActivity extends AppCompatActivity {
     private ImageView imageView;
     private Bitmap photo;
+
+    private Bitmap foto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +26,8 @@ public class ShowPhotoActivity extends AppCompatActivity {
         imageView = findViewById(R.id.imageView);
         photo = getIntent().getParcelableExtra("photo");
         imageView.setImageBitmap(photo);
+
+        foto= photo;
 
         Button btnSave = findViewById(R.id.btnSave);
         // Con esta linea ocultamos el actionBar, la barra de acción situada arriba de todo
@@ -43,19 +50,27 @@ public class ShowPhotoActivity extends AppCompatActivity {
     }
 
     private void savePhoto() {
-        // Aquí puedes agregar el código para guardar la foto en Firebase
-        // Puedes usar Firebase Storage o Firestore para almacenar la imagen
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        foto.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        byte[] imageData = baos.toByteArray();
 
-        // Una vez que hayas guardado la foto, puedes volver a la actividad principal
-        Intent intent = new Intent(ShowPhotoActivity.this, Venta.class);
+        if (VentaAguardar.photoToSave == null) {
+            VentaAguardar.photoToSave = new ArrayList<>();
+        }
+
+        VentaAguardar.photoToSave.add(imageData);
+
+        Intent intent = new Intent(ShowPhotoActivity.this, VentaAguardar.class);
         startActivity(intent);
     }
 
+
     private void deletePhoto() {
         // Aquí puedes agregar el código para borrar la foto de Firebase
+        VentaAguardar.photoToSave = null;
 
         // Una vez que hayas borrado la foto, puedes volver a la actividad principal
-        Intent intent = new Intent(ShowPhotoActivity.this, Venta.class);
+        Intent intent = new Intent(ShowPhotoActivity.this, VentaAguardar.class);
         startActivity(intent);
     }
 }
