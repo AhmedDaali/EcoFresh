@@ -179,4 +179,13 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
     <string name="text_tele">Teléfono:</string>
     <string name="text_dire">Dirección:</string>
     <string name="text_loca">Localidad:</string>
+
+    <!-- Texto de la activity_ventas_realizadas -->
+
+    <string name="text_ventas_realizadas">Estas han sido tus ventas</string>
+
+
+
+
+
 </resources>
