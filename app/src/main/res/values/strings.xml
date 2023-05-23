@@ -218,16 +218,6 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
     <string name="button_lupino">Lupino</string>
 
 
-    <!-- Texto de la activity_hortalizas -->
 
-    <string name="text_principal_hortalizas">¡Verduras!</string>
-    <string name="button_espinacas">Espinacas</string>
-    <string name="button_lechuga">Lechuga</string>
-
-    <string name="button_repollo">Repollo</string>
-    <string name="button_brocoli">Brocoli</string>
-
-    <string name="button_apio">Apio</string>
-    <string name="button_grelos">Grelos</string>
 
 </resources>

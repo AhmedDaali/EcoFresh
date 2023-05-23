@@ -8,12 +8,12 @@
     android:background="@drawable/bg_color2">
 
     <TextView
-        android:id="@+id/texto_verduras"
+        android:id="@+id/texto_legumbres"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
         android:fontFamily="@font/mangaka"
-        android:text="@string/text_principal_verduras"
+        android:text="@string/text_principal_legumbres"
         android:textColor="@color/texto_registro"
         android:textColorLink="#2C2828"
         android:textSize="36sp"
@@ -34,7 +34,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/texto_verduras" />
+        app:layout_constraintTop_toBottomOf="@+id/texto_legumbres" />
 
     <ImageButton
         android:id="@+id/boton_habas"
@@ -113,12 +113,12 @@
         android:layout_width="128dp"
         android:layout_height="104dp"
         android:layout_gravity="center"
-        android:layout_marginStart="232dp"
         android:layout_marginTop="4dp"
+        android:layout_marginEnd="48dp"
         android:background="@color/transparent_imageButton"
         android:contentDescription="Botón de lupino"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_lupino"
         app:srcCompat="@drawable/lupino" />
 
@@ -197,6 +197,6 @@
         android:textColor="@color/hint_registro"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boton_lentejas" />>
+        app:layout_constraintTop_toBottomOf="@+id/boton_lentejas" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
