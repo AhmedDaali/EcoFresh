@@ -4,10 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
@@ -17,6 +23,7 @@ public class ShowPhotoActivity extends AppCompatActivity {
     private Bitmap photo;
 
     private Bitmap foto;
+    private StorageReference storageRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +34,16 @@ public class ShowPhotoActivity extends AppCompatActivity {
         photo = getIntent().getParcelableExtra("photo");
         imageView.setImageBitmap(photo);
 
-        foto= photo;
+        foto = photo;
 
         Button btnSave = findViewById(R.id.btnSave);
-        // Con esta linea ocultamos el actionBar, la barra de acción situada arriba de todo
-
+        // Con esta línea ocultamos el actionBar, la barra de acción situada arriba de todo
         getSupportActionBar().hide();
+
+        // Obtén una instancia de FirebaseStorage y una referencia al almacenamiento
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        storageRef = storage.getReference();
+
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,10 +71,28 @@ public class ShowPhotoActivity extends AppCompatActivity {
 
         VentaAguardar.photoToSave.add(imageData);
 
-        Intent intent = new Intent(ShowPhotoActivity.this, VentaAguardar.class);
-        startActivity(intent);
-    }
+        // Crea una referencia al almacenamiento de Firebase donde deseas guardar la imagen
+        StorageReference imageRef = storageRef.child("images/myImage.jpg");
 
+        // Carga la imagen en Firebase Storage
+        UploadTask uploadTask = imageRef.putBytes(imageData);
+        uploadTask.addOnSuccessListener(taskSnapshot -> {
+            // La imagen se cargó exitosamente en Firebase Storage
+            // Aquí puedes obtener la URL de descarga de la imagen y realizar otras acciones necesarias
+            // por ejemplo, guardar la URL en una base de datos Firestore
+            imageRef.getDownloadUrl().addOnSuccessListener(downloadUri -> {
+                // URL de descarga de la imagen
+                String imageUrl = downloadUri.toString();
+
+                // Continúa con la lógica adicional después de cargar la imagen
+                Intent intent = new Intent(ShowPhotoActivity.this, VentaAguardar.class);
+                intent.putExtra("photoUrl", imageUrl); // Pasa la URL de descarga como dato extra
+                startActivity(intent);
+            });
+        }).addOnFailureListener(e -> {
+            // Ocurrió un error al cargar la imagen en Firebase Storage
+        });
+    }
 
     private void deletePhoto() {
         // Aquí puedes agregar el código para borrar la foto de Firebase

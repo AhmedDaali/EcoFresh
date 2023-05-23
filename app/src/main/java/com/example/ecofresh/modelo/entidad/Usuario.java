@@ -1,23 +1,26 @@
 package com.example.ecofresh.modelo.entidad;
 
+import com.example.ecofresh.VentaAguardar;
+
 import java.util.HashMap;
+import java.util.Map;
 
 public class Usuario {
 
-    private HashMap<String, Object> usuario = new HashMap<>();
+    private Map<String, Object> usuario = new HashMap<>();
 
-    /*public Usuario(String nombre, String apellidos, String email, String direccion,
+    public Usuario(String nombre, String apellidos, String email, String direccion,
                    String localidad, String telefono, VentaAguardar venta, Compra compra) {
 
-        usuarioData.put("nombre", nombre);
-        usuarioData.put("apellidos", apellidos);
-        usuarioData.put("email", email);
-        usuarioData.put("direccion", direccion);
-        usuarioData.put("localidad", localidad);
-        usuarioData.put("telefono", telefono);
-        usuarioData.put("venta", venta);
-        usuarioData.put("compra", compra);
-    }*/
+        usuario.put("nombre", nombre);
+        usuario.put("apellidos", apellidos);
+        usuario.put("email", email);
+        usuario.put("direccion", direccion);
+        usuario.put("localidad", localidad);
+        usuario.put("telefono", telefono);
+        usuario.put("venta", venta);
+        usuario.put("compra", compra);
+    }
 
     public Usuario() {
 
@@ -37,6 +40,7 @@ public class Usuario {
         usuario.put("apellidos", apellidos);
         usuario.put("email", email);
     }
+
     public Usuario(String nombre, String apellidos, String email, String direccion, String localidad, String telefono, Venta venta, Compra compra) {
 
         usuario.put("nombre", nombre);
@@ -49,9 +53,6 @@ public class Usuario {
         usuario.put("compra", compra);
     }
 
-    public HashMap<String, Object> getUsuario() {
-        return usuario;
-    }
 
     public void setUsuario(HashMap<String, Object> usuario) {
         this.usuario = usuario;
@@ -122,4 +123,6 @@ public class Usuario {
     public void setVenta(Venta venta) {
         usuario.put("venta", venta);
     }
+
+
 }

@@ -28,6 +28,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
+import java.util.Map;
 
 
 public class VentaAguardar extends AppCompatActivity {
@@ -77,6 +78,9 @@ public class VentaAguardar extends AppCompatActivity {
         // Obtener usuario actual
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
+
+        // Obtener la URL de descarga de la imagen del intent
+        String photoUrl = getIntent().getStringExtra("photoUrl");
 
         // Referencias a los elementos de la interfaz
         cantidadEditText = findViewById(R.id.cajaCantidad);
@@ -153,7 +157,8 @@ public class VentaAguardar extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                guardarVenta();
+                // Guarda la foto capturada pasando la URL de descarga como argumento
+                guardarVenta(photoUrl);
 
                 // De momento queremos que al hacer click en el botón pasemos a la siguiente activity_confirm_venta.
                 // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_confirm_venta (ConfirmVenta.class)
@@ -191,12 +196,12 @@ public class VentaAguardar extends AppCompatActivity {
                 DocumentSnapshot document = task.getResult();
                 if (document.exists()) {
                     // Obtener los datos del documento y actualizar los TextView correspondientes
-                    String nombre = document.getString("nombre");
-                    String apellidos = document.getString("apellidos");
+                    nombre = document.getString("nombre");
+                    apellidos = document.getString("apellidos");
                     String email = document.getString("email");
-                    String telefono = document.getString("telefono");
-                    String direccion = document.getString("direccion");
-                    String localidad = document.getString("localidad");
+                    telefono = document.getString("telefono");
+                    direccion = document.getString("direccion");
+                    localidad = document.getString("localidad");
                     String compra  = document.getString("compra");
 
                 }
@@ -206,7 +211,7 @@ public class VentaAguardar extends AppCompatActivity {
         });
     }
 
-    private void guardarVenta() {
+    private void guardarVenta(String photoUrl) {
 
         // Obtener los nuevos datos del usuario desde los EditText
         String cantidad = cantidadEditText.getText().toString().trim();
@@ -216,14 +221,14 @@ public class VentaAguardar extends AppCompatActivity {
         String precio = precioEditext.getText().toString().trim();
         String categoria =  autoCategoria.getText().toString().trim();
 
-        /*// Verificar que photoToSave no sea nulo antes de usarlo
+        // Verificar que photoToSave no sea nulo antes de usarlo
         if (photoToSave == null) {
             Toast.makeText(VentaAguardar.this, "Captura una foto antes de guardar la venta", Toast.LENGTH_SHORT).show();
             return;
-        }*/
+        }
 
         // Crea un objeto Producto
-        Producto producto = new Producto(nombreProducto, precio,categoria/*,photoToSave*/);
+        Producto producto = new Producto(nombreProducto, precio, categoria, localidad, photoUrl);
         // Crea un objeto Venta con los datos de la venta
         Venta venta = new Venta(cantidad, producto, currentUser.getEmail());
         // Crea un objeto Usuario con los datos de la venta

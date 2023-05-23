@@ -14,6 +14,9 @@ public class Venta {
         venta.put("producto", producto);
         venta.put("usuario", emailUsuario);
     }
+    public Venta() {
+        // Constructor sin argumentos requerido por Firebase Firestore
+    }
 
     public String getCantidad() {
         return (String) venta.get("cantidad");
