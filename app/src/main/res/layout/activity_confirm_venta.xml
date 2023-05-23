@@ -34,8 +34,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
             android:fontFamily="sans-serif-black"
             android:text="@string/text_vendedor"
             android:textColor="@color/texto_cliente1"
@@ -49,8 +51,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/textVendedor"
             android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp"
             android:fontFamily="sans-serif-black"
             android:text="@string/text_cantidad"
             android:textColor="@color/texto_cliente1"
@@ -64,8 +68,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/textCantidad"
             android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp"
             android:fontFamily="sans-serif-black"
             android:text="@string/text_producto"
             android:textColor="@color/texto_cliente1"
@@ -73,20 +79,22 @@
 
         <!-- Este es el cuarto texto de indicación del precio de esta activity -->
 
+        <!-- Este es el quinto texto de indicación de la localidad de esta activity -->
+
         <TextView
             android:id="@+id/textPrecio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textProducto"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp"
             android:fontFamily="sans-serif-black"
             android:text="@string/text_precio"
             android:textColor="@color/texto_cliente1"
             android:textSize="16sp" />
-
-        <!-- Este es el quinto texto de indicación de la localidad de esta activity -->
 
         <TextView
             android:id="@+id/textLocalidad"
@@ -94,8 +102,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/textPrecio"
             android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
             android:layout_marginStart="10dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp"
             android:fontFamily="sans-serif-black"
             android:text="@string/text_localidad"
             android:textColor="@color/texto_cliente1"
@@ -119,76 +129,17 @@
             app:layout_constraintTop_toBottomOf="parent"
             app:srcCompat="@drawable/logo_verde_sin_fondo" />
 
-        <TextView
-            android:id="@+id/textViewN"
-            android:layout_width="153dp"
-            android:layout_height="22dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="13dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="16dp"
-            android:layout_toEndOf="@+id/textVendedor"
-            android:text="" />
-
-        <TextView
-            android:id="@+id/textViewC"
-            android:layout_width="153dp"
-            android:layout_height="22dp"
-            android:layout_below="@+id/textViewN"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="19dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginEnd="16dp"
-            android:layout_toEndOf="@+id/textCantidad"
-            android:text="" />
-
-        <TextView
-            android:id="@+id/textViewProducto"
-            android:layout_width="154dp"
-            android:layout_height="22dp"
-            android:layout_below="@+id/textViewC"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_toEndOf="@+id/textProducto"
-            android:text="" />
-
-        <TextView
-            android:id="@+id/textViewPrecio"
-            android:layout_width="153dp"
-            android:layout_height="22dp"
-            android:layout_below="@+id/textViewProducto"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_toEndOf="@+id/textPrecio"
-            android:text="" />
-
-        <TextView
-            android:id="@+id/textViewPrecio2"
-            android:layout_width="153dp"
-            android:layout_height="22dp"
-            android:layout_below="@+id/textViewPrecio"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="14dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginEnd="16dp"
-            android:layout_toEndOf="@+id/textLocalidad"
-            android:text="" />
 
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewPrecio2"
+            android:layout_below="@+id/textLocalidad"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="81dp"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="130dp"
             android:layout_marginEnd="60dp"
             android:layout_marginBottom="1dp"
             tools:srcCompat="" />

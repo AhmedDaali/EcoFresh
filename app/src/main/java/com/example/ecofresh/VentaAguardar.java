@@ -3,6 +3,7 @@ package com.example.ecofresh;
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -21,6 +22,7 @@ import com.example.ecofresh.modelo.entidad.Compra;
 import com.example.ecofresh.modelo.entidad.Usuario;
 import com.example.ecofresh.modelo.entidad.Venta;
 import com.example.ecofresh.modelo.entidad.Producto;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -56,9 +58,9 @@ public class VentaAguardar extends AppCompatActivity {
             precioEditext,localidadEditext;
 
 
-    private String nombre, apellidos, telefono, direccion, localidad;
+    private String nombre, apellidos, telefono, direccion, localidad, email;
 
-    private Compra compra;
+   private Compra compra;
 
 
     private FirebaseUser currentUser;
@@ -136,8 +138,6 @@ public class VentaAguardar extends AppCompatActivity {
                         }
                     }
                 });
-
-
 
 
 
@@ -224,59 +224,51 @@ public class VentaAguardar extends AppCompatActivity {
         // Verificar que photoToSave no sea nulo antes de usarlo
         if (photoToSave == null) {
             Toast.makeText(VentaAguardar.this, "Captura una foto antes de guardar la venta", Toast.LENGTH_SHORT).show();
-            return;
-        }
 
-        // Crea un objeto Producto
-        Producto producto = new Producto(nombreProducto, precio, categoria, localidad, photoUrl);
-        // Crea un objeto Venta con los datos de la venta
-        Venta venta = new Venta(cantidad, producto, currentUser.getEmail());
-        // Crea un objeto Usuario con los datos de la venta
-        Usuario usuario= new Usuario(nombre, apellidos, currentUser.getEmail(), direccion,
-                localidad,telefono,venta,compra);
+            //Sino se ha hecho la foto volvemos a la activity de venta
+            Intent intent = new Intent(VentaAguardar.this, VentaAguardar.class);
+            // Arrancamos el evento que acabamos de crear
 
-        // Obtener referencia al documento del usuario en Firestore
-        DocumentReference usuarioRef = db.collection("usuarios").document(currentUser.getEmail());
+            startActivity(intent);
+
+        }else {
+
+            // Crea un objeto Producto
+            Producto producto = new Producto(nombreProducto, precio, categoria, localidad, photoUrl);
+            // Crea un objeto Venta con los datos de la venta
+            Venta venta = new Venta(cantidad, producto, currentUser.getEmail());
+            // Crea un objeto Usuario con los datos de la venta
+            Usuario usuario = new Usuario(nombre, apellidos, currentUser.getEmail(), direccion,
+                    localidad, telefono, venta, compra);
+
+            // Obtener referencia al documento del usuario en Firestore
+            DocumentReference usuarioRef = db.collection("usuarios").document(currentUser.getEmail());
 
 
-        // Actualizar los datos del usuario en Firestore
-        usuarioRef.set(usuario)
-                .addOnSuccessListener(aVoid -> {
-                    // Datos actualizados correctamente
-                    Toast.makeText(VentaAguardar.this, "Datos actualizados correctamente", Toast.LENGTH_SHORT).show();
-
-                    // Iniciar la actividad CuentaUsuario
-                    Intent intent = new Intent(VentaAguardar.this, ConfirmVenta.class);
-                    startActivity(intent);
-
-                    // Finalizar la actividad actual
-                    finish();
-                })
-                .addOnFailureListener(e -> {
-                    // Error al actualizar los datos del usuario
-                    Toast.makeText(VentaAguardar.this, "Error al actualizar los datos de la venta", Toast.LENGTH_SHORT).show();
-                });
-
-        /*// Guarda la venta en Firestore
-        db.collection("usuarios").document("venta")
-                .set(venta) // Utiliza set() en lugar de update()
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
+            // Actualizar los datos del usuario en Firestore
+            usuarioRef.set(usuario)
+                    .addOnSuccessListener(aVoid -> {
+                        // Datos actualizados correctamente
                         Toast.makeText(VentaAguardar.this, "Venta guardada exitosamente", Toast.LENGTH_SHORT).show();
-                        // Puedes realizar acciones adicionales después de guardar la venta, si es necesario
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(VentaAguardar.this, "Error al guardar la venta", Toast.LENGTH_SHORT).show();
-                    }
-                });
 
-        // Una vez que hayas guardado la foto, puedes volver a la actividad principal
-        Intent intent = new Intent(VentaAguardar.this, MainActivity.class);
-        startActivity(intent);*/
+                        // Iniciar la actividad CuentaUsuario
+                        Intent intent = new Intent(VentaAguardar.this, ConfirmVenta.class);
+                        startActivity(intent);
+
+                        // Finalizar la actividad actual
+                        finish();
+                    })
+                    .addOnFailureListener(e -> {
+                        // Error al actualizar los datos del usuario
+                        Toast.makeText(VentaAguardar.this, "Error al actualizar los datos de la venta", Toast.LENGTH_SHORT).show();
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(VentaAguardar.this, "Error al guardar la venta", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        }
     }
 
 }
