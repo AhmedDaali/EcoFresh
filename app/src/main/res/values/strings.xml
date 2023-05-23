@@ -193,7 +193,41 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
     <string name="button_manzanas">Manzanas</string>
     <string name="button_uvas">Uvas</string>
 
+    <!-- Texto de la activity_verduras -->
+
+    <string name="text_principal_verduras">¡Verduras!</string>
+    <string name="button_espinacas">Espinacas</string>
+    <string name="button_lechuga">Lechuga</string>
+
+    <string name="button_repollo">Repollo</string>
+    <string name="button_brocoli">Brocoli</string>
+
+    <string name="button_apio">Apio</string>
+    <string name="button_grelos">Grelos</string>
+
+    <!-- Texto de la activity_Legumbres -->
+
+    <string name="text_principal_legumbres">¡Legumbres!</string>
+    <string name="button_habas">Habas</string>
+    <string name="button_garbanzos">Garbanzos</string>
+
+    <string name="button_lentejas">Lentejas</string>
+    <string name="button_guisantes">Guisantes</string>
+
+    <string name="button_alfalfa">Alfalfa</string>
+    <string name="button_lupino">Lupino</string>
 
 
+    <!-- Texto de la activity_hortalizas -->
+
+    <string name="text_principal_hortalizas">¡Verduras!</string>
+    <string name="button_espinacas">Espinacas</string>
+    <string name="button_lechuga">Lechuga</string>
+
+    <string name="button_repollo">Repollo</string>
+    <string name="button_brocoli">Brocoli</string>
+
+    <string name="button_apio">Apio</string>
+    <string name="button_grelos">Grelos</string>
 
 </resources>
