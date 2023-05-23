@@ -15,7 +15,6 @@
         android:fontFamily="@font/mangaka"
         android:text="@string/text_principal_legumbres"
         android:textColor="@color/texto_registro"
-        android:textColorLink="#2C2828"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.185"
@@ -93,6 +92,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text_guisantes"
         app:srcCompat="@drawable/guisantes" />
 
+
     <ImageButton
         android:id="@+id/boton_alfalfa"
         android:layout_width="128dp"
@@ -106,7 +106,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_alfalfa"
         app:srcCompat="@drawable/alfalfa" />
-
 
     <ImageButton
         android:id="@+id/boton_lupino"
