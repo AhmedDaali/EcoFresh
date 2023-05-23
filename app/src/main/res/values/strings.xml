@@ -217,7 +217,17 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
     <string name="button_alfalfa">Alfalfa</string>
     <string name="button_lupino">Lupino</string>
 
+    <!-- Texto de la activity_Hortalizas -->
 
+    <string name="text_principal_hortalizas">¡Hortalizas!</string>
+    <string name="button_zanahorias">Zanahorias</string>
+    <string name="button_patatas">Patatas</string>
+
+    <string name="button_ajos">Ajos</string>
+    <string name="button_cebollas">Cebollas</string>
+
+    <string name="button_pimientos">Pimientos</string>
+    <string name="button_tomates">Tomates</string>
 
 
 </resources>

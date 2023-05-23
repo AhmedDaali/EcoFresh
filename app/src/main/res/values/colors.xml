@@ -63,4 +63,6 @@
     <color name="separaciones_cuenta">#80CCFA28</color>
     <color name="marcadores_compras_ventas">#3C06EA80</color>
 
+    <!-- color autocompletado -->
+    <color name="autocompletado">#3C3A3A</color>
 </resources>
