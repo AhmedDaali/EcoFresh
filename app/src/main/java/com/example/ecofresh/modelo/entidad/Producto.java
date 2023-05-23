@@ -1,20 +1,28 @@
 package com.example.ecofresh.modelo.entidad;
 
-import android.graphics.Bitmap;
+import java.util.List;
 
 public class Producto {
 
     private String nombre = "";
-    private float precio = 0;
+    private String precio = "";
     private String categoria = "";
-    private Bitmap photo;
 
-    public Producto(String nombre, float precio, String categoria, Bitmap photo) {
+    private String localidad= "";
+
+    private String photoUrls;
+
+
+    public Producto(String nombre, String precio, String categoria, String localidad, String photoUrls) {
         this.nombre = nombre;
         this.precio = precio;
         this.categoria = categoria;
-        this.photo = photo;
+        this.localidad = localidad;
+        this.photoUrls = photoUrls;
     }
+    public Producto() {
+    }
+
 
     public String getNombre() {
         return nombre;
@@ -24,11 +32,12 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public float getPrecio() {
+    public String getPrecio() {
         return precio;
     }
 
-    public void setPrecio(float precio) {
+    public void setPrecio(String precio) {
+
         this.precio = precio;
     }
 
@@ -37,14 +46,25 @@ public class Producto {
     }
 
     public void setCategoria(String categoria) {
+
         this.categoria = categoria;
     }
 
-    public Bitmap getPhoto() {
-        return photo;
+    public String getLocalidad() {
+        return localidad;
     }
 
-    public void setPhoto(Bitmap photo) {
-        this.photo = photo;
+    public void setLocalidad(String localidad) {
+        this.localidad = localidad;
     }
+
+    public String getPhotoUrls() {
+        return photoUrls;
+    }
+
+    public void setPhotoUrls(String photoUrls) {
+        this.photoUrls = photoUrls;
+    }
+
+
 }
