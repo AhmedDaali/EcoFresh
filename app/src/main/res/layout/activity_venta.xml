@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Venta">
+    tools:context=".VentaAguardar">
 
     <!-- Esta es la imagen del logo posiconada de fondo -->
 
