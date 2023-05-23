@@ -137,7 +137,6 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
     <string name="text_BotonRegresar">Regresar</string>
 
 
-
     <!-- Texto de la activity_cuenta_usuario -->
 
     <string name="text_trans">TRANSACCIONES</string>
@@ -158,13 +157,11 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
     <string name="text_editar">Editar</string>
 
 
-
     <!-- Texto de la activity_forgot_password -->
 
     <string name="ingresa_tu_correo">INGRESA TU CORREO</string>
     <string name="recupera_tu_contrase_a">Recupera tu contraseña</string>
     <string name="recuperar">RECUPERAR</string>
-
 
 
     <!-- Texto de la activity_edicion -->
@@ -184,8 +181,53 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
 
     <string name="text_ventas_realizadas">Estas han sido tus ventas</string>
 
+    <!-- Texto de la activity_frutas -->
 
+    <string name="text_principal_frutas">¡Frutitas freshcas!</string>
+    <string name="button_naranjas">Naranjas</string>
+    <string name="button_platanos">Platanos</string>
 
+    <string name="button_mandarinas">Mandarinas</string>
+    <string name="button_fresas">Fresas</string>
+
+    <string name="button_manzanas">Manzanas</string>
+    <string name="button_uvas">Uvas</string>
+
+    <!-- Texto de la activity_verduras -->
+
+    <string name="text_principal_verduras">¡Verduras!</string>
+    <string name="button_espinacas">Espinacas</string>
+    <string name="button_lechuga">Lechuga</string>
+
+    <string name="button_repollo">Repollo</string>
+    <string name="button_brocoli">Brocoli</string>
+
+    <string name="button_apio">Apio</string>
+    <string name="button_grelos">Grelos</string>
+
+    <!-- Texto de la activity_Legumbres -->
+
+    <string name="text_principal_legumbres">¡Legumbres!</string>
+    <string name="button_habas">Habas</string>
+    <string name="button_garbanzos">Garbanzos</string>
+
+    <string name="button_lentejas">Lentejas</string>
+    <string name="button_guisantes">Guisantes</string>
+
+    <string name="button_alfalfa">Alfalfa</string>
+    <string name="button_lupino">Lupino</string>
+
+    <!-- Texto de la activity_Hortalizas -->
+
+    <string name="text_principal_hortalizas">¡Hortalizas!</string>
+    <string name="button_zanahorias">Zanahorias</string>
+    <string name="button_patatas">Patatas</string>
+
+    <string name="button_ajos">Ajos</string>
+    <string name="button_cebollas">Cebollas</string>
+
+    <string name="button_pimientos">Pimientos</string>
+    <string name="button_tomates">Tomates</string>
 
 
 </resources>

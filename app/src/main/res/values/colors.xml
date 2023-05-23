@@ -14,7 +14,7 @@
 
     <color name="text_ecofresh">#5C633A</color>
     <color name="center">#54CA59</color>
-    <color name="verde">#229C26</color>
+    <color name="verde">#CB3FCA43</color>
 
     <!-- Paleta para la activity_cliente -->
 
@@ -63,4 +63,6 @@
     <color name="separaciones_cuenta">#80CCFA28</color>
     <color name="marcadores_compras_ventas">#3C06EA80</color>
 
+    <!-- color autocompletado -->
+    <color name="autocompletado">#3C3A3A</color>
 </resources>
