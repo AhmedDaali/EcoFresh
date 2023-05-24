@@ -11,29 +11,43 @@
         android:id="@+id/texto_legumbres"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="68dp"
         android:fontFamily="@font/mangaka"
         android:text="@string/text_principal_legumbres"
         android:textColor="@color/texto_registro"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.185"
+        app:layout_constraintHorizontal_bias="0.203"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <AutoCompleteTextView
         android:id="@+id/txt_auto"
-        android:layout_width="312dp"
+        android:layout_width="260dp"
         android:layout_height="51dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:hint="@string/hint_auto"
         android:padding="16dp"
         android:textColorHint="@color/texto_autocomplete"
         android:textColorLink="#3C3A3A"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.344"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/texto_legumbres" />
+
+    <ImageButton
+        android:id="@+id/boton_flechaL"
+        android:layout_width="50dp"
+        android:layout_height="51dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:background="@color/transparent_imageButton"
+        android:contentDescription="Boton de flecha"
+        app:layout_constraintStart_toEndOf="@+id/txt_auto"
+        app:layout_constraintTop_toBottomOf="@+id/texto_legumbres"
+        app:srcCompat="@drawable/flecha" />
+
 
     <ImageButton
         android:id="@+id/boton_habas"

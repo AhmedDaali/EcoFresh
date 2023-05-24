@@ -229,5 +229,9 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
     <string name="button_pimientos">Pimientos</string>
     <string name="button_tomates">Tomates</string>
 
+    <!-- Texto de la activity_muestrario -->
+
+    <string name="text_lista_productos">Productos seleccionados</string>
+
 
 </resources>
