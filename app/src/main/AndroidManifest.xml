@@ -15,6 +15,12 @@
         android:theme="@style/Theme.EcoFresh"
         tools:targetApi="31">
         <activity
+            android:name=".UltimoPasoCompra"
+            android:exported="false" />
+        <activity
+            android:name=".Muestrario"
+            android:exported="false" />
+        <activity
             android:name=".Hortalizas"
             android:exported="false" />
         <activity
