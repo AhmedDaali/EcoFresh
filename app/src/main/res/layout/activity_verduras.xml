@@ -23,17 +23,29 @@
 
     <AutoCompleteTextView
         android:id="@+id/txt_auto"
-        android:layout_width="312dp"
+        android:layout_width="260dp"
         android:layout_height="51dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:hint="@string/hint_auto"
         android:padding="16dp"
         android:textColorHint="@color/texto_autocomplete"
         android:textColorLink="#3C3A3A"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.344"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/texto_verduras" />
+
+    <ImageButton
+        android:id="@+id/boton_flechaV"
+        android:layout_width="50dp"
+        android:layout_height="51dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:background="@color/transparent_imageButton"
+        android:contentDescription="Boton de flecha"
+        app:layout_constraintStart_toEndOf="@+id/txt_auto"
+        app:layout_constraintTop_toBottomOf="@+id/texto_verduras"
+        app:srcCompat="@drawable/flecha" />
 
     <ImageButton
         android:id="@+id/boton_espinacas"
@@ -142,7 +154,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="12dp"
         android:background="@color/transparent_imageButton"
         android:text="@string/button_lechuga"
         android:textColor="@color/hint_registro"
