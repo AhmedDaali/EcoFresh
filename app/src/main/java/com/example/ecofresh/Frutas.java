@@ -2,11 +2,17 @@ package com.example.ecofresh;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.ImageButton;
 
 public class Frutas extends AppCompatActivity {
+
+    ImageButton botonNaranjas;
+
 
 
     AutoCompleteTextView auto;
@@ -35,7 +41,21 @@ public class Frutas extends AppCompatActivity {
         auto.setThreshold(3); // Indicamos con cuántas letras empezará a autocompletar
         auto.setAdapter(adapter);
 
+        // 1 Guardamos la referencia del botón de naranjas
 
+        botonNaranjas = findViewById(R.id.boton_naranjas);
+
+        botonNaranjas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Frutas.this,Muestrario.class);
+
+                // Arrancamos el evento que acabamos de crear
+                startActivity(intent);
+
+            }
+        });
 
 
 
