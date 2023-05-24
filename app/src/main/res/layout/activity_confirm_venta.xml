@@ -11,7 +11,7 @@
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="269dp"
-        android:layout_height="292dp"
+        android:layout_height="444dp"
         android:layout_below="@+id/texto_confirmVenta"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
@@ -132,16 +132,17 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="341dp"
+            android:layout_height="458dp"
+            android:layout_marginTop="4dp"
+            android:scaleType="fitXY"
             android:layout_below="@+id/textLocalidad"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="81dp"
-            android:layout_marginTop="130dp"
-            android:layout_marginEnd="60dp"
-            android:layout_marginBottom="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="4dp"
             tools:srcCompat="" />
 
     </RelativeLayout>

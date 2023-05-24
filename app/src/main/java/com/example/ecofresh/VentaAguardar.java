@@ -25,6 +25,7 @@ import com.example.ecofresh.modelo.entidad.Producto;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -54,14 +55,11 @@ public class VentaAguardar extends AppCompatActivity {
     };
     //La foto que se guardará;
     public static List<byte[]> photoToSave;
+    private  Bitmap photo;
     private EditText cantidadEditText, productoEditText,
-            precioEditext,localidadEditext;
-
+            precioEditext,localidadEditext, emailEditext;
 
     private String nombre, apellidos, telefono, direccion, localidad, email;
-
-   private Compra compra;
-
 
     private FirebaseUser currentUser;
     private ActivityResultLauncher<Intent> cameraLauncher;
@@ -81,8 +79,11 @@ public class VentaAguardar extends AppCompatActivity {
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
 
-        // Obtener la URL de descarga de la imagen del intent
+        // Obtener la URL de descarga de la imágen del intent
         String photoUrl = getIntent().getStringExtra("photoUrl");
+
+        //Obtener la imágen
+        photo = getIntent().getParcelableExtra("photo");
 
         // Referencias a los elementos de la interfaz
         cantidadEditText = findViewById(R.id.cajaCantidad);
@@ -90,11 +91,9 @@ public class VentaAguardar extends AppCompatActivity {
         precioEditext = findViewById(R.id.cajaPrecio);
         localidadEditext = findViewById(R.id.cajaLocalidad);
         autoCategoria = findViewById(R.id.text_auto);
-        //Bitmap foto = findViewById(R.id.imageView);
 
         // Obtener referencia al documento del usuario en Firestore
         DocumentReference usuarioRef = db.collection("usuarios").document(currentUser.getEmail());
-
 
         // Obtener los datos del usuario desde Firestore
         obtenerDatosUsuario();
@@ -157,20 +156,22 @@ public class VentaAguardar extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                // Guarda la foto capturada pasando la URL de descarga como argumento
-                guardarVenta(photoUrl);
+                if (photoToSave != null) {
+                    // Guarda la foto capturada pasando la URL de descarga como argumento
+                    guardarVenta(photoUrl);
+                    // De momento queremos que al hacer click en el botón pasemos a la siguiente activity_confirm_venta.
+                    // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_confirm_venta (ConfirmVenta.class)
 
-                // De momento queremos que al hacer click en el botón pasemos a la siguiente activity_confirm_venta.
-                // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_confirm_venta (ConfirmVenta.class)
+                    Intent intent = new Intent(VentaAguardar.this, ConfirmVenta.class);
+                    // Arrancamos el evento que acabamos de crear
 
-                Intent intent = new Intent(VentaAguardar.this, ConfirmVenta.class);
-                // Arrancamos el evento que acabamos de crear
+                    startActivity(intent);
 
-                startActivity(intent);
-
-                // Finalizar la actividad actual
-                finish();
-
+                    // Finalizar la actividad actual
+                    finish();
+                } else {
+                    Toast.makeText(VentaAguardar.this, "Captura una foto antes de guardar la venta", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -196,14 +197,7 @@ public class VentaAguardar extends AppCompatActivity {
                 DocumentSnapshot document = task.getResult();
                 if (document.exists()) {
                     // Obtener los datos del documento y actualizar los TextView correspondientes
-                    nombre = document.getString("nombre");
-                    apellidos = document.getString("apellidos");
-                    String email = document.getString("email");
-                    telefono = document.getString("telefono");
-                    direccion = document.getString("direccion");
-                    localidad = document.getString("localidad");
-                    String compra  = document.getString("compra");
-
+                    email = document.getString("email");
                 }
             } else {
                 Toast.makeText(VentaAguardar.this, "Error al obtener los datos", Toast.LENGTH_SHORT).show();
@@ -217,56 +211,57 @@ public class VentaAguardar extends AppCompatActivity {
         String cantidad = cantidadEditText.getText().toString().trim();
         String nombreProducto = productoEditText.getText().toString().trim();
         String localidad = localidadEditext.getText().toString().trim();
-        //float precio = Float.parseFloat(precioEditext.getText().toString().trim());
         String precio = precioEditext.getText().toString().trim();
         String categoria =  autoCategoria.getText().toString().trim();
 
-        // Verificar que photoToSave no sea nulo antes de usarlo
-        if (photoToSave == null) {
-            Toast.makeText(VentaAguardar.this, "Captura una foto antes de guardar la venta", Toast.LENGTH_SHORT).show();
 
-            //Sino se ha hecho la foto volvemos a la activity de venta
-            Intent intent = new Intent(VentaAguardar.this, VentaAguardar.class);
-            // Arrancamos el evento que acabamos de crear
-
-            startActivity(intent);
-
+        //Si los campos  están vacios, devuelve error.
+        if(categoria.isEmpty()){
+            autoCategoria.setError("Campo vacío.");
+        }else if (nombreProducto.isEmpty()) {
+            productoEditText.setError("Campo vacío.");
+        }else if (cantidad.isEmpty()) {
+            cantidadEditText.setError("Campo vacío.");
+        }else if (precio.isEmpty()) {
+            precioEditext.setError("Campo vacío.");
+        }else if (localidad.isEmpty()) {
+            localidadEditext.setError("Campo vacío.");
         }else {
 
             // Crea un objeto Producto
             Producto producto = new Producto(nombreProducto, precio, categoria, localidad, photoUrl);
             // Crea un objeto Venta con los datos de la venta
-            Venta venta = new Venta(cantidad, producto, currentUser.getEmail());
-            // Crea un objeto Usuario con los datos de la venta
-            Usuario usuario = new Usuario(nombre, apellidos, currentUser.getEmail(), direccion,
-                    localidad, telefono, venta, compra);
-
-            // Obtener referencia al documento del usuario en Firestore
-            DocumentReference usuarioRef = db.collection("usuarios").document(currentUser.getEmail());
+            //Venta venta = new Venta(cantidad, producto, currentUser.getEmail());
+            Venta venta = new Venta(cantidad, producto, email);
 
 
-            // Actualizar los datos del usuario en Firestore
-            usuarioRef.set(usuario)
-                    .addOnSuccessListener(aVoid -> {
-                        // Datos actualizados correctamente
+            // Obtener referencia a la colección de VentasRealizadas en Firestore
+            CollectionReference ventasRef = db.collection("VentasRealizadas");
+
+            // Agregar la nueva venta a la colección VentasRealizadas
+            ventasRef.add(venta)
+                    .addOnSuccessListener(documentReference -> {
+                        // Venta guardada correctamente
                         Toast.makeText(VentaAguardar.this, "Venta guardada exitosamente", Toast.LENGTH_SHORT).show();
 
-                        // Iniciar la actividad CuentaUsuario
+                        // Obtener el ID del documento de la venta recién guardada
+                        String ventaId = documentReference.getId();
+
+                        // Pasar los datos de la venta como dato extra en el Intent
                         Intent intent = new Intent(VentaAguardar.this, ConfirmVenta.class);
+                        intent.putExtra("cantidad", cantidad);
+                        intent.putExtra("producto", nombreProducto);
+                        intent.putExtra("localidad", localidad);
+                        intent.putExtra("precio", precio);
+                        intent.putExtra("photo", photo);
                         startActivity(intent);
 
                         // Finalizar la actividad actual
                         finish();
                     })
                     .addOnFailureListener(e -> {
-                        // Error al actualizar los datos del usuario
-                        Toast.makeText(VentaAguardar.this, "Error al actualizar los datos de la venta", Toast.LENGTH_SHORT).show();
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(VentaAguardar.this, "Error al guardar la venta", Toast.LENGTH_SHORT).show();
-                        }
+                        // Error al guardar la venta
+                        Toast.makeText(VentaAguardar.this, "Error al guardar la venta", Toast.LENGTH_SHORT).show();
                     });
         }
     }

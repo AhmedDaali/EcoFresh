@@ -3,9 +3,11 @@ package com.example.ecofresh;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,6 +17,9 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+
+import java.util.List;
 
 public class ConfirmVenta extends AppCompatActivity {
 
@@ -32,12 +37,10 @@ public class ConfirmVenta extends AppCompatActivity {
     private TextView precio;
     private TextView localidad;
 
-    //Imágen de la activity
-    //private ImageView image;
-    //private Bitmap foto;
+    private ImageView imageView;
 
-    //Almacen de archivos
-    //private StorageReference storageRef;
+    //Imágen guardada
+    private Bitmap photo;
 
     private FirebaseFirestore db;
     private FirebaseUser currentUser;
@@ -50,10 +53,6 @@ public class ConfirmVenta extends AppCompatActivity {
 
         // Con esta linea ocultamos el actionBar, la barra de acción situada arriba de todo
         getSupportActionBar().hide();
-
-        // Obtén una instancia de FirebaseStorage y una referencia al almacenamiento
-        //FirebaseStorage storage = FirebaseStorage.getInstance();
-        //storageRef = storage.getReference();
 
         // Inicializar Firebase Firestore
         db = FirebaseFirestore.getInstance();
@@ -68,16 +67,24 @@ public class ConfirmVenta extends AppCompatActivity {
         nombreProducto = findViewById(R.id.textProducto);
         precio = findViewById(R.id.textPrecio);
         localidad = findViewById(R.id.textLocalidad);
+        imageView = findViewById(R.id.imageView2);
 
         // Obtener los datos del usuario desde Firestore
         obtenerDatosUsuario();
 
-        // Obtener los datos de la venta desde Firestore
-        obtenerDatosVenta();
+        // Obtener los datos de la venta de la venta del Intent.
+        String cantidadVenta = getIntent().getStringExtra("cantidad");
+        String productoVenta = getIntent().getStringExtra("producto");
+        String  precioVenta= getIntent().getStringExtra("precio");
+        String localidadVenta = getIntent().getStringExtra("localidad");
+        photo = getIntent().getParcelableExtra("photo");
 
-        // Obtener los datos del producto desde Firestore
-        obtenerDatosProducto();
-
+        //Colocar los datos de la venta en los textView
+        cantidad.setText("Cantidad:    " + cantidadVenta+"Kg");
+        nombreProducto.setText("Producto:   " + productoVenta);
+        precio.setText("Precio/Kg:  " + precioVenta);
+        localidad.setText("Localidad:  " + localidadVenta);
+        imageView.setImageBitmap(photo);
 
 
         // 1
@@ -100,6 +107,9 @@ public class ConfirmVenta extends AppCompatActivity {
                 // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_main(MainActivity.class)
 
                 Intent intent = new Intent (ConfirmVenta.this,MainActivity.class);
+
+                //Ponemos la foto a null para la próxima venta
+                photo = null;
 
                 // Arrancamos el evento que acabamos de crear
 
@@ -130,6 +140,9 @@ public class ConfirmVenta extends AppCompatActivity {
 
                 Intent intent = new Intent (ConfirmVenta.this,Inicial.class);
 
+                //Ponemos la foto a null para la próxima venta
+                photo = null;
+
                 // Arrancamos el evento que acabamos de crear
 
                 startActivity(intent);
@@ -148,82 +161,11 @@ public class ConfirmVenta extends AppCompatActivity {
                 if (document.exists()) {
                     // Obtener los datos del documento y actualizar los TextView correspondientes
                     String nombreUser = document.getString("nombre");
-                    String localidadVenta = document.getString("localidad");
-                    //String cantidadVent = document.getString("cantidad");
-                    //cantidad.setText("Cantidad:   " + cantidadVent);
-
-                    nombre.setText("Nombre:     " + nombreUser);
-                    localidad.setText("Localidad:  " + localidadVenta);
-
-                    // Obtener referencia a la subcolección "venta"
-                    CollectionReference ventaCollectionRef = usuarioRef.collection("venta");
-
-                    ventaCollectionRef.document("cantidad").get().addOnCompleteListener(cantidadTask -> {
-                        if (cantidadTask.isSuccessful()) {
-                            DocumentSnapshot cantidadDocument = cantidadTask.getResult();
-                            if (cantidadDocument.exists()) {
-                                String cantidadVenta = cantidadDocument.getString("cantidad");
-                                cantidad.setText("Cantidad:   " + cantidadVenta);
-                            } else {
-                                // El documento "cantidad" no existe
-                            }
-                        } else {
-                            // Manejar el error al obtener el documento "cantidad"
-                        }
-                    });
+                    nombre.setText("Vendedor:  " + nombreUser);
                 }
             } else {
                 Toast.makeText(ConfirmVenta.this, "Error al obtener los datos", Toast.LENGTH_SHORT).show();
             }
         });
     }
-
-    private void obtenerDatosVenta(){
-        // Obtener referencia al documento del usuario en Firestore
-        // Obtener referencia a la subcolección "venta"
-        DocumentReference ventaRef = db.collection("usuarios").document(currentUser.getEmail()).collection("venta").document("cantidad");
-
-
-        ventaRef.get().addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                DocumentSnapshot document = task.getResult();
-                if (document.exists()) {
-                    String cantidadVenta = document.getString("cantidad");
-                    cantidad.setText("Cantidad:   " + cantidadVenta);
-                } else {
-                    // El documento "cantidad" no existe
-                }
-            } else {
-                // Manejar el error al obtener el documento "cantidad"
-            }
-        });
-    }
-
-    private void obtenerDatosProducto(){
-        // Obtener referencia al documento de producto en Firestore
-        DocumentReference usuarioRef = db.collection("usuarios").document(currentUser.getEmail()).collection("venta").document("producto");
-
-        // Obtener referencia a la subcolección "venta"
-        CollectionReference ventaCollectionRef = usuarioRef.collection("venta");
-
-        // Obtener referencia a la subcolección "venta"
-        CollectionReference productoRef = usuarioRef.collection("producto");
-        productoRef.document("producto").get().addOnCompleteListener(productoTask -> {
-            if (productoTask.isSuccessful()) {
-                DocumentSnapshot ProductoDocument = productoTask.getResult();
-                if (ProductoDocument.exists()) {
-                    String nombreP = ProductoDocument.getString("nombre");
-                    String precioVent = ProductoDocument.getString("precio");
-                    nombreProducto.setText("Producto:   " + nombreP);
-                    precio.setText("Producto:   " + precioVent);
-                } else {
-                    // El documento "cantidad" no existe
-                }
-            } else {
-                // Manejar el error al obtener el documento "cantidad"
-            }
-        });
-
-    }
-
 }

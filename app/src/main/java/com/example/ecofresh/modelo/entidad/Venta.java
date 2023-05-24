@@ -9,10 +9,10 @@ public class Venta {
 
     Map<String, Object> venta = new HashMap<>();
 
-    public Venta(String cantidad, Producto producto, String emailUsuario) {
+    public Venta(String cantidad, Producto producto, String email) {
         venta.put("cantidad", cantidad);
         venta.put("producto", producto);
-        venta.put("usuario", emailUsuario);
+        venta.put("email", email);
     }
     public Venta() {
         // Constructor sin argumentos requerido por Firebase Firestore
@@ -36,12 +36,12 @@ public class Venta {
         venta.put("producto", producto);
     }
 
-    public String getEmailUsuario() {
-        return (String) venta.get("emailUsuario");
+    public String getEmail() {
+        return (String) venta.get("email");
     }
 
-    public void setEmailUsuario(String emailUsuario) {
+    public void setEmail(String email) {
 
-        venta.put("usuario", emailUsuario);
+        venta.put("email", email);
     }
 }

@@ -86,7 +86,9 @@ public class ShowPhotoActivity extends AppCompatActivity {
 
                 // Continúa con la lógica adicional después de cargar la imagen
                 Intent intent = new Intent(ShowPhotoActivity.this, VentaAguardar.class);
-                intent.putExtra("photoUrl", imageUrl); // Pasa la URL de descarga como dato extra
+                // Pasa la imágen y la  URL de descarga de imágen como dato extra
+                intent.putExtra("photoUrl", imageUrl);
+                intent.putExtra("photo", photo);
                 startActivity(intent);
             });
         }).addOnFailureListener(e -> {
