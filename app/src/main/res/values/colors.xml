@@ -48,7 +48,7 @@
 
     <!-- Paleta para la activity_venta -->
 
-    <color name="datosVenta">#DCEDE2</color>
+    <color name="datosVenta">#6BC7FFDA</color>
 
     <!-- Paleta para la activity_camara -->
 
@@ -64,5 +64,12 @@
     <color name="marcadores_compras_ventas">#3C06EA80</color>
 
     <!-- color autocompletado -->
+
     <color name="autocompletado">#3C3A3A</color>
+
+    <!-- color fondo activity_ultimo_paso -->
+
+    <color name="fondo2">#CEF8EDED</color>
+
+    <color name="pago">#CEFF2020</color>
 </resources>

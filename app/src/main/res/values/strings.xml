@@ -13,7 +13,6 @@
     <string name="boton_google">Continuar con Google</string>
     <string name="boton_facebook">Continuar con Facebook</string>
     <string name="boton_email">Continuar con el e-mail</string>
-
     <string name="texto_cliente1">¿Ya tienes cuenta?</string>
     <string name="textLogin">Inicia sesión</string>
 
@@ -21,19 +20,16 @@
 
     <string name="texto_registro">¡Únete a</string>
     <string name="texto_registro2">Ecofresh!</string>
-
     <string name="hintNombre">Nombre*</string>
     <string name="hintApellidos">Apellidos*</string>
     <string name="hintEmail">E-mail*</string>
     <string name="hintContraseña">Password*</string>
-
     <string name="CheckBox">He leído y acepto las</string>
     <string name="CheckBox2"> Condiciones de uso</string>
     <string name="CheckBox3">y</string>
     <string name="CheckBox4"> Política de privacidad</string>
     <string name="CheckBox5"> de Ecofresh</string>
-
-    <string name="boton_Enter">Entrar</string> <!-- activity_login -->
+    <string name="boton_Enter">Entrar</string>
 
     <!-- Texto de la activity_login -->
 
@@ -61,16 +57,11 @@
     <!-- Texto de la activity_venta -->
 
     <string name="text_venta">¡Consigue dinero Fresh!</string>
-
     <string name="text_auto">Categoría*</string>
-
     <string name="hintCantidad">Cantidad en Kg*</string>
     <string name="hintPrecio">Precio/Kg*</string>
     <string name="text2_auto">Producto*</string>
-
-
     <string name="hintLocalidad">Localidad*</string>
-
     <string name="subirFoto">Subir foto</string>
     <string name="confirmar">Confirmar</string>
 
@@ -95,7 +86,6 @@
     <!-- Texto de la activity_Condiciones -->
 
     <string name="text_InicialCondiciones">Condiciones de uso y política de privacidad</string>
-
     <string name="text_CondicionesPrivacidad">Bienvenido a EcoFresh. Al utilizar la aplicación, usted acepta las siguientes condiciones de uso y política de privacidad:\n
 
 1. Condiciones de uso\n
@@ -133,27 +123,21 @@ f. Utilizamos cookies para mejorar su experiencia en la aplicación. Puede optar
 g. Usted tiene derecho a acceder, rectificar y eliminar su información personal. Puede hacerlo enviando un correo electrónico a nuestro servicio de atención al cliente.\n
 
 Al utilizar la aplicación, usted acepta estas condiciones de uso y política de privacidad. Si tiene alguna pregunta o inquietud, no dude en ponerse en contacto con nuestro servicio de atención al cliente. Gracias por elegir EcoFresh.</string>
-
     <string name="text_BotonRegresar">Regresar</string>
 
 
     <!-- Texto de la activity_cuenta_usuario -->
 
     <string name="text_trans">TRANSACCIONES</string>
-
     <string name="text_compras">Mis compras                                                                        ></string>
-    <string name="text_ventas">Mis ventas                                                                            ></string>
-
-
+    <string name="text_ventas">Mis ventas                                                                           ></string>
     <string name="text_datos">CUENTA</string>
-
     <string name="text_User">Tus datos</string>
     <string name="text_nombre">Nombre: </string>
     <string name="text_apellidos">Apellidos: </string>
     <string name="text_direccion">Dirección: </string>
     <string name="text_telefono">Telefono: </string>
     <string name="text_email">Email: </string>
-
     <string name="text_editar">Editar</string>
 
 
@@ -167,9 +151,7 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
     <!-- Texto de la activity_edicion -->
 
     <string name="text_modifica">Modifica tus datos</string>
-
     <string name="text_guarda">Guardar</string>
-
     <string name="text_nomb">Nombre:</string>
     <string name="text_apel">Apellidos:</string>
     <string name="text_emai">Email:</string>
@@ -186,10 +168,8 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
     <string name="text_principal_frutas">¡Frutitas freshcas!</string>
     <string name="button_naranjas">Naranjas</string>
     <string name="button_platanos">Platanos</string>
-
     <string name="button_mandarinas">Mandarinas</string>
     <string name="button_fresas">Fresas</string>
-
     <string name="button_manzanas">Manzanas</string>
     <string name="button_uvas">Uvas</string>
 
@@ -198,10 +178,8 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
     <string name="text_principal_verduras">¡Verduras!</string>
     <string name="button_espinacas">Espinacas</string>
     <string name="button_lechuga">Lechuga</string>
-
     <string name="button_repollo">Repollo</string>
     <string name="button_brocoli">Brocoli</string>
-
     <string name="button_apio">Apio</string>
     <string name="button_grelos">Grelos</string>
 
@@ -210,10 +188,8 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
     <string name="text_principal_legumbres">¡Legumbres!</string>
     <string name="button_habas">Habas</string>
     <string name="button_garbanzos">Garbanzos</string>
-
     <string name="button_lentejas">Lentejas</string>
     <string name="button_guisantes">Guisantes</string>
-
     <string name="button_alfalfa">Alfalfa</string>
     <string name="button_lupino">Lupino</string>
 
@@ -222,10 +198,8 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
     <string name="text_principal_hortalizas">¡Hortalizas!</string>
     <string name="button_zanahorias">Zanahorias</string>
     <string name="button_patatas">Patatas</string>
-
     <string name="button_ajos">Ajos</string>
     <string name="button_cebollas">Cebollas</string>
-
     <string name="button_pimientos">Pimientos</string>
     <string name="button_tomates">Tomates</string>
 
@@ -233,5 +207,24 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
 
     <string name="text_lista_productos">Productos seleccionados</string>
 
+    <!-- Texto de la activity_ultimo_paso -->
+
+    <string name="text_casi">¡Ya casi está!</string>
+    <string name="text_pago">Este producto será pagado \n      a contra reembolso</string>
+    <string name="hintCantidadFinal">             Kg</string>
+    <string name="text_calle">Calle/Avd</string>
+    <string name="text_ciudad">Localidad</string>
+    <string name="text_cp">Cp</string>
+
+
+    <!-- Texto de la activity_confirm_compra -->
+
+    <string name="text_final">¡Compra realizada!</string>
+    <string name="text_final2">¡GRACIAS!</string>
+    <string name="text_comprador">Comprador:</string>
+    <string name="text_calle2">Calle/Avd</string>
+    <string name="text_ciudad2">Localidad</string>
+    <string name="text_cp2">Cp</string>
+    <string name="continua_comprando">Continua comprando</string>
 
 </resources>
