@@ -26,6 +26,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.regex.Pattern;
 
+
+
 public class Registro extends AppCompatActivity {
 
     // Esta parte de código será declarada para el botón de entrar en la activity_main
@@ -35,20 +37,16 @@ public class Registro extends AppCompatActivity {
 
     // texto de las condiciones como botón
     TextView condiciones;
-
     // texto de la política como botón
     TextView politica;
-
     CheckBox checkBoxCondiciones;
-
     EditText nombre, apellidos, email, password;
 
+    //private static final String EDIT_TEXT_VALUE_KEY = "edit_text_value";
     FirebaseAuth mAuth;
     Boolean checkBoxState = false;
 
     private FirebaseFirestore db;
-
-
 
 
     @Override
@@ -262,4 +260,16 @@ public class Registro extends AppCompatActivity {
         Pattern pattern = Patterns.EMAIL_ADDRESS;
         return pattern.matcher(email).matches();
     }
+   /*@Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(EDIT_TEXT_VALUE_KEY, email.getText().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        String editTextValue = savedInstanceState.getString(EDIT_TEXT_VALUE_KEY);
+        email.setText(editTextValue);
+    }*/
 }

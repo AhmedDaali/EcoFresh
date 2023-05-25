@@ -18,33 +18,18 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import com.google.firebase.firestore.DocumentSnapshot;
 
-
 public class CuentaUsuario extends AppCompatActivity {
 
-    Button botonEditar;
-
-    Button botonMenu;
-
-    RelativeLayout botonCompras;
-
-    RelativeLayout botonVentas;
-
-    private TextView textNombre;
-    private TextView textApellidos;
-    private TextView textEmail;
-    private TextView textTelefono;
-    private TextView textDireccion;
-    private TextView textLocalidad;
-
+    Button botonEditar, botonMenu;
+    RelativeLayout botonCompras, botonVentas;
+    private TextView textNombre,textApellidos,textEmail, textTelefono, textDireccion,textLocalidad;
     FirebaseFirestore db;
     private FirebaseUser currentUser;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cuenta_usuario);
-
 
         // Con esta linea ocultamos el actionBar, la barra de acción situada arriba de todo
         getSupportActionBar().hide();
@@ -79,7 +64,6 @@ public class CuentaUsuario extends AppCompatActivity {
 
             }
         });
-
 
         botonMenu = findViewById(R.id.btnMenuSel);
 

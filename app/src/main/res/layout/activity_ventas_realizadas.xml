@@ -13,25 +13,25 @@
         android:id="@+id/text_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/mangaka"
         android:text="@string/text_ventas_realizadas"
         android:textColor="@color/texto_registro"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.155"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:id="@+id/listViewVentasRealizadas"
         android:layout_width="match_parent"
-        android:layout_height="602dp"
+        android:layout_height="624dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_user"
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageView

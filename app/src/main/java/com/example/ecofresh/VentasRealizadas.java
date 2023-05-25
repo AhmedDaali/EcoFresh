@@ -32,10 +32,12 @@ public class VentasRealizadas extends AppCompatActivity {
 
     ListView listViewVentas;
     List<String> listaCantidad = new ArrayList<>();
-  //  List<String> listaComprador = new ArrayList<>();
-  //  List<String> listaProducto = new ArrayList<>();
+    List<String> listaComprador = new ArrayList<>();
+    List<String> listaProducto = new ArrayList<>();
+    List<String> listaPrecio = new ArrayList<>();
     List<String> listaIdVentas = new ArrayList<>();
     ArrayAdapter<String> mAdapterVentas;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +60,6 @@ public class VentasRealizadas extends AppCompatActivity {
         actualizarUI();
 
 
-
-
     }
 
     private void actualizarUI() {
@@ -76,16 +76,16 @@ public class VentasRealizadas extends AppCompatActivity {
                         }
 
                         listaCantidad.clear();
-                       // listaComprador.clear();
-                       // listaProducto.clear();
+                        listaComprador.clear();
+                        listaProducto.clear();
                         listaIdVentas.clear();
                         for (QueryDocumentSnapshot doc : value) {
 
                                listaIdVentas.add(doc.getId());
-                               listaCantidad.add(String.valueOf(doc.getDouble("cantidad")));
-                              // listaComprador.add(doc.getString("comprador"));
-                              //  listaProducto.add(doc.getString("producto"));
-
+                               listaCantidad.add(doc.getString("cantidad"));
+                               //listaComprador.add(doc.getString("comprador"));
+                               //listaProducto.add(doc.get("producto").getClass().getName());
+                               //listaPrecio.add(doc.get("producto").getClass().getName());
 
                         }
 
@@ -100,6 +100,17 @@ public class VentasRealizadas extends AppCompatActivity {
                             listViewVentas.setAdapter(mAdapterVentas);
 
                         }
+                        /*if (listaPrecio.size() == 0 ){
+
+                            listViewVentas.setAdapter(null);
+
+                        }else{
+
+                            mAdapterVentas = new ArrayAdapter<>(VentasRealizadas.this,R.layout.item_ventas_realizadas,R.id.textViewComprador,listaComprador);
+
+                            listViewVentas.setAdapter(mAdapterVentas);
+
+                        }*/
 
                        /* if (listaComprador.size() == 0 ){
 
