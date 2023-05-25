@@ -217,4 +217,14 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
     <string name="text_cp">Cp</string>
 
 
+    <!-- Texto de la activity_confirm_compra -->
+
+    <string name="text_final">¡Compra realizada!</string>
+    <string name="text_final2">¡GRACIAS!</string>
+    <string name="text_comprador">Comprador:</string>
+    <string name="text_calle2">Calle/Avd</string>
+    <string name="text_ciudad2">Localidad</string>
+    <string name="text_cp2">Cp</string>
+    <string name="continua_comprando">Continua comprando</string>
+
 </resources>
