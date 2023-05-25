@@ -23,15 +23,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
-        android:id="@+id/listViewVentasRealizadas"
+        android:id="@+id/listViewProductos"
         android:layout_width="match_parent"
         android:layout_height="522dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.326" />
+        app:layout_constraintVertical_bias="0.497" />
 
     <ImageView
         android:id="@+id/logo"
@@ -56,8 +56,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listViewVentasRealizadas"
-        app:layout_constraintVertical_bias="0.136"
+        app:layout_constraintTop_toBottomOf="@+id/listViewProductos"
+        app:layout_constraintVertical_bias="0.457"
         app:strokeColor="@color/borde_boton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
