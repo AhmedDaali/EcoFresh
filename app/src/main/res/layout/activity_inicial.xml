@@ -64,12 +64,14 @@
         android:id="@+id/text_cliente1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="28dp"
         android:fontFamily="sans-serif-black"
         android:text="@string/texto_cliente1"
         android:textColor="@color/texto_cliente1"
         android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/textLogin"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/botonEmail" />
 
@@ -78,12 +80,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
+        android:layout_marginEnd="70dp"
         android:fontFamily="sans-serif-black"
         android:text="@string/textLogin"
         android:textColor="@color/textLogin"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.178"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/text_cliente1"
         app:layout_constraintTop_toBottomOf="@+id/botonEmail" />
 

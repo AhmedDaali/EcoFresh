@@ -159,9 +159,10 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
     <string name="text_dire">Dirección:</string>
     <string name="text_loca">Localidad:</string>
 
-    <!-- Texto de la activity_ventas_realizadas -->
+    <!-- Texto de la activity_compras/ventas_realizadas -->
 
     <string name="text_ventas_realizadas">Estas han sido tus ventas</string>
+    <string name="text_compras_realizadas">Estas han sido tus compras</string>
 
     <!-- Texto de la activity_frutas -->
 
