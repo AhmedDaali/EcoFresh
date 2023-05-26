@@ -2,11 +2,21 @@ package com.example.ecofresh;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.ImageButton;
 
 public class Hortalizas extends AppCompatActivity {
+
+    ImageButton botonZanahorias;
+    ImageButton botonPatatas;
+    ImageButton botonTomates;
+    ImageButton botonAjos;
+    ImageButton botonCebollas;
+    ImageButton botonPimientos;
 
     AutoCompleteTextView auto;
     String[] hortalizas = {
@@ -37,5 +47,103 @@ public class Hortalizas extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, hortalizas);
         auto.setThreshold(3); // Indicamos con cuántas letras empezará a autocompletar
         auto.setAdapter(adapter);
+
+
+        // 1 Guardamos la referencia del botón de zanahorias
+
+        botonZanahorias = findViewById(R.id.boton_zanahorias);
+
+        botonZanahorias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Hortalizas.this,Muestrario.class);
+
+                // Arrancamos el evento que acabamos de crear
+                startActivity(intent);
+
+            }
+        });
+
+        // 2 Guardamos la referencia del botón de patatas
+
+        botonPatatas = findViewById(R.id.boton_patatas);
+
+        botonPatatas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Hortalizas.this,Muestrario.class);
+
+                // Arrancamos el evento que acabamos de crear
+                startActivity(intent);
+
+            }
+        });
+
+        // 3 Guardamos la referencia del botón de tomates
+
+        botonTomates = findViewById(R.id.boton_tomates);
+
+        botonTomates.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Hortalizas.this,Muestrario.class);
+
+                // Arrancamos el evento que acabamos de crear
+                startActivity(intent);
+
+            }
+        });
+
+        // 4 Guardamos la referencia del botón de ajos
+
+        botonAjos = findViewById(R.id.boton_ajos);
+
+        botonAjos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Hortalizas.this,Muestrario.class);
+
+                // Arrancamos el evento que acabamos de crear
+                startActivity(intent);
+
+            }
+        });
+
+        // 5 Guardamos la referencia del botón de cebollas
+
+        botonCebollas = findViewById(R.id.boton_cebollas);
+
+        botonCebollas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Hortalizas.this,Muestrario.class);
+
+                // Arrancamos el evento que acabamos de crear
+                startActivity(intent);
+
+            }
+        });
+
+
+        // 6 Guardamos la referencia del botón de pimientos
+
+        botonPimientos = findViewById(R.id.boton_pimientos);
+
+        botonPimientos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Hortalizas.this,Muestrario.class);
+
+                // Arrancamos el evento que acabamos de crear
+                startActivity(intent);
+
+            }
+        });
     }
 }

@@ -57,7 +57,7 @@ public class Muestrario extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(Muestrario.this,UltimoPasoCompra.class);
+                Intent intent = new Intent(Muestrario.this,Selection.class);
 
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
