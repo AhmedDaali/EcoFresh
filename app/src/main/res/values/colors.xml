@@ -49,6 +49,7 @@
     <!-- Paleta para la activity_venta -->
 
     <color name="datosVenta">#6BC7FFDA</color>
+    <color name="productos">#F3B76B</color>
 
     <!-- Paleta para la activity_camara -->
 
@@ -72,4 +73,7 @@
     <color name="fondo2">#CEF8EDED</color>
 
     <color name="pago">#CEFF2020</color>
+
+
+
 </resources>
