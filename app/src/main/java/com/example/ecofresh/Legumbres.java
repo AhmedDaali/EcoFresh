@@ -2,12 +2,21 @@ package com.example.ecofresh;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.ImageButton;
 
 public class Legumbres extends AppCompatActivity {
 
+    ImageButton botonHabas;
+    ImageButton botonGarbanzos;
+    ImageButton botonLentejas;
+    ImageButton botonGuisantes;
+    ImageButton botonAlfalfa;
+    ImageButton botonLupino;
 
     AutoCompleteTextView auto;
     String[] legumbres = {
@@ -34,7 +43,102 @@ public class Legumbres extends AppCompatActivity {
         auto.setThreshold(3); // Indicamos con cuántas letras empezará a autocompletar
         auto.setAdapter(adapter);
 
+        // 1 Guardamos la referencia del botón de habas
 
+        botonHabas = findViewById(R.id.boton_habas);
+
+        botonHabas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Legumbres.this,Muestrario.class);
+
+                // Arrancamos el evento que acabamos de crear
+                startActivity(intent);
+
+            }
+        });
+
+        // 2 Guardamos la referencia del botón de garbanzos
+
+        botonGarbanzos = findViewById(R.id.boton_garbanzos);
+
+        botonGarbanzos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Legumbres.this,Muestrario.class);
+
+                // Arrancamos el evento que acabamos de crear
+                startActivity(intent);
+
+            }
+        });
+
+        // 3 Guardamos la referencia del botón de lentejas
+
+        botonLentejas = findViewById(R.id.boton_lentejas);
+
+        botonLentejas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Legumbres.this,Muestrario.class);
+
+                // Arrancamos el evento que acabamos de crear
+                startActivity(intent);
+
+            }
+        });
+
+        // 4 Guardamos la referencia del botón de guisantes
+
+        botonGuisantes = findViewById(R.id.boton_guisantes);
+
+        botonGuisantes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Legumbres.this,Muestrario.class);
+
+                // Arrancamos el evento que acabamos de crear
+                startActivity(intent);
+
+            }
+        });
+
+        // 5 Guardamos la referencia del botón de alfalfa
+
+        botonAlfalfa = findViewById(R.id.boton_alfalfa);
+
+        botonAlfalfa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Legumbres.this,Muestrario.class);
+
+                // Arrancamos el evento que acabamos de crear
+                startActivity(intent);
+
+            }
+        });
+
+
+        // 6 Guardamos la referencia del botón de lupino
+
+        botonLupino = findViewById(R.id.boton_lupino);
+
+        botonLupino.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Legumbres.this,Muestrario.class);
+
+                // Arrancamos el evento que acabamos de crear
+                startActivity(intent);
+
+            }
+        });
 
 
 

@@ -12,8 +12,11 @@ import android.widget.ImageButton;
 public class Frutas extends AppCompatActivity {
 
     ImageButton botonNaranjas;
-
-
+    ImageButton botonPlatanos;
+    ImageButton botonMandarinas;
+    ImageButton botonFresas;
+    ImageButton botonManzanas;
+    ImageButton botonUvas;
 
     AutoCompleteTextView auto;
     String[] frutas = {
@@ -57,10 +60,86 @@ public class Frutas extends AppCompatActivity {
             }
         });
 
+        // 2 Guardamos la referencia del botón de platanos
+
+        botonPlatanos = findViewById(R.id.boton_platanos);
+
+        botonPlatanos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Frutas.this,Muestrario.class);
+
+                // Arrancamos el evento que acabamos de crear
+                startActivity(intent);
+
+            }
+        });
+
+        // 3 Guardamos la referencia del botón de mandarinas
+
+        botonMandarinas = findViewById(R.id.boton_mandarinas);
+
+        botonMandarinas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Frutas.this,Muestrario.class);
+
+                // Arrancamos el evento que acabamos de crear
+                startActivity(intent);
+
+            }
+        });
+
+        // 4 Guardamos la referencia del botón de Fresas
+
+        botonFresas = findViewById(R.id.boton_fresas);
+
+        botonFresas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Frutas.this,Muestrario.class);
+
+                // Arrancamos el evento que acabamos de crear
+                startActivity(intent);
+
+            }
+        });
+
+        // 5 Guardamos la referencia del botón de manzanas
+
+        botonManzanas = findViewById(R.id.boton_manzanas);
+
+        botonManzanas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Frutas.this,Muestrario.class);
+
+                // Arrancamos el evento que acabamos de crear
+                startActivity(intent);
+
+            }
+        });
 
 
+        // 6 Guardamos la referencia del botón de uvas
 
+        botonUvas = findViewById(R.id.boton_uvas);
 
+        botonUvas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Frutas.this,Muestrario.class);
+
+                // Arrancamos el evento que acabamos de crear
+                startActivity(intent);
+
+            }
+        });
 
 
 
