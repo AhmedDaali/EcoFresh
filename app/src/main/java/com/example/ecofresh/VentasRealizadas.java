@@ -14,6 +14,9 @@ import android.widget.ListView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -31,13 +34,8 @@ public class VentasRealizadas extends AppCompatActivity {
     String emailUsuario;
 
     ListView listViewVentas;
-    List<String> listaCantidad = new ArrayList<>();
-    List<String> listaComprador = new ArrayList<>();
-    List<String> listaProducto = new ArrayList<>();
-    List<String> listaPrecio = new ArrayList<>();
     List<String> listaIdVentas = new ArrayList<>();
     ArrayAdapter<String> mAdapterVentas;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,9 +59,7 @@ public class VentasRealizadas extends AppCompatActivity {
 
 
     }
-
     private void actualizarUI() {
-
         db.collection("VentasRealizadas")
                 .whereEqualTo("email", emailUsuario)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
@@ -71,74 +67,38 @@ public class VentasRealizadas extends AppCompatActivity {
                     public void onEvent(@Nullable QuerySnapshot value,
                                         @Nullable FirebaseFirestoreException e) {
                         if (e != null) {
-
+                            // Manejar el error aquí
                             return;
                         }
 
-                        listaCantidad.clear();
-                        listaComprador.clear();
-                        listaProducto.clear();
-                        listaIdVentas.clear();
+                        List<String> listaVentas = new ArrayList<>();
                         for (QueryDocumentSnapshot doc : value) {
+                            listaIdVentas.add(doc.getId());
 
-                               listaIdVentas.add(doc.getId());
-                               listaCantidad.add(doc.getString("cantidad"));
-                               //listaComprador.add(doc.getString("comprador"));
-                               //listaProducto.add(doc.get("producto").getClass().getName());
-                               //listaPrecio.add(doc.get("producto").getClass().getName());
+                            String cantidad = doc.getString("cantidad");
 
+                            // Obtiene los datos del producto directamente del documento actual
+                            String precio = doc.getString("producto.precio");
+                            String nombre = doc.getString("producto.nombre");
+
+                            // Combina los datos en una sola cadena
+                            String venta = "Producto: " + nombre + "\n" +
+                                    "Cantidad: " + cantidad + "\n" +
+                                    "Precio: " + precio;
+
+                            // Agrega la cadena a la lista
+                            listaVentas.add(venta);
                         }
 
-                        if (listaCantidad.size() == 0 ){
-
+                        if (listaVentas.size() == 0) {
                             listViewVentas.setAdapter(null);
-
-                        }else{
-
-                            mAdapterVentas = new ArrayAdapter<>(VentasRealizadas.this,R.layout.item_ventas_realizadas,R.id.textViewCantidad,listaCantidad);
-
+                        } else {
+                            mAdapterVentas = new ArrayAdapter<>(VentasRealizadas.this, R.layout.item_ventas_realizadas, R.id.textViewVenta, listaVentas);
                             listViewVentas.setAdapter(mAdapterVentas);
-
                         }
-                        /*if (listaPrecio.size() == 0 ){
-
-                            listViewVentas.setAdapter(null);
-
-                        }else{
-
-                            mAdapterVentas = new ArrayAdapter<>(VentasRealizadas.this,R.layout.item_ventas_realizadas,R.id.textViewComprador,listaComprador);
-
-                            listViewVentas.setAdapter(mAdapterVentas);
-
-                        }*/
-
-                       /* if (listaComprador.size() == 0 ){
-
-                            listViewVentas.setAdapter(null);
-
-                        }else{
-
-                            mAdapterVentas = new ArrayAdapter<>(VentasRealizadas.this,R.layout.item_ventas_realizadas,R.id.textViewComprador,listaComprador);
-
-                            listViewVentas.setAdapter(mAdapterVentas);
-
-                        }
-
-                        if (listaProducto.size() == 0 ){
-
-                            listViewVentas.setAdapter(null);
-
-                        }else{
-
-                            mAdapterVentas = new ArrayAdapter<>(VentasRealizadas.this,R.layout.item_ventas_realizadas,R.id.textViewProducto,listaProducto);
-
-                            listViewVentas.setAdapter(mAdapterVentas);
-
-                        }*/
-
                     }
                 });
-
-
     }
+
+
 }
