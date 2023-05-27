@@ -78,8 +78,8 @@ public class VentasRealizadas extends AppCompatActivity {
                             String cantidad = doc.getString("cantidad");
 
                             // Obtiene los datos del producto directamente del documento actual
-                            String precio = doc.getString("producto.precio");
-                            String nombre = doc.getString("producto.nombre");
+                            boolean precio = Boolean.parseBoolean(doc.getString("producto.precio"));
+                            boolean nombre = Boolean.parseBoolean(doc.getString("producto.nombre"));
 
                             // Combina los datos en una sola cadena
                             String venta = "Producto: " + nombre + "\n" +
