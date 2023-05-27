@@ -42,6 +42,8 @@ public class Muestrario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_muestrario);
 
+        // Obtener los datos de la venta de la venta del Intent.
+        String nombreProducto = getIntent().getStringExtra("producto");
 
         // Con esta linea ocultamos el actionBar, la barra de acción situada arriba de todo
 
@@ -74,9 +76,11 @@ public class Muestrario extends AppCompatActivity {
         emailUsuario = mAuth.getCurrentUser().getEmail();
         listViewProductos = findViewById(R.id.listViewProductos);
 
+
+
         // Una vez que entra el usuario a esta activity debemos actualizar la interfaz de usuario con sus propias ventas, del usuario logueado
 
-        actualizarUI();
+        actualizarUI( nombreProducto);
 
 
 
@@ -85,69 +89,47 @@ public class Muestrario extends AppCompatActivity {
 
     }
 
-    private void actualizarUI() {
 
-        db.collection("Productos")
-                .whereEqualTo("email", emailUsuario)
+    private void actualizarUI(String nombreProducto) {
+
+
+
+        db.collection("VentasRealizadas")
+                .whereEqualTo("producto.nombre", nombreProducto)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value,
                                         @Nullable FirebaseFirestoreException e) {
                         if (e != null) {
-
+                            // Manejar el error aquí
                             return;
                         }
 
-                        listaCantidad.clear();
-                        // listaComprador.clear();
-                        // listaProducto.clear();
-                        listaIdProductos.clear();
+                        List<String> listaVentas = new ArrayList<>();
                         for (QueryDocumentSnapshot doc : value) {
-
                             listaIdProductos.add(doc.getId());
-                            listaCantidad.add(String.valueOf(doc.getDouble("cantidad")));
-                            // listaComprador.add(doc.getString("comprador"));
-                            //  listaProducto.add(doc.getString("producto"));
 
+                            String cantidad = doc.getString("cantidad");
 
+                            // Obtiene los datos del producto directamente del documento actual
+                            String precio = doc.getString("producto.precio");
+                            String nombre = doc.getString("producto.nombre");
+
+                            // Combina los datos en una sola cadena
+                            String venta = "  Producto:     " + nombre + "\n" +
+                                    "  Stock:           " + cantidad + "\n" +
+                                    "  Precio:          " + precio;
+
+                            // Agrega la cadena a la lista
+                            listaVentas.add(venta);
                         }
 
-                        if (listaCantidad.size() == 0) {
-
+                        if (listaVentas.size() == 0) {
                             listViewProductos.setAdapter(null);
-
                         } else {
-
-                            mAdapterProductos = new ArrayAdapter<>(Muestrario.this, R.layout.item_ventas_realizadas, R.id.textViewCantidad, listaCantidad);
-
+                            mAdapterProductos = new ArrayAdapter<>(Muestrario.this, R.layout.item_muestrario, R.id.textViewProducto, listaVentas);
                             listViewProductos.setAdapter(mAdapterProductos);
-
                         }
-
-                       /* if (listaComprador.size() == 0 ){
-
-                            listViewVentas.setAdapter(null);
-
-                        }else{
-
-                            mAdapterVentas = new ArrayAdapter<>(VentasRealizadas.this,R.layout.item_ventas_realizadas,R.id.textViewComprador,listaComprador);
-
-                            listViewVentas.setAdapter(mAdapterVentas);
-
-                        }
-
-                        if (listaProducto.size() == 0 ){
-
-                            listViewVentas.setAdapter(null);
-
-                        }else{
-
-                            mAdapterVentas = new ArrayAdapter<>(VentasRealizadas.this,R.layout.item_ventas_realizadas,R.id.textViewProducto,listaProducto);
-
-                            listViewVentas.setAdapter(mAdapterVentas);
-
-                        }*/
-
                     }
                 });
 

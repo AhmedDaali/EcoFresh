@@ -51,7 +51,11 @@ public class Legumbres extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                String nombreProducto = auto.getText().toString().trim();
+
                 Intent intent = new Intent(Legumbres.this,Muestrario.class);
+
+                intent.putExtra("producto", nombreProducto);
 
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);

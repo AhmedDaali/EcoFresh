@@ -18,6 +18,8 @@ public class Hortalizas extends AppCompatActivity {
     ImageButton botonCebollas;
     ImageButton botonPimientos;
 
+    //String nombreProducto;
+
     AutoCompleteTextView auto;
     String[] hortalizas = {
 
@@ -75,6 +77,7 @@ public class Hortalizas extends AppCompatActivity {
 
                 Intent intent = new Intent(Hortalizas.this,Muestrario.class);
 
+                intent.putExtra("producto", "patatas");
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
 
@@ -107,6 +110,8 @@ public class Hortalizas extends AppCompatActivity {
 
                 Intent intent = new Intent(Hortalizas.this,Muestrario.class);
 
+                intent.putExtra("producto", "ajos");
+
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
 
@@ -122,6 +127,8 @@ public class Hortalizas extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(Hortalizas.this,Muestrario.class);
+
+                intent.putExtra("producto", "cebolla");
 
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
@@ -139,6 +146,8 @@ public class Hortalizas extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(Hortalizas.this,Muestrario.class);
+
+                intent.putExtra("producto", "pimientos");
 
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);

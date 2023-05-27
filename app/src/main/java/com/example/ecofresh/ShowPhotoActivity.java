@@ -59,43 +59,6 @@ public class ShowPhotoActivity extends AppCompatActivity {
             }
         });
     }
-
-    /*private void savePhoto() {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        foto.compress(Bitmap.CompressFormat.PNG, 100, baos);
-        byte[] imageData = baos.toByteArray();
-
-        if (VentaAguardar.photoToSave == null) {
-            VentaAguardar.photoToSave = new ArrayList<>();
-        }
-
-        VentaAguardar.photoToSave.add(imageData);
-
-        // Crea una referencia al almacenamiento de Firebase donde deseas guardar la imagen
-        StorageReference imageRef = storageRef.child("images/myImage.jpg");
-
-        // Carga la imagen en Firebase Storage
-        UploadTask uploadTask = imageRef.putBytes(imageData);
-        uploadTask.addOnSuccessListener(taskSnapshot -> {
-            // La imagen se cargó exitosamente en Firebase Storage
-            // Aquí puedes obtener la URL de descarga de la imagen y realizar otras acciones necesarias
-            // por ejemplo, guardar la URL en una base de datos Firestore
-            imageRef.getDownloadUrl().addOnSuccessListener(downloadUri -> {
-                // URL de descarga de la imagen
-                String imageUrl = downloadUri.toString();
-
-                // Continúa con la lógica adicional después de cargar la imagen
-                Intent intent = new Intent(ShowPhotoActivity.this, VentaAguardar.class);
-                // Pasa la imágen y la  URL de descarga de imágen como dato extra
-                intent.putExtra("photoUrl", imageUrl);
-                intent.putExtra("photo", photo);
-                startActivity(intent);
-            });
-        }).addOnFailureListener(e -> {
-            // Ocurrió un error al cargar la imagen en Firebase Storage
-        });
-    }*/
-
     private void deletePhoto() {
         // Aquí puedes agregar el código para borrar la foto de Firebase
         VentaAguardar.photoToSave = null;
@@ -145,7 +108,3 @@ public class ShowPhotoActivity extends AppCompatActivity {
         });
     }
 }
-        /*En este código, se genera un nombre único para cada foto utilizando System.currentTimeMillis() para obtener la marca de tiempo actual en milisegundos. Esto asegura que cada nombre de archivo sea diferente y evita que las fotos se sobrescriban.
-
-        Recuerda que también debes actualizar el código correspondiente en el método deletePhoto() para eliminar la foto correcta utilizando el nombre de archivo único generado al guardarla.
-*/
