@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 
 public class Verduras extends AppCompatActivity {
 
-
+    ImageButton botonFlecha4;
     ImageButton botonEspinacas;
     ImageButton botonLechuga;
     ImageButton botonRepollo;
@@ -131,6 +131,22 @@ public class Verduras extends AppCompatActivity {
         botonGrelos = findViewById(R.id.boton_grelos);
 
         botonGrelos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Verduras.this,Muestrario.class);
+
+                // Arrancamos el evento que acabamos de crear
+                startActivity(intent);
+
+            }
+        });
+
+        // 7 Guardamos la referencia del botón de flecha
+
+        botonFlecha4 = findViewById(R.id.boton_flechaV);
+
+        botonFlecha4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
