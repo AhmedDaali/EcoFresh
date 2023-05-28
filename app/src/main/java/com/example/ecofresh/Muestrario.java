@@ -34,6 +34,8 @@ public class Muestrario extends AppCompatActivity {
     List<String> listaCantidad = new ArrayList<>();
 
     List<String> listaIdProductos = new ArrayList<>();
+
+    
     ArrayAdapter<String> mAdapterProductos;
 
     @SuppressLint({"WrongViewCast", "MissingInflatedId"})
@@ -125,29 +127,7 @@ public class Muestrario extends AppCompatActivity {
 
                         }
 
-                       /* if (listaComprador.size() == 0 ){
 
-                            listViewVentas.setAdapter(null);
-
-                        }else{
-
-                            mAdapterVentas = new ArrayAdapter<>(VentasRealizadas.this,R.layout.item_ventas_realizadas,R.id.textViewComprador,listaComprador);
-
-                            listViewVentas.setAdapter(mAdapterVentas);
-
-                        }
-
-                        if (listaProducto.size() == 0 ){
-
-                            listViewVentas.setAdapter(null);
-
-                        }else{
-
-                            mAdapterVentas = new ArrayAdapter<>(VentasRealizadas.this,R.layout.item_ventas_realizadas,R.id.textViewProducto,listaProducto);
-
-                            listViewVentas.setAdapter(mAdapterVentas);
-
-                        }*/
 
                     }
                 });
