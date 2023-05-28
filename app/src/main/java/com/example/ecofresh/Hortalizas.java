@@ -11,6 +11,8 @@ import android.widget.ImageButton;
 
 public class Hortalizas extends AppCompatActivity {
 
+
+    ImageButton botonFlecha2;
     ImageButton botonZanahorias;
     ImageButton botonPatatas;
     ImageButton botonTomates;
@@ -145,5 +147,25 @@ public class Hortalizas extends AppCompatActivity {
 
             }
         });
+
+
+        // 7 Guardamos la referencia del botón de la flecha del autocompletado
+
+        botonFlecha2 = findViewById(R.id.boton_flechaH);
+
+        botonFlecha2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Hortalizas.this,Muestrario.class);
+
+                // Arrancamos el evento que acabamos de crear
+                startActivity(intent);
+
+            }
+        });
+
+
+
     }
 }
