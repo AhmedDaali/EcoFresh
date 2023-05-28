@@ -85,6 +85,7 @@ public class Muestrario extends AppCompatActivity {
 
     }
 
+    @SuppressLint("WrongViewCast")
     private void actualizarUI() {
 
         db.collection("Productos")
@@ -150,6 +151,12 @@ public class Muestrario extends AppCompatActivity {
 
                     }
                 });
+
+
+
+
+
+
 
     }
 
