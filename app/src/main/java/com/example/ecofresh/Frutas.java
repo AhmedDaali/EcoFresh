@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 
 public class Frutas extends AppCompatActivity {
 
+    ImageButton botonFlecha3;
     ImageButton botonNaranjas;
     ImageButton botonPlatanos;
     ImageButton botonMandarinas;
@@ -141,6 +142,22 @@ public class Frutas extends AppCompatActivity {
             }
         });
 
+
+        // 7 Guardamos la referencia del botón de Flecha
+
+        botonFlecha3 = findViewById(R.id.boton_flechaF);
+
+        botonFlecha3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Frutas.this,Muestrario.class);
+
+                // Arrancamos el evento que acabamos de crear
+                startActivity(intent);
+
+            }
+        });
 
 
     }

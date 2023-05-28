@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 
 public class Legumbres extends AppCompatActivity {
 
+    ImageButton botonFlecha;
     ImageButton botonHabas;
     ImageButton botonGarbanzos;
     ImageButton botonLentejas;
@@ -143,6 +144,26 @@ public class Legumbres extends AppCompatActivity {
 
             }
         });
+
+        // 7 Guardamos la referencia del botón de next
+
+        botonFlecha = findViewById(R.id.boton_flechaL);
+
+        botonFlecha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Legumbres.this,Muestrario.class);
+
+                // Arrancamos el evento que acabamos de crear
+                startActivity(intent);
+
+            }
+        });
+
+
+
+
 
 
 
