@@ -22,20 +22,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <AutoCompleteTextView
-        android:id="@+id/txt_auto"
-        android:layout_width="312dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="8dp"
-        android:hint="@string/hint_auto"
-        android:padding="16dp"
-        android:textColorHint="@color/texto_autocomplete"
-        android:textColorLink="@color/autocompletado"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/texto_selection" />
-
     <ImageButton
         android:id="@+id/boton_fruta"
         android:layout_width="128dp"
@@ -98,28 +84,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="48dp"
         android:text="@string/button_fruta"
         android:textColor="@color/hint_registro"
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/text_verdura"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_auto" />
+        app:layout_constraintTop_toBottomOf="@+id/texto_selection" />
 
     <TextView
         android:id="@+id/text_verdura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="48dp"
         android:text="@string/button_verdura"
         android:textColor="@color/hint_registro"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/text_fruta"
-        app:layout_constraintTop_toBottomOf="@+id/txt_auto" />
+        app:layout_constraintTop_toBottomOf="@+id/texto_selection" />
 
     <TextView
         android:id="@+id/text_hortaliza"
@@ -151,19 +137,19 @@
         app:layout_constraintTop_toBottomOf="@+id/boton_fruta"
         app:layout_constraintVertical_bias="0.0" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="116dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="296dp" />
+    <Button
+        android:id="@+id/btnMenu"
+        android:layout_width="318dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="@color/verde_email_cliente"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/text_menu"
+        android:textColor="@color/dunkel_text_boton"
+        app:cornerRadius="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boton_legumbre" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,6 +13,9 @@ import android.widget.ImageButton;
 
 public class Selection extends AppCompatActivity {
 
+    ImageButton botonFlechaS;
+    Button botonRegreso;
+
     ImageButton botonFrutas;
     ImageButton botonVerduras;
     ImageButton botonLegumbres;
@@ -123,6 +126,42 @@ public class Selection extends AppCompatActivity {
 
             }
         });
+
+
+        // 5 Guardamos la referencia del botón de Hortalizas
+
+        botonFlechaS = findViewById(R.id.boton_flechaS);
+
+        botonFlechaS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Selection.this,Hortalizas.class);
+
+                // Arrancamos el evento que acabamos de crear
+                startActivity(intent);
+
+            }
+        });
+
+
+        // 6 Guardamos la referencia del botón de Hortalizas
+
+        botonHortalizas = findViewById(R.id.boton_hortaliza);
+
+        botonHortalizas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Selection.this,Hortalizas.class);
+
+                // Arrancamos el evento que acabamos de crear
+                startActivity(intent);
+
+            }
+        });
+
+
 
     }
 }
