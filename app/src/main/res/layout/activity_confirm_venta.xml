@@ -170,7 +170,7 @@
 
     <!-- Este es el botón para regresar al Menú principal -->
 
-    <!-- Este es el botón para salir -->
+
 
     <Button
         android:id="@+id/btnMenu"
@@ -191,6 +191,8 @@
         app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+    <!-- Este es el botón para salir -->
 
     <Button
         android:id="@+id/salir"

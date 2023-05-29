@@ -129,8 +129,8 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
     <!-- Texto de la activity_cuenta_usuario -->
 
     <string name="text_trans">TRANSACCIONES</string>
-    <string name="text_compras">Mis compras                                                                        ></string>
-    <string name="text_ventas">Mis ventas                                                                           ></string>
+    <string name="text_compras">Mis compras                                                             ></string>
+    <string name="text_ventas">Mis ventas                                                                 ></string>
     <string name="text_datos">CUENTA</string>
     <string name="text_User">Tus datos</string>
     <string name="text_nombre">Nombre: </string>
@@ -213,9 +213,10 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
     <string name="text_casi">¡Ya casi está!</string>
     <string name="text_pago">Este producto será pagado \n      a contra reembolso</string>
     <string name="hintCantidadFinal">             Kg</string>
-    <string name="text_calle">Calle/Avd</string>
-    <string name="text_ciudad">Localidad</string>
-    <string name="text_cp">Cp</string>
+    <string name="text_titulo_direccion">Datos de dirección*</string>
+    <string name="text_calle">Calle/Avd*</string>
+    <string name="text_ciudad">Localidad*</string>
+    <string name="text_cp">Cp*</string>
 
 
     <!-- Texto de la activity_confirm_compra -->
