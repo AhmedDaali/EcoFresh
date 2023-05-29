@@ -21,7 +21,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 public class CuentaUsuario extends AppCompatActivity {
 
     private Button botonEditar, botonMenu;
-    private RelativeLayout botonCompras, botonVentas;
+    private RelativeLayout botonCompras, botonVentas, botonProductosVenta;
     private TextView textNombre,textApellidos,textEmail, textTelefono, textDireccion,textLocalidad;
     FirebaseFirestore db;
     private FirebaseUser currentUser;
@@ -116,6 +116,28 @@ public class CuentaUsuario extends AppCompatActivity {
 
             }
         });
+
+        botonProductosVenta = findViewById(R.id.marcador3);
+
+        botonProductosVenta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // De momento queremos que al hacer click en el botón pasemos a la siguiente activity_confirm_venta.
+                // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_confirm_venta (ConfirmVenta.class)
+
+                Intent intent = new Intent(CuentaUsuario.this, ProductosVenta.class);
+
+                // Arrancamos el evento que acabamos de crear
+                startActivity(intent);
+
+            }
+        });
+
+
+
+
+
     }
 // ...
 
