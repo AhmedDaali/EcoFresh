@@ -13,12 +13,22 @@ import android.widget.ImageButton;
 
 public class Selection extends AppCompatActivity {
 
-    private Button botonMenu;
 
-    private ImageButton botonFrutas;
-    private ImageButton botonVerduras;
-    private ImageButton botonLegumbres;
-    private ImageButton botonHortalizas;
+    Button botonRegreso;
+
+    ImageButton botonFrutas;
+    ImageButton botonVerduras;
+    ImageButton botonLegumbres;
+    ImageButton botonHortalizas;
+    // Esto es el código para la entrada de texto autocompletable
+
+    AutoCompleteTextView auto;
+    String[] productos = {
+
+       "Frutas", "Verduras", "Hortalizas", "Legumbres"
+
+    };
+
 
 
 
@@ -33,6 +43,13 @@ public class Selection extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
+
+        // Esto se hace para que se autocomplete la entrada de texto
+
+        auto = (AutoCompleteTextView) findViewById(R.id.txt_auto);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, productos);
+        auto.setThreshold(3); // Indicamos con cuántas letras empezará a autocompletar
+        auto.setAdapter(adapter);
 
 
         // 1 Guardamos la referencia del botón de frutas
@@ -111,15 +128,16 @@ public class Selection extends AppCompatActivity {
         });
 
 
-        botonMenu = findViewById(R.id.btnMenu);
 
-        botonMenu.setOnClickListener(new View.OnClickListener() {
+        // 6 Guardamos la referencia del botón de Hortalizas
+
+        botonRegreso = findViewById(R.id.btnMen);
+
+        botonRegreso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                // De momento queremos que al hacer click en el botón regresar al menú principal.
-                // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (a la MainActivity)
-                Intent intent = new Intent(Selection.this, MainActivity.class);
+                Intent intent = new Intent(Selection.this,MainActivity.class);
 
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
