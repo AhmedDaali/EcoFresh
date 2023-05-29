@@ -131,6 +131,7 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
     <string name="text_trans">TRANSACCIONES</string>
     <string name="text_compras">Mis compras                                                             ></string>
     <string name="text_ventas">Mis ventas                                                                 ></string>
+    <string name="text_misproductos">Productos a la venta                                               ></string>
     <string name="text_datos">CUENTA</string>
     <string name="text_User">Tus datos</string>
     <string name="text_nombre">Nombre: </string>
@@ -228,5 +229,7 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
     <string name="text_ciudad2">Localidad</string>
     <string name="text_cp2">Cp</string>
     <string name="continua_comprando">Continua comprando</string>
+
+
 
 </resources>
