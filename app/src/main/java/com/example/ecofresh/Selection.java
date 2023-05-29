@@ -13,22 +13,12 @@ import android.widget.ImageButton;
 
 public class Selection extends AppCompatActivity {
 
-    ImageButton botonFlechaS;
-    Button botonRegreso;
+    private Button botonMenu;
 
-    ImageButton botonFrutas;
-    ImageButton botonVerduras;
-    ImageButton botonLegumbres;
-    ImageButton botonHortalizas;
-    // Esto es el código para la entrada de texto autocompletable
-
-    AutoCompleteTextView auto;
-    String[] productos = {
-
-       "Frutas", "Verduras", "Hortalizas", "Legumbres"
-
-    };
-
+    private ImageButton botonFrutas;
+    private ImageButton botonVerduras;
+    private ImageButton botonLegumbres;
+    private ImageButton botonHortalizas;
 
 
 
@@ -43,13 +33,6 @@ public class Selection extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
-
-        // Esto se hace para que se autocomplete la entrada de texto
-
-        auto = (AutoCompleteTextView) findViewById(R.id.txt_auto);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, productos);
-        auto.setThreshold(3); // Indicamos con cuántas letras empezará a autocompletar
-        auto.setAdapter(adapter);
 
 
         // 1 Guardamos la referencia del botón de frutas
@@ -128,32 +111,15 @@ public class Selection extends AppCompatActivity {
         });
 
 
-        // 5 Guardamos la referencia del botón de Hortalizas
+        botonMenu = findViewById(R.id.btnMenu);
 
-        botonFlechaS = findViewById(R.id.boton_flechaS);
-
-        botonFlechaS.setOnClickListener(new View.OnClickListener() {
+        botonMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(Selection.this,Hortalizas.class);
-
-                // Arrancamos el evento que acabamos de crear
-                startActivity(intent);
-
-            }
-        });
-
-
-        // 6 Guardamos la referencia del botón de Hortalizas
-
-        botonHortalizas = findViewById(R.id.boton_hortaliza);
-
-        botonHortalizas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(Selection.this,Hortalizas.class);
+                // De momento queremos que al hacer click en el botón regresar al menú principal.
+                // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (a la MainActivity)
+                Intent intent = new Intent(Selection.this, MainActivity.class);
 
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);

@@ -20,8 +20,8 @@ import com.google.firebase.firestore.DocumentSnapshot;
 
 public class CuentaUsuario extends AppCompatActivity {
 
-    Button botonEditar, botonMenu;
-    RelativeLayout botonCompras, botonVentas;
+    private Button botonEditar, botonMenu;
+    private RelativeLayout botonCompras, botonVentas;
     private TextView textNombre,textApellidos,textEmail, textTelefono, textDireccion,textLocalidad;
     FirebaseFirestore db;
     private FirebaseUser currentUser;
