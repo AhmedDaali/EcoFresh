@@ -14,20 +14,13 @@ import android.widget.ImageButton;
 public class Selection extends AppCompatActivity {
 
 
-    Button botonRegreso;
+    private Button botonRegreso;
 
-    ImageButton botonFrutas;
-    ImageButton botonVerduras;
-    ImageButton botonLegumbres;
-    ImageButton botonHortalizas;
+    private ImageButton botonFrutas;
+    private ImageButton botonVerduras;
+    private ImageButton botonLegumbres;
+    private ImageButton botonHortalizas;
     // Esto es el código para la entrada de texto autocompletable
-
-    AutoCompleteTextView auto;
-    String[] productos = {
-
-       "Frutas", "Verduras", "Hortalizas", "Legumbres"
-
-    };
 
 
 
@@ -42,14 +35,6 @@ public class Selection extends AppCompatActivity {
         // Con esta linea ocultamos el actionBar, la barra de acción situada arriba de todo
 
         getSupportActionBar().hide();
-
-
-        // Esto se hace para que se autocomplete la entrada de texto
-
-        auto = (AutoCompleteTextView) findViewById(R.id.txt_auto);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, productos);
-        auto.setThreshold(3); // Indicamos con cuántas letras empezará a autocompletar
-        auto.setAdapter(adapter);
 
 
         // 1 Guardamos la referencia del botón de frutas
