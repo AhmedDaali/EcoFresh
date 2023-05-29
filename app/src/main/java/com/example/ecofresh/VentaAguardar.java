@@ -59,7 +59,7 @@ public class VentaAguardar extends AppCompatActivity {
     private EditText cantidadEditText, productoEditText,
             precioEditext,localidadEditext, emailEditext;
 
-    private String nombre, apellidos, telefono, direccion, localidad, email;
+    private String nombre, apellidos, telefono, direccion, localidad, email, vendedor;
 
     private FirebaseUser currentUser;
     private ActivityResultLauncher<Intent> cameraLauncher;
@@ -216,6 +216,7 @@ public class VentaAguardar extends AppCompatActivity {
                 if (document.exists()) {
                     // Obtener los datos del documento y actualizar los TextView correspondientes
                     email = document.getString("email");
+                    vendedor = document.getString("nombre")+" "+document.getString("apellidos");
                 }
             } else {
                 Toast.makeText(VentaAguardar.this, "Error al obtener los datos", Toast.LENGTH_SHORT).show();
@@ -234,10 +235,10 @@ public class VentaAguardar extends AppCompatActivity {
         String categoria =  autoCategoria.getText().toString().trim();
 
         // Crea un objeto Producto
-        Producto producto = new Producto(nombreProducto, precio, categoria, localidad, photoUrl);
+        Producto producto = new Producto(nombreProducto.toLowerCase(), precio, categoria, localidad, photoUrl);
         // Crea un objeto Venta con los datos de la venta
         //Venta venta = new Venta(cantidad, producto, currentUser.getEmail());
-        Venta venta = new Venta(cantidad, producto, email);
+        Venta venta = new Venta(cantidad, producto, email, vendedor);
 
 
         // Obtener referencia a la colección de VentasRealizadas en Firestore

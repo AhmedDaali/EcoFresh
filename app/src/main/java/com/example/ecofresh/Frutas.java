@@ -55,6 +55,9 @@ public class Frutas extends AppCompatActivity {
 
                 Intent intent = new Intent(Frutas.this,Muestrario.class);
 
+                //Enviamos la variable a buscar al listView
+                intent.putExtra("producto", "naranjas");
+
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
 
@@ -70,6 +73,9 @@ public class Frutas extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(Frutas.this,Muestrario.class);
+
+                //Enviamos la variable a buscar al listView
+                intent.putExtra("producto", "platanos");
 
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
@@ -87,6 +93,9 @@ public class Frutas extends AppCompatActivity {
 
                 Intent intent = new Intent(Frutas.this,Muestrario.class);
 
+                //Enviamos la variable a buscar al listView
+                intent.putExtra("producto", "mandarinas");
+
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
 
@@ -103,6 +112,9 @@ public class Frutas extends AppCompatActivity {
 
                 Intent intent = new Intent(Frutas.this,Muestrario.class);
 
+                //Enviamos la variable a buscar al listView
+                intent.putExtra("producto", "fresas");
+
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
 
@@ -118,6 +130,9 @@ public class Frutas extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(Frutas.this,Muestrario.class);
+
+                //Enviamos la variable a buscar al listView
+                intent.putExtra("producto", "manzanas");
 
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
@@ -136,6 +151,9 @@ public class Frutas extends AppCompatActivity {
 
                 Intent intent = new Intent(Frutas.this,Muestrario.class);
 
+                //Enviamos la variable a buscar al listView
+                intent.putExtra("producto", "uvas");
+
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
 
@@ -151,7 +169,13 @@ public class Frutas extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                //Recogemos el valor del autoCompleteTextView
+                String nombreProducto =  auto.getText().toString().trim();
+
                 Intent intent = new Intent(Frutas.this,Muestrario.class);
+
+                //Enviamos la variable a buscar al listView
+                intent.putExtra("producto", nombreProducto.toLowerCase());
 
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);

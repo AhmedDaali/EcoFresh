@@ -92,8 +92,6 @@ public class Muestrario extends AppCompatActivity {
 
     private void actualizarUI(String nombreProducto) {
 
-
-
         db.collection("VentasRealizadas")
                 .whereEqualTo("producto.nombre", nombreProducto)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
@@ -110,13 +108,17 @@ public class Muestrario extends AppCompatActivity {
                             listaIdProductos.add(doc.getId());
 
                             String cantidad = doc.getString("cantidad");
+                            String vendedor = doc.getString("vendedor");
 
                             // Obtiene los datos del producto directamente del documento actual
                             String precio = doc.getString("producto.precio");
                             String nombre = doc.getString("producto.nombre");
+                            String localidad = doc.getString("producto.localidad");
 
                             // Combina los datos en una sola cadena
                             String venta = "  Producto:     " + nombre + "\n" +
+                                    "  Vendedor:    " + vendedor + "\n" +
+                                    "  Localidad:    " + localidad + "\n" +
                                     "  Stock:           " + cantidad + "\n" +
                                     "  Precio:          " + precio;
 

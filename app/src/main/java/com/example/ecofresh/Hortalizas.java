@@ -12,24 +12,23 @@ import android.widget.ImageButton;
 public class Hortalizas extends AppCompatActivity {
 
 
-    ImageButton botonFlecha2;
-    ImageButton botonZanahorias;
-    ImageButton botonPatatas;
-    ImageButton botonTomates;
-    ImageButton botonAjos;
-    ImageButton botonCebollas;
-    ImageButton botonPimientos;
+    private ImageButton botonFlecha2;
+    private ImageButton botonZanahorias;
+    private ImageButton botonPatatas;
+    private ImageButton botonTomates;
+    private ImageButton botonAjos;
+    private ImageButton botonCebollas;
+    private ImageButton botonPimientos;
 
     //String nombreProducto;
 
-    AutoCompleteTextView auto;
-    String[] hortalizas = {
+    private AutoCompleteTextView auto;
+    private String[] hortalizas = {
 
-            "Zanahorias", "Patatas", "Tomates", "Ajos", "Cebollas", "Pimientos"
+            "Zanahorias", "Patatas", "Tomates", "Ajos", "Cebollas", "Pimientos", "Puerros"
 
     };
-
-
+    private String nombreProducto;
 
 
     @Override
@@ -37,7 +36,7 @@ public class Hortalizas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hortalizas);
 
-
+        //String nombreProducto =  auto.getText().toString().trim();
 
 
         // Con esta linea ocultamos el actionBar, la barra de acción situada arriba de todo
@@ -52,6 +51,8 @@ public class Hortalizas extends AppCompatActivity {
         auto.setThreshold(3); // Indicamos con cuántas letras empezará a autocompletar
         auto.setAdapter(adapter);
 
+        String nombreProducto =  auto.getText().toString().trim();
+
 
         // 1 Guardamos la referencia del botón de zanahorias
 
@@ -62,6 +63,8 @@ public class Hortalizas extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(Hortalizas.this,Muestrario.class);
+
+                intent.putExtra("producto", "zanahoria");
 
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
@@ -112,7 +115,7 @@ public class Hortalizas extends AppCompatActivity {
 
                 Intent intent = new Intent(Hortalizas.this,Muestrario.class);
 
-                intent.putExtra("producto", "ajos");
+                intent.putExtra("producto", "ajo");
 
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
@@ -149,7 +152,7 @@ public class Hortalizas extends AppCompatActivity {
 
                 Intent intent = new Intent(Hortalizas.this,Muestrario.class);
 
-                intent.putExtra("producto", "pimientos");
+                intent.putExtra("producto", "pimiento");
 
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
@@ -166,7 +169,12 @@ public class Hortalizas extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                String nombreProducto =  auto.getText().toString().trim();
+
+
                 Intent intent = new Intent(Hortalizas.this,Muestrario.class);
+
+                intent.putExtra("producto", nombreProducto.toLowerCase());
 
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);

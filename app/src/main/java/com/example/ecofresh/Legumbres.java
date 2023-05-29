@@ -11,16 +11,16 @@ import android.widget.ImageButton;
 
 public class Legumbres extends AppCompatActivity {
 
-    ImageButton botonFlecha;
-    ImageButton botonHabas;
-    ImageButton botonGarbanzos;
-    ImageButton botonLentejas;
-    ImageButton botonGuisantes;
-    ImageButton botonAlfalfa;
-    ImageButton botonLupino;
+    private ImageButton botonFlecha;
+    private ImageButton botonHabas;
+    private ImageButton botonGarbanzos;
+    private ImageButton botonLentejas;
+    private ImageButton botonGuisantes;
+    private ImageButton botonAlfalfa;
+    private ImageButton botonLupino;
 
-    AutoCompleteTextView auto;
-    String[] legumbres = {
+    private AutoCompleteTextView auto;
+    private String[] legumbres = {
 
             "Habas", "Garbanzos", "Lentejas", "Guisantes", "Alfalfa", "Lupino"
 
@@ -56,7 +56,7 @@ public class Legumbres extends AppCompatActivity {
 
                 Intent intent = new Intent(Legumbres.this,Muestrario.class);
 
-                intent.putExtra("producto", nombreProducto);
+                intent.putExtra("producto", "habas");
 
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
@@ -74,6 +74,8 @@ public class Legumbres extends AppCompatActivity {
 
                 Intent intent = new Intent(Legumbres.this,Muestrario.class);
 
+                intent.putExtra("producto", "garbanzos");
+
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
 
@@ -89,6 +91,8 @@ public class Legumbres extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(Legumbres.this,Muestrario.class);
+
+                intent.putExtra("producto", "lentejas");
 
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
@@ -106,6 +110,8 @@ public class Legumbres extends AppCompatActivity {
 
                 Intent intent = new Intent(Legumbres.this,Muestrario.class);
 
+                intent.putExtra("producto", "guisantes");
+
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
 
@@ -121,6 +127,8 @@ public class Legumbres extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(Legumbres.this,Muestrario.class);
+
+                intent.putExtra("producto", "alfalfa");
 
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
@@ -139,6 +147,8 @@ public class Legumbres extends AppCompatActivity {
 
                 Intent intent = new Intent(Legumbres.this,Muestrario.class);
 
+                intent.putExtra("producto", "lupino");
+
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
 
@@ -153,7 +163,12 @@ public class Legumbres extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                String nombreProducto =  auto.getText().toString().trim();
+
                 Intent intent = new Intent(Legumbres.this,Muestrario.class);
+
+                //Enviamos la variable a buscar al listView
+                intent.putExtra("producto", nombreProducto.toLowerCase());
 
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
