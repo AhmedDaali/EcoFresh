@@ -230,6 +230,9 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
     <string name="text_cp2">Cp</string>
     <string name="continua_comprando">Continua comprando</string>
 
+    <!-- Texto de la activity_productos_venta -->
+
+    <string name="text_productos_venta">¡A la venta!</string>
 
 
 </resources>
