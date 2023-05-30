@@ -95,7 +95,7 @@ public class Muestrario extends AppCompatActivity {
 
 
     private void actualizarUI(String nombreProducto) {
-       /* mAdapterProductos = new ArrayAdapter<String>(Muestrario.this, R.layout.item_muestrario, R.id.imageProducto, listaImagenes ) {
+        mAdapterProductos = new ArrayAdapter<String>(Muestrario.this, R.layout.item_muestrario, R.id.imageProducto, listaImagenes ) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
@@ -130,7 +130,7 @@ public class Muestrario extends AppCompatActivity {
 
                 return view;
             }
-        };*/
+        };
 
         db.collection("VentasRealizadas")
                 .whereEqualTo("producto.nombre", nombreProducto)
@@ -183,7 +183,7 @@ public class Muestrario extends AppCompatActivity {
                             String imageUrl = doc.getString("producto.photoUrls");
                             if (imageUrl != null && !imageUrl.isEmpty()) {
                                 listaImagenes.add(imageUrl);
-                                Picasso.get().load(imageUrl).into(imageProducto);
+                               // Picasso.get().load(imageUrl).into(imageProducto);
                             } else {
                                 // Si no hay una URL de imagen válida, puedes mostrar una imagen de relleno o dejarla vacía.
                                 // Por ejemplo:
