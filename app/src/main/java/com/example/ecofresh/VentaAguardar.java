@@ -43,12 +43,12 @@ public class VentaAguardar extends AppCompatActivity {
     Button botonSubirFoto;
 
     // Variable que guardará la referencia del botón Confirmar
-    Button botonConfirm;
+    private Button botonConfirm;
 
     // Esto es el código para la entrada de texto autocompletable
-    AutoCompleteTextView autoCategoria;
+    private AutoCompleteTextView autoCategoria;
 
-    String[] categorias = {
+    private String[] categorias = {
 
             "Frutas", "Verduras", "Hortalizas", "Legumbres"
 

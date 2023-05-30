@@ -72,6 +72,7 @@
             android:layout_toEndOf="@+id/textCantidad">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/EditTextCantidad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/datosVenta"
@@ -295,9 +296,11 @@
         android:id="@+id/textTituloDireccion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="32dp"
         android:text="@string/text_titulo_direccion"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-        tools:layout_editor_absoluteX="46dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.211"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
