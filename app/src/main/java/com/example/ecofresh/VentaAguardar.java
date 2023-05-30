@@ -228,10 +228,10 @@ public class VentaAguardar extends AppCompatActivity {
 
 
         // Obtener los nuevos datos del usuario desde los EditText
-        String cantidad = cantidadEditText.getText().toString().trim();
+        float cantidad = Float.parseFloat(cantidadEditText.getText().toString().trim());
         String nombreProducto = productoEditText.getText().toString().trim();
         String localidad = localidadEditext.getText().toString().trim();
-        String precio = precioEditext.getText().toString().trim();
+        float precio = Float.parseFloat(precioEditext.getText().toString().trim());
         String categoria =  autoCategoria.getText().toString().trim();
 
         // Crea un objeto Producto
