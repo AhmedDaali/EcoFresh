@@ -54,8 +54,12 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore'
 
     //Dependencias de internet
-   // implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    // implementation 'com.squareup.retrofit2:retrofit:2.9.0'
 
+    //Almacen de archivos
     implementation 'com.google.firebase:firebase-storage:20.0.0'
+
+    //biblioteca Picasso para cargar una imagen desde una URL
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
 }
