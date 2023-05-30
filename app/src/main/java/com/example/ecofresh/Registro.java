@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -43,6 +44,10 @@ public class Registro extends AppCompatActivity {
     EditText nombre, apellidos, email, password;
 
     //private static final String EDIT_TEXT_VALUE_KEY = "edit_text_value";
+    private static final String NAME_KEY = "name";
+    private static final String LAST_NAME_KEY = "last_name";
+    private static final String EMAIL_KEY = "email";
+    private static final String PASSWORD_KEY = "password";
     FirebaseAuth mAuth;
     Boolean checkBoxState = false;
 
@@ -260,16 +265,32 @@ public class Registro extends AppCompatActivity {
         Pattern pattern = Patterns.EMAIL_ADDRESS;
         return pattern.matcher(email).matches();
     }
-   /*@Override
-    protected void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putString(EDIT_TEXT_VALUE_KEY, email.getText().toString());
+
+    //Métodos para que la información escrita en los editText se mantenga cuando cambiemos de Activity
+    @Override
+    protected void onPause() {
+        super.onPause();
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(NAME_KEY, nombre.getText().toString());
+        editor.putString(LAST_NAME_KEY, apellidos.getText().toString());
+        editor.putString(EMAIL_KEY, email.getText().toString());
+        editor.putString(PASSWORD_KEY, password.getText().toString());
+        editor.apply();
     }
 
     @Override
-    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        String editTextValue = savedInstanceState.getString(EDIT_TEXT_VALUE_KEY);
-        email.setText(editTextValue);
-    }*/
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        String nombreValue = sharedPreferences.getString(NAME_KEY, "");
+        String apellidosValue = sharedPreferences.getString(LAST_NAME_KEY, "");
+        String emailValue = sharedPreferences.getString(EMAIL_KEY, "");
+        String passwordValue = sharedPreferences.getString(PASSWORD_KEY, "");
+
+        nombre.setText(nombreValue);
+        apellidos.setText(apellidosValue);
+        email.setText(emailValue);
+        password.setText(passwordValue);
+    }
 }
