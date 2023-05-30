@@ -214,11 +214,11 @@ public class Muestrario extends AppCompatActivity {
 
     // Obtenemos el textView. Guardamos en esta variable el TextView a través del padre
 
-    TextView ProductoTextView = parent.findViewById(R.id.textViewMuestraProducto);
+    //TextView ProductoTextView = parent.findViewById(R.id.textViewMuestraProducto);
 
     // Ahora necesitamos el contenido del anterior TextView, que guardaremoms en la variable siguiente
 
-        String producto = ProductoTextView.getText().toString();
+        //String producto = ProductoTextView.getText().toString();
 
     //
 

@@ -29,13 +29,13 @@ import java.util.Objects;
 
 public class VentasRealizadas extends AppCompatActivity {
 
-    FirebaseAuth mAuth;
-    FirebaseFirestore db;
-    String emailUsuario;
+    private FirebaseAuth mAuth;
+    private FirebaseFirestore db;
+    private String emailUsuario;
 
-    ListView listViewVentas;
-    List<String> listaIdVentas = new ArrayList<>();
-    ArrayAdapter<String> mAdapterVentas;
+    private ListView listViewVentas;
+    private List<String> listaIdVentas = new ArrayList<>();
+    private ArrayAdapter<String> mAdapterVentas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
