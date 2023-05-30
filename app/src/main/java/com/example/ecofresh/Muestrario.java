@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -14,6 +17,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.EventListener;
@@ -21,6 +25,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -37,10 +43,21 @@ public class Muestrario extends AppCompatActivity {
     String emailUsuario;
 
     ListView listViewProductos;
-    List<String> listaImagenes = new ArrayList<>();
+    List<String> listaImagenes ;
 
-    List<String> listaIdProductos = new ArrayList<>();
+    List<String> listaIdProductos ;
     ArrayAdapter<String> mAdapterProductos;
+
+    StorageReference storageReference;
+    String storage_path = "images/";
+
+    private static final int COD_SEL_STORAGE = 200;
+    private static final int COD_SEL_IMAGE = 300;
+
+    private Uri image_url;
+    String photo = "photo";
+    //String idd;
+
 
     private ImageView imageProducto;
 
@@ -49,15 +66,23 @@ public class Muestrario extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_muestrario);
+        //setContentView(R.layout.item_muestrario);
 
         // Obtener los datos de la venta de la venta del Intent.
         String nombreProducto = getIntent().getStringExtra("producto");
+
+        // Aquí inicializo las instancias de Firebase
+
+        db = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
+        emailUsuario = mAuth.getCurrentUser().getEmail();
+        storageReference = FirebaseStorage.getInstance().getReference();
 
         //Inicializamos la imágen
         imageProducto = findViewById(R.id.imageProducto);
 
         listViewProductos = findViewById(R.id.listViewProductos);
-        listViewProductos.setAdapter(mAdapterProductos);
+        //listViewProductos.setAdapter(mAdapterProductos);
 
         // Con esta linea ocultamos el actionBar, la barra de acción situada arriba de todo
         getSupportActionBar().hide();
@@ -80,18 +105,7 @@ public class Muestrario extends AppCompatActivity {
             }
         });
 
-
-
-        // Aquí inicializo las instancias de Firebase
-
-        db = FirebaseFirestore.getInstance();
-        mAuth = FirebaseAuth.getInstance();
-        emailUsuario = mAuth.getCurrentUser().getEmail();
-        listViewProductos = findViewById(R.id.listViewProductos);
-
-
         // Una vez que entra el usuario a esta activity debemos actualizar la interfaz de usuario con sus propias ventas, del usuario logueado
-
         actualizarUI( nombreProducto);
 
 
@@ -127,6 +141,8 @@ public class Muestrario extends AppCompatActivity {
                                         // imageProducto.setImageResource(R.drawable.placeholder_image);
                                         // O simplemente:
                                         // imageProducto.setImageDrawable(null);
+                                        mAdapterProductos = new ArrayAdapter<>(Muestrario.this, R.layout.item_muestrario, R.id.imageProducto, listaImagenes);
+                                        listViewProductos.setAdapter(mAdapterProductos);
                                     }
                                 }
                             }
@@ -150,10 +166,10 @@ public class Muestrario extends AppCompatActivity {
 
                        listaVentas = new ArrayList<>();
 
-                        listaImagenes.clear(); // Limpiar la lista de imágenes antes de agregar las nuevas
+                        //listaImagenes.clear(); // Limpiar la lista de imágenes antes de agregar las nuevas
 
 
-                     
+                        listaIdProductos = new ArrayList<>();
 
                         for (QueryDocumentSnapshot doc : value) {
                             listaIdProductos.add(doc.getId());
@@ -175,7 +191,24 @@ public class Muestrario extends AppCompatActivity {
                                     "  Stock:           " + cantidad + "\n" +
                                     "  Precio:          " + precio;
 
-                            // Agrega la cadena a la lista
+
+                            String imageUrl = doc.getString("producto.photoUrls");
+                            /*try {
+                                if(!imageUrl.equals("")){
+                                    Toast toast = Toast.makeText(getApplicationContext(), "Cargando foto", Toast.LENGTH_SHORT);
+                                    toast.setGravity(Gravity.TOP,0,200);
+                                    toast.show();
+                                    Picasso.with(Muestrario.this)
+                                            .load(imageUrl)
+                                            .resize(150, 150)
+                                            .into(imageUrl);
+                                }
+                            }catch (Exception ee){
+                                Log.v("Error", "e: " + e);
+                            }*/
+
+
+                    // Agrega la cadena a la lista
                             listaVentas.add(venta);
                         }
 
@@ -185,7 +218,7 @@ public class Muestrario extends AppCompatActivity {
                             mAdapterProductos = new ArrayAdapter<>(Muestrario.this, R.layout.item_muestrario, R.id.textViewProducto, listaVentas);
                             listViewProductos.setAdapter(mAdapterProductos);
                         }
-                        for (QueryDocumentSnapshot doc : value) {
+                        /*for (QueryDocumentSnapshot doc : value) {
 
 
                             String imageUrl = doc.getString("producto.photoUrls");
@@ -196,8 +229,10 @@ public class Muestrario extends AppCompatActivity {
                                 // Si no hay una URL de imagen válida, puedes mostrar una imagen de relleno o dejarla vacía.
                                 // Por ejemplo:
                                 //listaImagenes.add(""); // Agrega una cadena vacía
+                                mAdapterProductos = new ArrayAdapter<>(Muestrario.this, R.layout.item_muestrario, R.id.imageProducto, listaImagenes);
+                                listViewProductos.setAdapter(mAdapterProductos);
                             }
-                        }
+                        }*/
 
                         //mAdapterProductos.notifyDataSetChanged(); // Notificar al adaptador que los datos han cambiado
                     }
@@ -226,9 +261,6 @@ public class Muestrario extends AppCompatActivity {
 
 
     }
-
-
-
 
 
 }
