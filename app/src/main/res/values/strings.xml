@@ -212,7 +212,7 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
     <!-- Texto de la activity_ultimo_paso -->
 
     <string name="text_casi">¡Ya casi está!</string>
-    <string name="text_pago">Este producto será pagado \n      a contra reembolso</string>
+    <string name="text_pago">El pago se realizará \na contra reembolso</string>
     <string name="hintCantidadFinal">             Kg</string>
     <string name="text_titulo_direccion">Datos de dirección*</string>
     <string name="text_calle">Calle/Avd*</string>
