@@ -77,7 +77,7 @@
     <RelativeLayout
         android:id="@+id/marcador1"
         android:layout_width="411dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/persona"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
@@ -99,9 +99,9 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="17dp"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="0dp"
-            android:layout_marginBottom="14dp"
+            android:layout_marginBottom="10dp"
             android:fontFamily="sans-serif-black"
             android:text="@string/text_compras"
             android:textColor="@color/texto_cliente1"
@@ -117,11 +117,11 @@
     <RelativeLayout
         android:id="@+id/marcador2"
         android:layout_width="411dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/persona"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="29dp"
         android:background="@color/marcadores_compras_ventas"
         app:layout_constraintEnd_toEndOf="parent"
@@ -138,9 +138,9 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="17dp"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="0dp"
-            android:layout_marginBottom="14dp"
+            android:layout_marginBottom="10dp"
             android:fontFamily="sans-serif-black"
             android:text="@string/text_ventas"
             android:textColor="@color/texto_cliente1"
@@ -148,6 +148,42 @@
     </RelativeLayout>
 
     <!-- Este es el contenedor de cuenta, de separación con respecto a las transacciones -->
+
+
+    <RelativeLayout
+        android:id="@+id/marcador3"
+        android:layout_width="411dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/persona"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="29dp"
+        android:background="@color/marcadores_compras_ventas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/marcador2">
+
+        <TextView
+            android:id="@+id/textProductosCuenta"
+            android:layout_width="300dp"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/text_misproductos"
+            android:textColor="@color/texto_cliente1"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <!-- Estos son los textos de los datos personales -->
 
     <RelativeLayout
         android:id="@+id/separador1"
@@ -162,7 +198,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/marcador2">
+        app:layout_constraintTop_toBottomOf="@+id/marcador3">
 
 
         <TextView
@@ -183,9 +219,6 @@
             app:layout_constraintStart_toStartOf="parent" />
 
     </RelativeLayout>
-
-    <!-- Estos son los textos de los datos personales -->
-
 
     <TextView
         android:id="@+id/textViewNombre"
