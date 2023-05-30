@@ -43,7 +43,7 @@ public class Registro extends AppCompatActivity {
     CheckBox checkBoxCondiciones;
     EditText nombre, apellidos, email, password;
 
-    //private static final String EDIT_TEXT_VALUE_KEY = "edit_text_value";
+
     private static final String NAME_KEY = "name";
     private static final String LAST_NAME_KEY = "last_name";
     private static final String EMAIL_KEY = "email";

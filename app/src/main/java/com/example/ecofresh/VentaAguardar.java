@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -61,6 +62,13 @@ public class VentaAguardar extends AppCompatActivity {
 
     private String nombre, apellidos, telefono, direccion, localidad, email, vendedor;
 
+    private static final String CATEGORY_KEY = "text_auto";
+    private static final String PRODUCTOS_KEY = "cajaProductos";
+    private static final String CANTIDAD_KEY = "cajaCantidad";
+    private static final String PRECIO_KEY = "cajaPrecio";
+    private static final String LOCALIDAD_KEY = "cajaLocalidad";
+
+    EditText productos, cantidad, precio, localidadGuardar;
     private FirebaseUser currentUser;
     private ActivityResultLauncher<Intent> cameraLauncher;
 
@@ -269,6 +277,35 @@ public class VentaAguardar extends AppCompatActivity {
                     // Error al guardar la venta
                     Toast.makeText(VentaAguardar.this, "Error al guardar la venta", Toast.LENGTH_SHORT).show();
                 });
+    }
+
+    //Métodos para que la información escrita en los editText se mantenga cuando cambiemos de Activity
+    @Override
+    protected void onPause() {
+        super.onPause();
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+       // editor.putString(CATEGORY_KEY, categorias.getText().toString());
+        editor.putString(PRODUCTOS_KEY,productos.getText().toString());
+        editor.putString(CANTIDAD_KEY, cantidad.getText().toString());
+        editor.putString(PRECIO_KEY, precio.getText().toString());
+        editor.putString(LOCALIDAD_KEY, localidadGuardar.getText().toString());
+        editor.apply();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        String productosValue = sharedPreferences.getString(PRODUCTOS_KEY, "");
+        String cantidadValue = sharedPreferences.getString(CANTIDAD_KEY, "");
+        String precioValue = sharedPreferences.getString(PRECIO_KEY, "");
+        String localidadValue = sharedPreferences.getString(LOCALIDAD_KEY, "");
+
+        productos.setText(productosValue);
+        cantidad.setText(cantidadValue);
+        precio.setText(precioValue);
+        localidadGuardar.setText(localidadValue);
     }
 
 }
