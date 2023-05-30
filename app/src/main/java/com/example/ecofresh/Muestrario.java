@@ -1,8 +1,5 @@
 package com.example.ecofresh;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,10 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.EventListener;
@@ -81,7 +80,10 @@ public class Muestrario extends AppCompatActivity {
         });
 
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> a11adf6d5affd469d5d100b2bb4d411d102d9493
         // Aquí inicializo las instancias de Firebase
 
         db = FirebaseFirestore.getInstance();
@@ -153,7 +155,10 @@ public class Muestrario extends AppCompatActivity {
                         listaImagenes.clear(); // Limpiar la lista de imágenes antes de agregar las nuevas
 
 
+<<<<<<< HEAD
+=======
                      
+>>>>>>> a11adf6d5affd469d5d100b2bb4d411d102d9493
 
                         for (QueryDocumentSnapshot doc : value) {
                             listaIdProductos.add(doc.getId());
@@ -206,6 +211,9 @@ public class Muestrario extends AppCompatActivity {
 
     }
 
+<<<<<<< HEAD
+    public void mostrarProducto (View view) {
+=======
     public void mostrarProducto (View view){
 
     // Así obtenemos acceso al padre del textView, en este caso es el listView
@@ -221,11 +229,19 @@ public class Muestrario extends AppCompatActivity {
         //String producto = ProductoTextView.getText().toString();
 
     //
+>>>>>>> a11adf6d5affd469d5d100b2bb4d411d102d9493
 
+        View parent = (View) view.getParent();
+        TextView ProductosTextView = parent.findViewById(R.id.textViewProducto);
+        Intent intent = new Intent(Muestrario.this, UltimoPasoCompra.class);
+        // Arrancamos el evento que acabamos de crear
+        startActivity(intent);
 
 
 
     }
+
+
 
 
 
