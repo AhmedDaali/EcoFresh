@@ -80,10 +80,7 @@ public class Muestrario extends AppCompatActivity {
         });
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> a11adf6d5affd469d5d100b2bb4d411d102d9493
         // Aquí inicializo las instancias de Firebase
 
         db = FirebaseFirestore.getInstance();
@@ -155,10 +152,7 @@ public class Muestrario extends AppCompatActivity {
                         listaImagenes.clear(); // Limpiar la lista de imágenes antes de agregar las nuevas
 
 
-<<<<<<< HEAD
-=======
-                     
->>>>>>> a11adf6d5affd469d5d100b2bb4d411d102d9493
+
 
                         for (QueryDocumentSnapshot doc : value) {
                             listaIdProductos.add(doc.getId());
@@ -211,25 +205,9 @@ public class Muestrario extends AppCompatActivity {
 
     }
 
-<<<<<<< HEAD
+
     public void mostrarProducto (View view) {
-=======
-    public void mostrarProducto (View view){
 
-    // Así obtenemos acceso al padre del textView, en este caso es el listView
-
-    View parent = (View) view.getParent();
-
-    // Obtenemos el textView. Guardamos en esta variable el TextView a través del padre
-
-    //TextView ProductoTextView = parent.findViewById(R.id.textViewMuestraProducto);
-
-    // Ahora necesitamos el contenido del anterior TextView, que guardaremoms en la variable siguiente
-
-        //String producto = ProductoTextView.getText().toString();
-
-    //
->>>>>>> a11adf6d5affd469d5d100b2bb4d411d102d9493
 
         View parent = (View) view.getParent();
         TextView ProductosTextView = parent.findViewById(R.id.textViewProducto);
