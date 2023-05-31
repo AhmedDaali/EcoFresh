@@ -1,12 +1,13 @@
 package com.example.ecofresh;
 
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.EventListener;
@@ -26,6 +27,8 @@ public class ProductosVenta extends AppCompatActivity {
     private String emailUsuario;
 
     private ListView listViewVentas;
+
+    private List<String> listaVentas;
     private List<String> listaIdVentas = new ArrayList<>();
     private ArrayAdapter<String> mAdapterVentas;
 
@@ -61,7 +64,7 @@ public class ProductosVenta extends AppCompatActivity {
                             return;
                         }
 
-                        List<String> listaVentas = new ArrayList<>();
+                        listaVentas = new ArrayList<>();
                         for (QueryDocumentSnapshot doc : value) {
                             listaIdVentas.add(doc.getId());
 
@@ -74,7 +77,7 @@ public class ProductosVenta extends AppCompatActivity {
                             // Combina los datos en una sola cadena
                             String venta = "  Producto:     " + nombre + "\n" +
                                     "  Cantidad:     " + cantidad + "\n" +
-                                    "  Precio:          " + precio;
+                                    "  Precio:          " + precio + "€";
 
                             // Agrega la cadena a la lista
                             listaVentas.add(venta);
@@ -89,4 +92,46 @@ public class ProductosVenta extends AppCompatActivity {
                     }
                 });
     }
+
+
+// El view que le pasamos a este método es el botón.
+
+    public void retirarProducto(View view){
+
+
+        // Necesitamos obtener al padre, que es otro view y guardarlo en la variable parent.
+        // necesitamos hacer un casting para que sea del mismo tipo  el padre con la variable parent.
+
+        View parent = (View) view.getParent();
+
+        // A través del padre, obtendremos el textView que contiene la información y guardarlo en otra variable.
+
+        TextView productoTextView = parent.findViewById(R.id.ProductoVenta);
+
+        // Ahora de la caja de texto necesitamos el contenido, que guardaremos en otra variable intermedia.
+        // Para conseguir el contenido, tenemos la caja, productoTextView, conseguimos el texto y lo pasamos a string.
+
+        String producto = productoTextView.getText().toString();
+
+        // Como la posición del producto, coincide con la posición del id, vamos a obtener al identificador del producto primero para después encontrar el producto.
+        // Sacamos la posición de este producto en la lista. la lista de productos tiene un método que se llama indexOf para sacar la posición.
+
+        int posicion = listaVentas.indexOf(producto);
+
+        // Ahora haremos el borrado de datos en la BBDD. Accedemos a la colección 'Ventas'
+        // A continuación al documento cuyo identificador estará en la lista de identificadores
+        // De esa lista obtener el identificador que está en la posición que hemos conseguido anteriormente
+
+        db.collection("Ventas").document(listaIdVentas.get(posicion)).delete();
+
+
+    }
+
+
+
+
+
+
+
+
 }

@@ -82,7 +82,7 @@ public class ConfirmVenta extends AppCompatActivity {
         //Colocar los datos de la venta en los textView
         cantidad.setText("Cantidad:    " + cantidadVenta+"Kg");
         nombreProducto.setText("Producto:   " + productoVenta);
-        precio.setText("Precio/Kg:  " + precioVenta);
+        precio.setText("Precio/Kg:  " + precioVenta + "€/kg");
         localidad.setText("Localidad:  " + localidadVenta);
         imageView.setImageBitmap(photo);
 
