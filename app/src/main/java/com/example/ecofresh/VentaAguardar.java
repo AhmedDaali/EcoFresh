@@ -179,21 +179,9 @@ public class VentaAguardar extends AppCompatActivity {
                     // Arrancamos el evento que acabamos de crear
                     startActivity(intent);
 
-
-
                     // Finalizar la actividad actual
-                    finish();
-                    //Si los campos  están vacios, devuelve error.
-                }else if(categoria.isEmpty()){
-                        autoCategoria.setError("Campo vacío.");
-                }else if (nombreProducto.isEmpty()) {
-                        productoEditText.setError("Campo vacío.");
-                }else if (cantidad.isEmpty()) {
-                        cantidadEditText.setError("Campo vacío.");
-                }else if (precio.isEmpty()) {
-                        precioEditext.setError("Campo vacío.");
-                }else if (localidad.isEmpty()) {
-                        localidadEditext.setError("Campo vacío.");*/
+                    finish();*/
+
                 } else {
                     Toast.makeText(VentaAguardar.this, "Captura una foto antes de guardar la venta", Toast.LENGTH_SHORT).show();
                 }
@@ -260,14 +248,14 @@ public class VentaAguardar extends AppCompatActivity {
                     // Obtener el ID del documento de la venta recién guardada
                     String ventaId = documentReference.getId();
 
-                    /*// Pasar los datos de la venta como dato extra en el Intent
+                    // Pasar los datos de la venta como dato extra en el Intent
                     Intent intent = new Intent(VentaAguardar.this, ConfirmVenta.class);
                     intent.putExtra("cantidad", cantidad);
                     intent.putExtra("producto", nombreProducto);
                     intent.putExtra("localidad", localidad);
                     intent.putExtra("precio", precio);
                     intent.putExtra("photo", photo);
-                    startActivity(intent);*/
+                    startActivity(intent);
 
                     // Finalizar la actividad actual
                     finish();
