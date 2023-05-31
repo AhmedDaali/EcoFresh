@@ -23,7 +23,7 @@
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logazo" />
 
     <Button
         android:id="@+id/botonGoogle"
@@ -80,7 +80,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="70dp"
+        android:layout_marginEnd="55dp"
         android:fontFamily="sans-serif-black"
         android:text="@string/textLogin"
         android:textColor="@color/textLogin"

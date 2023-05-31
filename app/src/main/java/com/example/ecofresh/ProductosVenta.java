@@ -77,7 +77,7 @@ public class ProductosVenta extends AppCompatActivity {
                             // Combina los datos en una sola cadena
                             String venta = "  Producto:     " + nombre + "\n" +
                                     "  Cantidad:     " + cantidad + "\n" +
-                                    "  Precio:          " + precio;
+                                    "  Precio:          " + precio + "€";
 
                             // Agrega la cadena a la lista
                             listaVentas.add(venta);
