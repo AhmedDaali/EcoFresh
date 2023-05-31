@@ -1,70 +1,74 @@
 package com.example.ecofresh.modelo.entidad;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Producto {
 
-    private String nombre = "";
-    private String precio = "";
-    private String categoria = "";
-
-    private String localidad= "";
-
-    private String photoUrls;
-
-
-    public Producto(String nombre, String precio, String categoria, String localidad, String photoUrls) {
-        this.nombre = nombre;
-        this.precio = precio;
-        this.categoria = categoria;
-        this.localidad = localidad;
-        this.photoUrls = photoUrls;
+    Map<String, Object> producto = new HashMap<>();
+    public Producto(String nombre, float precio, String categoria, String localidad, String photoUrls) {
+        producto.put("nombre", nombre);
+        producto.put("precio", precio);
+        producto.put("categoria", categoria);
+        producto.put("localidad", localidad);
+        producto.put("photoUrls", photoUrls);
+    }
+    public Producto(String nombre, float precio,  String localidad) {
+        producto.put("nombre", nombre);
+        producto.put("precio", precio);
+        producto.put("localidad", localidad);
     }
     public Producto() {
     }
 
+    public float getPrecio() {
+
+        return (float) producto.get("precio");
+    }
+
+    public void setPrecio(float precio) {
+
+        producto.put("precio", precio);
+    }
 
     public String getNombre() {
-        return nombre;
+
+        return (String)  producto.get("nombre");
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+
+        producto.put("nombre", nombre);
     }
 
-    public String getPrecio() {
-        return precio;
+    public String getLocalidad() {
+
+        return (String) producto.get("localidad");
     }
 
-    public void setPrecio(String precio) {
+    public void setLocalidad(String localidad) {
 
-        this.precio = precio;
+        producto.put("localidad", localidad);
     }
 
     public String getCategoria() {
-        return categoria;
+
+        return (String) producto.get("categoria");
     }
 
     public void setCategoria(String categoria) {
 
-        this.categoria = categoria;
-    }
-
-    public String getLocalidad() {
-        return localidad;
-    }
-
-    public void setLocalidad(String localidad) {
-        this.localidad = localidad;
+        producto.put("categoria", categoria);
     }
 
     public String getPhotoUrls() {
-        return photoUrls;
+        return (String) producto.get("photoUrls");
     }
 
     public void setPhotoUrls(String photoUrls) {
-        this.photoUrls = photoUrls;
-    }
 
+        producto.put("photoUrls", photoUrls);
+    }
 
 }

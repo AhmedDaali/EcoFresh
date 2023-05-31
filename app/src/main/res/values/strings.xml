@@ -164,6 +164,7 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
 
     <string name="text_ventas_realizadas">Estas han sido tus ventas</string>
     <string name="text_compras_realizadas">Estas han sido tus compras</string>
+    <string name="text_boton_retirar">Retirar</string>
 
     <!-- Texto de la activity_frutas -->
 

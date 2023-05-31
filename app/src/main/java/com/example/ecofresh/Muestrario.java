@@ -33,7 +33,8 @@ public class Muestrario extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     FirebaseFirestore db;
-    String emailUsuario;
+    String emailUsuario, vendedor, nombre, localidad ;
+    private float cantidad, precio;
 
     ListView listViewProductos;
     List<String> listaImagenes = new ArrayList<>();
@@ -158,13 +159,13 @@ public class Muestrario extends AppCompatActivity {
 
 
 
-                            String cantidad = doc.getString("cantidad");
-                            String vendedor = doc.getString("vendedor");
+                            cantidad = Float.parseFloat(doc.getString("cantidad"));
+                            vendedor = doc.getString("vendedor");
 
                             // Obtiene los datos del producto directamente del documento actual
-                            String precio = doc.getString("producto.precio");
-                            String nombre = doc.getString("producto.nombre");
-                            String localidad = doc.getString("producto.localidad");
+                            precio = Float.parseFloat(doc.getString("producto.precio"));
+                            nombre = doc.getString("producto.nombre");
+                            localidad = doc.getString("producto.localidad");
 
                             // Combina los datos en una sola cadena
                             String venta = "  Producto:     " + nombre + "\n" +
@@ -221,6 +222,12 @@ public class Muestrario extends AppCompatActivity {
 
         TextView ProductosTextView = parent.findViewById(R.id.textViewProducto);
         Intent intent = new Intent(Muestrario.this, UltimoPasoCompra.class);
+
+        intent.putExtra("cantidad", cantidad);
+        intent.putExtra("producto", nombre);
+        intent.putExtra("localidad", localidad);
+        intent.putExtra("precio", precio);
+        intent.putExtra("vendedor", vendedor);
         // Arrancamos el evento que acabamos de crear
         startActivity(intent);
 
