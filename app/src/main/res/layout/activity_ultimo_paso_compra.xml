@@ -54,7 +54,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="28dp"
             android:fontFamily="sans-serif-black"
             android:text="@string/text_cantidad"
             android:textColor="@color/texto_cliente1"
@@ -64,11 +64,11 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="135dp"
-            android:layout_height="22dp"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:layout_toEndOf="@+id/textCantidad">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -76,10 +76,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/datosVenta"
-                android:hint="@string/hintCantidadFinal"
-                android:textSize="14dp"
-                tools:ignore="TouchTargetSizeCheck,TextSizeCheck" />
+                android:hint="@string/hintCantidad"
+                android:textColorHint="@color/texto_autocomplete"
+                android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
+
+       <!--
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/LayoutCantidad"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="@+id/LayoutLocalidad"
+            app:layout_constraintTop_toBottomOf="@+id/LayoutProductos">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cajaCantidad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/datosVenta"
+                android:hint="@string/hintCantidad"
+                android:textColorHint="@color/texto_autocomplete"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        -->
 
 
         <!-- Este es el segundo texto de indicación de cantidad de esta activity -->
@@ -101,6 +122,8 @@
 
         <!-- Este es el tercer texto de indicación del producto de esta activity -->
 
+        <!-- Este es el cuarto texto de indicación del precio de esta activity -->
+
         <TextView
             android:id="@+id/textVendedor"
             android:layout_width="wrap_content"
@@ -109,14 +132,12 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
             android:fontFamily="sans-serif-black"
             android:text="@string/text_producto"
             android:textColor="@color/texto_cliente1"
             android:textSize="16sp" />
-
-        <!-- Este es el cuarto texto de indicación del precio de esta activity -->
 
         <TextView
             android:id="@+id/textPrecio"

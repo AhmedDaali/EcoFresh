@@ -3,6 +3,7 @@ package com.example.ecofresh;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -47,6 +48,8 @@ public class ProductosVenta extends AppCompatActivity {
         emailUsuario = mAuth.getCurrentUser().getEmail();
         listViewVentas = findViewById(R.id.listViewProductosVentas);
 
+
+
         // Una vez que entra el usuario a esta activity debemos actualizar la interfaz de usuario con sus propias ventas, del usuario logueado
 
         actualizarUI();
@@ -86,7 +89,7 @@ public class ProductosVenta extends AppCompatActivity {
                         if (listaVentas.size() == 0) {
                             listViewVentas.setAdapter(null);
                         } else {
-                            mAdapterVentas = new ArrayAdapter<>(ProductosVenta.this, R.layout.item_productos_venta, R.id.textViewVenta, listaVentas);
+                            mAdapterVentas = new ArrayAdapter<>(ProductosVenta.this, R.layout.item_productos_venta, R.id.ProductoVenta, listaVentas);
                             listViewVentas.setAdapter(mAdapterVentas);
                         }
                     }
@@ -118,11 +121,11 @@ public class ProductosVenta extends AppCompatActivity {
 
         int posicion = listaVentas.indexOf(producto);
 
-        // Ahora haremos el borrado de datos en la BBDD. Accedemos a la colección 'Ventas'
+        // Ahora haremos el borrado de datos en la BBDD. Accedemos a la colección 'VentasRealizadas'
         // A continuación al documento cuyo identificador estará en la lista de identificadores
         // De esa lista obtener el identificador que está en la posición que hemos conseguido anteriormente
 
-        db.collection("Ventas").document(listaIdVentas.get(posicion)).delete();
+        db.collection("VentasRealizadas").document(listaIdVentas.get(posicion)).delete();
 
 
     }
