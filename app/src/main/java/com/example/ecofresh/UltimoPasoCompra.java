@@ -74,12 +74,19 @@ public class UltimoPasoCompra extends AppCompatActivity {
 
         botonConfirm = findViewById(R.id.btnMenu);
 
+        // Obtener los datos de la venta de la venta del Intent.
+        String cantidad = getIntent().getStringExtra("cantidad");
+        String producto = getIntent().getStringExtra("producto");
+        String precio = getIntent().getStringExtra("precio");
+        String vendedor = getIntent().getStringExtra("vendedor");
+
+
 
         // Obtener referencia al documento del usuario en Firestore
         //DocumentReference usuarioRef = db.collection("usuarios").document(currentUser.getEmail());
 
         // Obtener los datos del usuario desde Firestore
-        obtenerDatosCompra();
+        //obtenerDatosCompra();
 
         botonConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,17 +132,22 @@ public class UltimoPasoCompra extends AppCompatActivity {
         });
 
         // Obtener los nuevos datos del usuario desde los EditText y TextView
+        // Obtener los datos de la venta de la venta del Intent.
+        String cantidad = String.valueOf(Float.parseFloat(getIntent().getStringExtra("cantidad")));
+        String producto = getIntent().getStringExtra("producto");
+        String precio = String.valueOf(Float.parseFloat(getIntent().getStringExtra("precio")));
+        String vendedor = getIntent().getStringExtra("vendedor");
         nombreProducto = productoTextView.getText().toString().trim();
         localidad = localidadTextView.getText().toString().trim();
-        precio = Float.parseFloat(precioTextView.getText().toString().trim());
+        //precio = Float.parseFloat(precioTextView.getText().toString().trim());
         vendedor = vendedorTextView.getText().toString().trim();
-        cantidad = Float.parseFloat(cantidadEditText.getText().toString().trim());
+        //cantidad = Float.parseFloat(cantidadEditText.getText().toString().trim());
         calle = calleEditText.getText().toString().trim();
         cp = cpEditext.getText().toString().trim();
         localidadEnvio = localidadEditext.getText().toString().trim();
 
         // Crea un objeto DireccionEnvio
-        DireccionEnvio direccionEnvio = new DireccionEnvio(calle, localidadEnvio,cp );
+        /*DireccionEnvio direccionEnvio = new DireccionEnvio(calle, localidadEnvio,cp );
         // Crea un objeto Producto
         Producto producto = new Producto(nombreProducto, precio, localidad);
         // Crea un objeto Compra con los datos de la compra
