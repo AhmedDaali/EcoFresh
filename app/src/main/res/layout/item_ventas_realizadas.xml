@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/textViewVenta"
-        android:layout_width="286dp"
-        android:layout_height="114dp"
+        android:layout_width="412dp"
+        android:layout_height="121dp"
         android:layout_marginTop="4dp"
         android:fontFamily="sans-serif-black"
         android:text="TextViewCantidad"
@@ -19,20 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/buttonRetirar"
-        android:layout_width="99dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/text_boton_retirar"
-        android:textColor="@color/dunkel_text_boton"
-        android:fontFamily="sans-serif-black"
-        android:backgroundTint="@color/verde_email_cliente"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.384"
-        app:layout_constraintStart_toEndOf="@+id/textViewVenta"
-        app:layout_constraintTop_toTopOf="parent"
-        app:cornerRadius="32sp"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
