@@ -41,7 +41,7 @@ public class VentaAguardar extends AppCompatActivity {
 
 
     // Variable que guardará la referencia del botón subir foto
-    Button botonSubirFoto;
+    private Button botonSubirFoto;
 
     // Variable que guardará la referencia del botón Confirmar
     private Button botonConfirm;
@@ -175,15 +175,16 @@ public class VentaAguardar extends AppCompatActivity {
                     // De momento queremos que al hacer click en el botón pasemos a la siguiente activity_confirm_venta.
                     // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_confirm_venta (ConfirmVenta.class)
 
-                    Intent intent = new Intent(VentaAguardar.this, ConfirmVenta.class);
+                    /*Intent intent = new Intent(VentaAguardar.this, ConfirmVenta.class);
                     // Arrancamos el evento que acabamos de crear
-
                     startActivity(intent);
+
+
 
                     // Finalizar la actividad actual
                     finish();
                     //Si los campos  están vacios, devuelve error.
-                /*}else if(categoria.isEmpty()){
+                }else if(categoria.isEmpty()){
                         autoCategoria.setError("Campo vacío.");
                 }else if (nombreProducto.isEmpty()) {
                         productoEditText.setError("Campo vacío.");
@@ -259,14 +260,14 @@ public class VentaAguardar extends AppCompatActivity {
                     // Obtener el ID del documento de la venta recién guardada
                     String ventaId = documentReference.getId();
 
-                    // Pasar los datos de la venta como dato extra en el Intent
+                    /*// Pasar los datos de la venta como dato extra en el Intent
                     Intent intent = new Intent(VentaAguardar.this, ConfirmVenta.class);
                     intent.putExtra("cantidad", cantidad);
                     intent.putExtra("producto", nombreProducto);
                     intent.putExtra("localidad", localidad);
                     intent.putExtra("precio", precio);
                     intent.putExtra("photo", photo);
-                    startActivity(intent);
+                    startActivity(intent);*/
 
                     // Finalizar la actividad actual
                     finish();

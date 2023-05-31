@@ -73,9 +73,9 @@ public class ConfirmVenta extends AppCompatActivity {
         obtenerDatosUsuario();
 
         // Obtener los datos de la venta de la venta del Intent.
-        String cantidadVenta = getIntent().getStringExtra("cantidad");
+        float cantidadVenta = Float.parseFloat(getIntent().getStringExtra("cantidad"));
         String productoVenta = getIntent().getStringExtra("producto");
-        String  precioVenta= getIntent().getStringExtra("precio");
+        float  precioVenta= Float.parseFloat(getIntent().getStringExtra("precio"));
         String localidadVenta = getIntent().getStringExtra("localidad");
         photo = getIntent().getParcelableExtra("photo");
 

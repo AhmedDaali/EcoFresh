@@ -75,18 +75,20 @@ public class UltimoPasoCompra extends AppCompatActivity {
         botonConfirm = findViewById(R.id.btnMenu);
 
         // Obtener los datos de la venta de la venta del Intent.
-        String cantidad = getIntent().getStringExtra("cantidad");
-        String producto = getIntent().getStringExtra("producto");
-        String precio = getIntent().getStringExtra("precio");
-        String vendedor = getIntent().getStringExtra("vendedor");
+        nombreProducto = getIntent().getStringExtra("producto");
+        localidad = getIntent().getStringExtra("localidad");
+        precio = (float) getIntent().getDoubleExtra("precio",precio);
+        vendedor = getIntent().getStringExtra("vendedor");
 
+        //Colocar los datos de la venta en los textView
+        productoTextView.setText("Producto:   " + nombreProducto);
+        precioTextView.setText("Precio€/kg:  " + precio );
+        localidadTextView.setText("Localidad:  " + localidad);
+        vendedorTextView.setText("Vendedor:    "+vendedor);
 
-
-        // Obtener referencia al documento del usuario en Firestore
-        //DocumentReference usuarioRef = db.collection("usuarios").document(currentUser.getEmail());
 
         // Obtener los datos del usuario desde Firestore
-        //obtenerDatosCompra();
+        obtenerDatosCompra();
 
         botonConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,9 +98,14 @@ public class UltimoPasoCompra extends AppCompatActivity {
                 if (cantidadEditText != null&& calleEditText != null && cpEditext != null && localidadEditext !=null) {
                     guardarCompra();
                     Intent intent = new Intent(UltimoPasoCompra.this, ConfirmCompra.class);
-                    // Arrancamos el evento que acabamos de crear
 
+                    // Arrancamos el evento que acabamos de crear
                     startActivity(intent);
+
+                    intent.putExtra("cantidad", cantidad);
+                    intent.putExtra("producto", nombreProducto);
+                    intent.putExtra("localidad", localidad);
+                    intent.putExtra("precio", precio);
 
                     // Finalizar la actividad actual
                     finish();
@@ -132,26 +139,28 @@ public class UltimoPasoCompra extends AppCompatActivity {
         });
 
         // Obtener los nuevos datos del usuario desde los EditText y TextView
-        // Obtener los datos de la venta de la venta del Intent.
-        String cantidad = String.valueOf(Float.parseFloat(getIntent().getStringExtra("cantidad")));
-        String producto = getIntent().getStringExtra("producto");
-        String precio = String.valueOf(Float.parseFloat(getIntent().getStringExtra("precio")));
-        String vendedor = getIntent().getStringExtra("vendedor");
         nombreProducto = productoTextView.getText().toString().trim();
         localidad = localidadTextView.getText().toString().trim();
-        //precio = Float.parseFloat(precioTextView.getText().toString().trim());
+        //String precioString = precioTextView.getText().toString().trim();
+        //precioString = precioString.replace("Precio/Kg: ", "");
+        //precio = Float.parseFloat(precioString);
+        precio = Float.parseFloat((precioTextView.getText().toString().trim()).replace("Precio/Kg: ", ""));
         vendedor = vendedorTextView.getText().toString().trim();
-        //cantidad = Float.parseFloat(cantidadEditText.getText().toString().trim());
+        cantidad = Float.parseFloat(cantidadEditText.getText().toString().trim());
         calle = calleEditText.getText().toString().trim();
         cp = cpEditext.getText().toString().trim();
         localidadEnvio = localidadEditext.getText().toString().trim();
 
+        //String cantidad = String.valueOf(Float.parseFloat(getIntent().getStringExtra("cantidad")));
+
         // Crea un objeto DireccionEnvio
-        /*DireccionEnvio direccionEnvio = new DireccionEnvio(calle, localidadEnvio,cp );
+        DireccionEnvio direccionEnvio = new DireccionEnvio(calle, localidadEnvio,cp );
+
         // Crea un objeto Producto
         Producto producto = new Producto(nombreProducto, precio, localidad);
+
         // Crea un objeto Compra con los datos de la compra
-        total = precio*cantidad;
+        total = precio * cantidad;
         Compra compra = new Compra(cantidad, total, producto, comprador, vendedor, direccionEnvio);
 
 
@@ -167,7 +176,7 @@ public class UltimoPasoCompra extends AppCompatActivity {
                     // Obtener el ID del documento de la venta recién guardada
                     String ventaId = documentReference.getId();
 
-                    // Pasar los datos de la venta como dato extra en el Intent
+                    /*// Pasar los datos de la venta como dato extra en el Intent
                     Intent intent = new Intent(UltimoPasoCompra.this, ConfirmVenta.class);
                     intent.putExtra("cantidad", cantidad);
                     intent.putExtra("producto", nombreProducto);
@@ -176,7 +185,7 @@ public class UltimoPasoCompra extends AppCompatActivity {
                     startActivity(intent);
 
                     // Finalizar la actividad actual
-                    finish();
+                    finish();*/
                 })
                 .addOnFailureListener(e -> {
                     // Error al guardar la compra

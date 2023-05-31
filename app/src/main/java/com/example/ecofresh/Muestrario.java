@@ -42,6 +42,8 @@ public class Muestrario extends AppCompatActivity {
     List<String> listaIdProductos = new ArrayList<>();
     ArrayAdapter<String> mAdapterProductos;
 
+    ArrayAdapter<String> mAdapterImagenes;
+
     private ImageView imageProducto;
 
     @SuppressLint({"WrongViewCast", "MissingInflatedId"})
@@ -99,7 +101,7 @@ public class Muestrario extends AppCompatActivity {
 
 
     private void actualizarUI(String nombreProducto) {
-        mAdapterProductos = new ArrayAdapter<String>(Muestrario.this, R.layout.item_muestrario, R.id.imageProducto, listaImagenes ) {
+        mAdapterImagenes = new ArrayAdapter<String>(Muestrario.this, R.layout.item_muestrario, R.id.imageProducto, listaImagenes ) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
@@ -122,11 +124,8 @@ public class Muestrario extends AppCompatActivity {
                                     if (imageUrl != null && !imageUrl.isEmpty()) {
                                         Picasso.get().load(imageUrl).into(imageProducto);
                                     } else {
-                                        // Si no hay una URL de imagen válida, puedes mostrar una imagen de relleno o dejarla vacía.
-                                        // Por ejemplo:
-                                        // imageProducto.setImageResource(R.drawable.placeholder_image);
-                                        // O simplemente:
-                                        // imageProducto.setImageDrawable(null);
+                                                mAdapterImagenes = new ArrayAdapter<>(Muestrario.this, R.layout.item_muestrario, R.id.imageProducto, listaImagenes);
+                                                listViewProductos.setAdapter(mAdapterImagenes);
                                     }
                                 }
                             }
@@ -159,11 +158,11 @@ public class Muestrario extends AppCompatActivity {
 
 
 
-                            cantidad = Float.parseFloat(doc.getString("cantidad"));
+                            cantidad =  doc.getDouble("cantidad").floatValue();
                             vendedor = doc.getString("vendedor");
 
                             // Obtiene los datos del producto directamente del documento actual
-                            precio = Float.parseFloat(doc.getString("producto.precio"));
+                            precio =  doc.getDouble("producto.precio").floatValue();
                             nombre = doc.getString("producto.nombre");
                             localidad = doc.getString("producto.localidad");
 
@@ -184,19 +183,18 @@ public class Muestrario extends AppCompatActivity {
                             mAdapterProductos = new ArrayAdapter<>(Muestrario.this, R.layout.item_muestrario, R.id.textViewProducto, listaVentas);
                             listViewProductos.setAdapter(mAdapterProductos);
                         }
-                        for (QueryDocumentSnapshot doc : value) {
+                        /*for (QueryDocumentSnapshot doc : value) {
 
 
                             String imageUrl = doc.getString("producto.photoUrls");
                             if (imageUrl != null && !imageUrl.isEmpty()) {
                                 listaImagenes.add(imageUrl);
-                               // Picasso.get().load(imageUrl).into(imageProducto);
+                                //Picasso.get().load(imageUrl).into(imageProducto);
                             } else {
-                                // Si no hay una URL de imagen válida, puedes mostrar una imagen de relleno o dejarla vacía.
-                                // Por ejemplo:
-                                //listaImagenes.add(""); // Agrega una cadena vacía
+                                mAdapterImagenes = new ArrayAdapter<>(Muestrario.this, R.layout.item_muestrario, R.id.imageProducto, listaImagenes);
+                                listViewProductos.setAdapter(mAdapterImagenes);
                             }
-                        }
+                        }*/
 
                         //mAdapterProductos.notifyDataSetChanged(); // Notificar al adaptador que los datos han cambiado
                     }
@@ -234,11 +232,6 @@ public class Muestrario extends AppCompatActivity {
 
 
     }
-
-
-
-
-
 
 
 }
