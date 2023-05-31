@@ -64,7 +64,7 @@ public class Hortalizas extends AppCompatActivity {
 
                 Intent intent = new Intent(Hortalizas.this,Muestrario.class);
 
-                intent.putExtra("producto", "zanahoria");
+                intent.putExtra("producto", "zanahorias");
 
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
@@ -99,6 +99,8 @@ public class Hortalizas extends AppCompatActivity {
 
                 Intent intent = new Intent(Hortalizas.this,Muestrario.class);
 
+                intent.putExtra("producto", "tomates");
+
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
 
@@ -115,7 +117,7 @@ public class Hortalizas extends AppCompatActivity {
 
                 Intent intent = new Intent(Hortalizas.this,Muestrario.class);
 
-                intent.putExtra("producto", "ajo");
+                intent.putExtra("producto", "ajos");
 
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
@@ -133,7 +135,7 @@ public class Hortalizas extends AppCompatActivity {
 
                 Intent intent = new Intent(Hortalizas.this,Muestrario.class);
 
-                intent.putExtra("producto", "cebolla");
+                intent.putExtra("producto", "cebollas");
 
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
@@ -152,7 +154,7 @@ public class Hortalizas extends AppCompatActivity {
 
                 Intent intent = new Intent(Hortalizas.this,Muestrario.class);
 
-                intent.putExtra("producto", "pimiento");
+                intent.putExtra("producto", "pimientos");
 
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);

@@ -234,6 +234,7 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
     <!-- Texto de la activity_productos_venta -->
 
     <string name="text_productos_venta">¡A la venta!</string>
+    <string name="total">Total:</string>
 
 
 </resources>

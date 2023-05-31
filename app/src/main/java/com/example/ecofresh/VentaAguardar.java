@@ -60,7 +60,9 @@ public class VentaAguardar extends AppCompatActivity {
     private EditText cantidadEditText, productoEditText,
             precioEditext,localidadEditext, emailEditext;
 
-    private String nombre, apellidos, telefono, direccion, localidad, email, vendedor;
+    private String nombre, apellidos, telefono, direccion, nombreProducto,categoria, localidad, email, vendedor;
+
+    private float precio, cantidad;
 
     private static final String PRODUCTOS_KEY = "cajaProductos";
     private static final String CANTIDAD_KEY = "cajaCantidad";
@@ -175,12 +177,12 @@ public class VentaAguardar extends AppCompatActivity {
                     // De momento queremos que al hacer click en el botón pasemos a la siguiente activity_confirm_venta.
                     // Para ello debemos crear un objeto de la clase Intent. Introduciendo en el paréntesis, que pase de esta activity (this) a la activity_confirm_venta (ConfirmVenta.class)
 
-                    /*Intent intent = new Intent(VentaAguardar.this, ConfirmVenta.class);
+                    Intent intent = new Intent(VentaAguardar.this, ConfirmVenta.class);
                     // Arrancamos el evento que acabamos de crear
                     startActivity(intent);
 
                     // Finalizar la actividad actual
-                    finish();*/
+                    finish();
 
                 } else {
                     Toast.makeText(VentaAguardar.this, "Captura una foto antes de guardar la venta", Toast.LENGTH_SHORT).show();
@@ -223,11 +225,11 @@ public class VentaAguardar extends AppCompatActivity {
 
 
         // Obtener los nuevos datos del usuario desde los EditText
-        float cantidad = Float.parseFloat(cantidadEditText.getText().toString().trim());
-        String nombreProducto = productoEditText.getText().toString().trim();
-        String localidad = localidadEditext.getText().toString().trim();
-        float precio = Float.parseFloat(precioEditext.getText().toString().trim());
-        String categoria =  autoCategoria.getText().toString().trim();
+        cantidad = Float.parseFloat(cantidadEditText.getText().toString().trim());
+        nombreProducto = productoEditText.getText().toString().trim();
+        localidad = localidadEditext.getText().toString().trim();
+        precio = Float.parseFloat(precioEditext.getText().toString().trim());
+        categoria =  autoCategoria.getText().toString().trim();
 
         // Crea un objeto Producto
         Producto producto = new Producto(nombreProducto.toLowerCase(), precio, categoria, localidad, photoUrl);
@@ -250,10 +252,10 @@ public class VentaAguardar extends AppCompatActivity {
 
                     // Pasar los datos de la venta como dato extra en el Intent
                     Intent intent = new Intent(VentaAguardar.this, ConfirmVenta.class);
-                    intent.putExtra("cantidad", cantidad);
+                    intent.putExtra("cantidad", cantidad).toString();
                     intent.putExtra("producto", nombreProducto);
                     intent.putExtra("localidad", localidad);
-                    intent.putExtra("precio", precio);
+                    intent.putExtra("precio", precio).toString();
                     intent.putExtra("photo", photo);
                     startActivity(intent);
 

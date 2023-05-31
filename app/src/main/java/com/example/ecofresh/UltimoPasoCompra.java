@@ -27,6 +27,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,7 +78,7 @@ public class UltimoPasoCompra extends AppCompatActivity {
         // Obtener los datos de la venta de la venta del Intent.
         nombreProducto = getIntent().getStringExtra("producto");
         localidad = getIntent().getStringExtra("localidad");
-        precio = (float) getIntent().getDoubleExtra("precio",precio);
+        precio = getIntent().getFloatExtra("precio", 0.0f);
         vendedor = getIntent().getStringExtra("vendedor");
 
         //Colocar los datos de la venta en los textView
@@ -116,9 +117,41 @@ public class UltimoPasoCompra extends AppCompatActivity {
             }
         });
     }
+    private void obtenerDatosCompra() {
+        DocumentReference usuarioRef = db.collection("usuarios").document(currentUser.getEmail());
+
+        usuarioRef.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                DocumentSnapshot document = task.getResult();
+                if (document.exists()) {
+                    // Obtener los datos del documento y actualizar los TextView correspondientes
+                    email = document.getString("email");
+                    comprador = document.getString("nombre")+" "+document.getString("apellidos");
+                }
+            } else {
+                Toast.makeText(UltimoPasoCompra.this, "Error al obtener los datos", Toast.LENGTH_SHORT).show();
+            }
+        });
+        db.collection("VentasRealizadas")
+                .whereEqualTo("producto.nombre", nombreProducto)
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        if (error != null) {
+                            // Manejar el error aquí
+                            return;
+                        }
+
+                        for (QueryDocumentSnapshot doc : value) {
+                            // Obtener la URL de la imagen para el elemento actual en la posición 'position'
+                            vendedor = doc.getString("producto.vendedor");
+
+                        }
+                    }
+                });
+    }
 
     private void guardarCompra() {
-
 
 
         // Comprobar si la colección "comprasRealizadas" existe, y crearla si no existe
@@ -141,17 +174,12 @@ public class UltimoPasoCompra extends AppCompatActivity {
         // Obtener los nuevos datos del usuario desde los EditText y TextView
         nombreProducto = productoTextView.getText().toString().trim();
         localidad = localidadTextView.getText().toString().trim();
-        //String precioString = precioTextView.getText().toString().trim();
-        //precioString = precioString.replace("Precio/Kg: ", "");
-        //precio = Float.parseFloat(precioString);
-        precio = Float.parseFloat((precioTextView.getText().toString().trim()).replace("Precio/Kg: ", ""));
         vendedor = vendedorTextView.getText().toString().trim();
         cantidad = Float.parseFloat(cantidadEditText.getText().toString().trim());
         calle = calleEditText.getText().toString().trim();
         cp = cpEditext.getText().toString().trim();
         localidadEnvio = localidadEditext.getText().toString().trim();
 
-        //String cantidad = String.valueOf(Float.parseFloat(getIntent().getStringExtra("cantidad")));
 
         // Crea un objeto DireccionEnvio
         DireccionEnvio direccionEnvio = new DireccionEnvio(calle, localidadEnvio,cp );
@@ -176,16 +204,21 @@ public class UltimoPasoCompra extends AppCompatActivity {
                     // Obtener el ID del documento de la venta recién guardada
                     String ventaId = documentReference.getId();
 
-                    /*// Pasar los datos de la venta como dato extra en el Intent
+                    // Pasar los datos de la venta como dato extra en el Intent
                     Intent intent = new Intent(UltimoPasoCompra.this, ConfirmVenta.class);
+                    intent.putExtra("comprador", comprador);
+                    intent.putExtra("vendedor", vendedor);
+                    intent.putExtra("total", total);
                     intent.putExtra("cantidad", cantidad);
                     intent.putExtra("producto", nombreProducto);
-                    intent.putExtra("localidad", localidad);
+                    intent.putExtra("localidad", localidadEnvio);
+                    intent.putExtra("calle", calle);
+                    intent.putExtra("cp", cp);
                     intent.putExtra("precio", precio);
                     startActivity(intent);
 
                     // Finalizar la actividad actual
-                    finish();*/
+                    finish();
                 })
                 .addOnFailureListener(e -> {
                     // Error al guardar la compra
@@ -193,51 +226,5 @@ public class UltimoPasoCompra extends AppCompatActivity {
                 });
     }
 
-
-    private void obtenerDatosCompra() {
-        DocumentReference usuarioRef = db.collection("usuarios").document(currentUser.getEmail());
-
-
-        usuarioRef.get().addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                DocumentSnapshot document = task.getResult();
-                if (document.exists()) {
-                    // Obtener los datos del documento y actualizar los TextView correspondientes
-                    email = document.getString("email");
-                    comprador = document.getString("nombre")+" "+document.getString("apellidos");
-                }
-            } else {
-                Toast.makeText(UltimoPasoCompra.this, "Error al obtener los datos", Toast.LENGTH_SHORT).show();
-            }
-        });
-        /*db.collection("VentasRealizadas")
-                .whereEqualTo("nombre", )
-                .addSnapshotListener(new EventListener<QuerySnapshot>() {
-                    @Override
-                    public void onEvent(@Nullable QuerySnapshot value,
-                                        @Nullable FirebaseFirestoreException e) {
-                        if (e != null) {
-                            // Manejar el error aquí
-                            return;
-                        }
-
-                        for (QueryDocumentSnapshot doc : value) {
-
-                            String cantidad = doc.getString("cantidad");
-
-                            // Obtiene los datos del producto directamente del documento actual
-                            String precio = doc.getString("producto.precio");
-                            String nombre = doc.getString("producto.nombre");
-                            String categoria = doc.getString("producto.categoria");
-                            String  = doc.getString("producto.nombre");
-
-                            // Combina los datos en una sola cadena
-                            String venta = "  Producto:     " + nombre + "\n" +
-                                    "  Cantidad:     " + cantidad + "\n" +
-                                    "  Precio:          " + precio;
-
-
-                });*/
-    }
 
 }
