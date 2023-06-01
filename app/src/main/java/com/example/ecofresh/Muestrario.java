@@ -33,16 +33,16 @@ public class Muestrario extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     FirebaseFirestore db;
-    String emailUsuario, vendedor, nombre, localidad ;
+    private String emailUsuario, vendedor, nombre, localidad ;
     private float cantidad, precio;
 
-    ListView listViewProductos;
-    List<String> listaImagenes = new ArrayList<>();
+    private ListView listViewProductos;
+    private List<String> listaImagenes = new ArrayList<>();
 
-    List<String> listaIdProductos = new ArrayList<>();
-    ArrayAdapter<String> mAdapterProductos;
+    private List<String> listaIdProductos = new ArrayList<>();
+    private ArrayAdapter<String> mAdapterProductos;
 
-    ArrayAdapter<String> mAdapterImagenes;
+    private ArrayAdapter<String> mAdapterImagenes;
 
     private ImageView imageProducto;
 

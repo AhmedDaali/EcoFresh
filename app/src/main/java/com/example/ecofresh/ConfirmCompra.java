@@ -36,7 +36,7 @@ public class ConfirmCompra extends AppCompatActivity {
         botonContinuarCompra = findViewById(R.id.btnContinuarComprando);
 
         // Referencias a los elementos de la interfaz
-        compradorTextView = findViewById(R.id.texto_confirmCompra);
+        compradorTextView = findViewById(R.id.textComprador);
         vendedorTextView = findViewById(R.id.textVendedor2);
         totalTextView = findViewById(R.id.textTotal);
         cantidadTextView = findViewById(R.id.textCantidad2);

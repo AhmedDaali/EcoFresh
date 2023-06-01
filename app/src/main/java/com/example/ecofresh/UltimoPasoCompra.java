@@ -97,19 +97,8 @@ public class UltimoPasoCompra extends AppCompatActivity {
 
 
                 if (cantidadEditText != null&& calleEditText != null && cpEditext != null && localidadEditext !=null) {
+
                     guardarCompra();
-                    Intent intent = new Intent(UltimoPasoCompra.this, ConfirmCompra.class);
-
-                    // Arrancamos el evento que acabamos de crear
-                    startActivity(intent);
-
-                    intent.putExtra("cantidad", cantidad);
-                    intent.putExtra("producto", nombreProducto);
-                    intent.putExtra("localidad", localidad);
-                    intent.putExtra("precio", precio);
-
-                    // Finalizar la actividad actual
-                    finish();
 
                 } else {
                     Toast.makeText(UltimoPasoCompra.this, "Rellene los campos antes de guardar la compra", Toast.LENGTH_SHORT).show();
@@ -205,7 +194,7 @@ public class UltimoPasoCompra extends AppCompatActivity {
                     String ventaId = documentReference.getId();
 
                     // Pasar los datos de la venta como dato extra en el Intent
-                    Intent intent = new Intent(UltimoPasoCompra.this, ConfirmVenta.class);
+                    Intent intent = new Intent(UltimoPasoCompra.this, ConfirmCompra.class);
                     intent.putExtra("comprador", comprador);
                     intent.putExtra("vendedor", vendedor);
                     intent.putExtra("total", total);

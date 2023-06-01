@@ -72,6 +72,7 @@ public class ProductosVenta extends AppCompatActivity {
                             listaIdVentas.add(doc.getId());
 
                             float cantidad = doc.getDouble("cantidad").floatValue();
+                            //precio = getIntent().getFloatExtra("precio", 0.0f);
 
                             // Obtiene los datos del producto directamente del documento actual
                             float precio = doc.getDouble("producto.precio").floatValue();
