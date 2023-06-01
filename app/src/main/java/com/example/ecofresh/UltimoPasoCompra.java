@@ -133,7 +133,7 @@ public class UltimoPasoCompra extends AppCompatActivity {
 
                         for (QueryDocumentSnapshot doc : value) {
                             // Obtener la URL de la imagen para el elemento actual en la posición 'position'
-                            vendedor = doc.getString("producto.vendedor");
+                            vendedor = doc.getString("vendedor");
 
                         }
                     }
@@ -195,6 +195,7 @@ public class UltimoPasoCompra extends AppCompatActivity {
 
                     // Pasar los datos de la venta como dato extra en el Intent
                     Intent intent = new Intent(UltimoPasoCompra.this, ConfirmCompra.class);
+
                     intent.putExtra("comprador", comprador);
                     intent.putExtra("vendedor", vendedor);
                     intent.putExtra("total", total);

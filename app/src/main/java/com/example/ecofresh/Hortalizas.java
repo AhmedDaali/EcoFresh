@@ -171,7 +171,7 @@ public class Hortalizas extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String nombreProducto =  auto.getText().toString().trim();
+                //String nombreProducto =  auto.getText().toString().trim();
 
 
                 Intent intent = new Intent(Hortalizas.this,Muestrario.class);

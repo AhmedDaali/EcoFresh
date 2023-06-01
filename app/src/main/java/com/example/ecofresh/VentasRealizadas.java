@@ -65,10 +65,10 @@ public class VentasRealizadas extends AppCompatActivity {
                         for (QueryDocumentSnapshot doc : value) {
                             listaIdVentas.add(doc.getId());
 
-                            String cantidad = doc.getString("cantidad");
+                            double cantidad = Double.parseDouble(doc.getString("cantidad"));
 
                             // Obtiene los datos del producto directamente del documento actual
-                            String precio = doc.getString("producto.precio");
+                            double precio = Double.parseDouble(doc.getString("producto.precio"));
                             String nombre = doc.getString("producto.nombre");
 
                             // Combina los datos en una sola cadena
