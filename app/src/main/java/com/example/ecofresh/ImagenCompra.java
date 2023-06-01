@@ -49,7 +49,7 @@ public class ImagenCompra extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(ImagenCompra.this,Muestrario.class);
+                Intent intent = new Intent(ImagenCompra.this,Selection.class);
 
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
