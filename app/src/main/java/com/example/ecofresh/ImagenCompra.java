@@ -32,7 +32,13 @@ public class ImagenCompra extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseFirestore db;
 
-    private String comprador, vendedor, nombreProducto, localidad, precio, emailUsuario, imageUrl;
+    private String comprador;
+    private String vendedor;
+    private String nombreProducto;
+    private String localidad;
+    private double precio;
+    private String emailUsuario;
+    private String imageUrl;
 
     private ImageView imageProducto;
 
@@ -64,7 +70,7 @@ public class ImagenCompra extends AppCompatActivity {
         vendedor = getIntent().getStringExtra("vendedor");
         nombreProducto = getIntent().getStringExtra("producto");
         localidad = getIntent().getStringExtra("localidad");
-        precio = getIntent().getStringExtra("precio");
+        precio = getIntent().getDoubleExtra("precio",0.0d);
         imageUrl = getIntent().getStringExtra("photoUrls");
 
         // 1 Guardamos la referencia del botón de confirmar
