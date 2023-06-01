@@ -40,9 +40,9 @@ public class UltimoPasoCompra extends AppCompatActivity {
     private EditText cantidadEditText, calleEditText, localidadEditext, cpEditext;
     private TextView productoTextView, vendedorTextView, precioTextView, localidadTextView;
 
-    private String nombreProducto, vendedor, comprador, localidad, calle, cp,localidadEnvio, email;
+    private String nombreProducto, vendedor, comprador, localidad, calle, cp,localidadEnvio, imageUrl, email, categoria;
 
-    private float total, precio, cantidad;
+    private double total, precio, cantidad;
 
     private FirebaseUser currentUser;
     private FirebaseFirestore db;
@@ -78,8 +78,10 @@ public class UltimoPasoCompra extends AppCompatActivity {
         // Obtener los datos de la venta de la venta del Intent.
         nombreProducto = getIntent().getStringExtra("producto");
         localidad = getIntent().getStringExtra("localidad");
-        precio = getIntent().getFloatExtra("precio", 0.0f);
+        precio = getIntent().getDoubleExtra("precio", 0.0d);
         vendedor = getIntent().getStringExtra("vendedor");
+        categoria = getIntent().getStringExtra("categoria");
+        imageUrl = getIntent().getStringExtra("photoUrls");
 
         //Colocar los datos de la venta en los textView
         productoTextView.setText("Producto:   " + nombreProducto);
@@ -121,23 +123,6 @@ public class UltimoPasoCompra extends AppCompatActivity {
                 Toast.makeText(UltimoPasoCompra.this, "Error al obtener los datos", Toast.LENGTH_SHORT).show();
             }
         });
-        db.collection("VentasRealizadas")
-                .whereEqualTo("producto.nombre", nombreProducto)
-                .addSnapshotListener(new EventListener<QuerySnapshot>() {
-                    @Override
-                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                        if (error != null) {
-                            // Manejar el error aquí
-                            return;
-                        }
-
-                        for (QueryDocumentSnapshot doc : value) {
-                            // Obtener la URL de la imagen para el elemento actual en la posición 'position'
-                            vendedor = doc.getString("vendedor");
-
-                        }
-                    }
-                });
     }
 
     private void guardarCompra() {
@@ -161,10 +146,10 @@ public class UltimoPasoCompra extends AppCompatActivity {
         });
 
         // Obtener los nuevos datos del usuario desde los EditText y TextView
-        nombreProducto = productoTextView.getText().toString().trim();
-        localidad = localidadTextView.getText().toString().trim();
-        vendedor = vendedorTextView.getText().toString().trim();
-        cantidad = Float.parseFloat(cantidadEditText.getText().toString().trim());
+        //nombreProducto = productoTextView.getText().toString().trim();
+        //localidad = localidadTextView.getText().toString().trim();
+        //vendedor = vendedorTextView.getText().toString().trim();
+        cantidad = Double.parseDouble(cantidadEditText.getText().toString().trim());
         calle = calleEditText.getText().toString().trim();
         cp = cpEditext.getText().toString().trim();
         localidadEnvio = localidadEditext.getText().toString().trim();
@@ -174,7 +159,7 @@ public class UltimoPasoCompra extends AppCompatActivity {
         DireccionEnvio direccionEnvio = new DireccionEnvio(calle, localidadEnvio,cp );
 
         // Crea un objeto Producto
-        Producto producto = new Producto(nombreProducto, precio, localidad);
+        Producto producto = new Producto(nombreProducto, precio, categoria, localidad,imageUrl);
 
         // Crea un objeto Compra con los datos de la compra
         total = precio * cantidad;
@@ -203,7 +188,7 @@ public class UltimoPasoCompra extends AppCompatActivity {
                     intent.putExtra("producto", nombreProducto);
                     intent.putExtra("localidad", localidadEnvio);
                     intent.putExtra("calle", calle);
-                    intent.putExtra("cp", cp);
+                    intent.putExtra("cp:", cp);
                     intent.putExtra("precio", precio);
                     startActivity(intent);
 

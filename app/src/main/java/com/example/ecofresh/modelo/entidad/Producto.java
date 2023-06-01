@@ -14,11 +14,11 @@ public class Producto {
         producto.put("localidad", localidad);
         producto.put("photoUrls", photoUrls);
     }
-    public Producto(String nombre, double precio,  String localidad) {
+    /*public Producto(String nombre, double precio,  String localidad) {
         producto.put("nombre", nombre);
         producto.put("precio", precio);
         producto.put("localidad", localidad);
-    }
+    }*/
     public Producto() {
     }
 
