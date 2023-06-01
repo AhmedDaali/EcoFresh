@@ -236,5 +236,11 @@ Al utilizar la aplicación, usted acepta estas condiciones de uso y política de
     <string name="text_productos_venta">¡A la venta!</string>
     <string name="total">Total:</string>
 
+    <!-- Texto de la activity_imagen_compra -->
+
+    <string name="imagen_camara">Este es el producto</string>
+    <string name="boton_imagen_compra">Comprar</string>
+    <string name="boton_regreso_imagen">Regresar</string>
+
 
 </resources>

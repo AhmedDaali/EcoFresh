@@ -244,7 +244,7 @@ public class Muestrario extends AppCompatActivity {
         //String producto = ProductoTextView.getText().toString();
 
         TextView ProductosTextView = parent.findViewById(R.id.textViewProducto);
-        Intent intent = new Intent(Muestrario.this, UltimoPasoCompra.class);
+        Intent intent = new Intent(Muestrario.this, ImagenCompra.class);
 
         intent.putExtra("cantidad", cantidad);
         intent.putExtra("producto", nombre);
