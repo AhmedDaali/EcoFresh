@@ -31,11 +31,7 @@ public class ConfirmVenta extends AppCompatActivity {
     Button botonSalir;
 
     //Variables de textView
-    private TextView nombre;
-    private TextView cantidad;
-    private TextView nombreProducto;
-    private TextView precio;
-    private TextView localidad;
+    private TextView nombre, nombreProducto, cantidad, precio, localidad;
 
     private ImageView imageView;
 
@@ -73,9 +69,10 @@ public class ConfirmVenta extends AppCompatActivity {
         obtenerDatosUsuario();
 
         // Obtener los datos de la venta de la venta del Intent.
-        String cantidadVenta = getIntent().getStringExtra("cantidad");
+        double cantidadVenta = getIntent().getDoubleExtra("cantidad", 0.0f);
         String productoVenta = getIntent().getStringExtra("producto");
-        String  precioVenta= getIntent().getStringExtra("precio");
+
+        double precioVenta = getIntent().getDoubleExtra("precio", 0.0f);
         String localidadVenta = getIntent().getStringExtra("localidad");
         photo = getIntent().getParcelableExtra("photo");
 
@@ -169,180 +166,4 @@ public class ConfirmVenta extends AppCompatActivity {
         });
     }
 }
-/*package com.example.ecofresh;
 
-        import androidx.annotation.NonNull;
-        import androidx.appcompat.app.AppCompatActivity;
-
-        import android.content.Intent;
-        import android.os.Bundle;
-        import android.os.PersistableBundle;
-        import android.util.Patterns;
-        import android.view.View;
-        import android.widget.Button;
-        import android.widget.CheckBox;
-        import android.widget.CompoundButton;
-        import android.widget.EditText;
-        import android.widget.TextView;
-        import android.widget.Toast;
-
-        import com.example.ecofresh.modelo.entidad.Usuario;
-        import com.google.android.gms.tasks.OnCompleteListener;
-        import com.google.android.gms.tasks.Task;
-        import com.google.firebase.auth.AuthResult;
-        import com.google.firebase.auth.FirebaseAuth;
-        import com.google.firebase.auth.SignInMethodQueryResult;
-        import com.google.firebase.firestore.FirebaseFirestore;
-
-        import java.util.regex.Pattern;
-
-public class Registro extends AppCompatActivity {
-
-    Button botonEnter;
-    TextView condiciones;
-    TextView politica;
-    CheckBox checkBoxCondiciones;
-    EditText nombre, apellidos, email, password;
-    FirebaseAuth mAuth;
-    Boolean checkBoxState = false;
-    private FirebaseFirestore db;
-    private static final String EDIT_TEXT_VALUE_KEY = "edit_text_value";
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registro);
-        getSupportActionBar().hide();
-
-        db = FirebaseFirestore.getInstance();
-        mAuth = FirebaseAuth.getInstance();
-
-        nombre = findViewById(R.id.cajaNombre);
-        apellidos = findViewById(R.id.cajaApellidos);
-        email = findViewById(R.id.cajaEmail);
-        password = findViewById(R.id.cajaContraseña);
-        checkBoxCondiciones = findViewById(R.id.checkBox);
-        checkBoxCondiciones.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                checkBoxState = isChecked;
-            }
-        });
-
-        botonEnter = findViewById(R.id.Enter);
-        botonEnter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String emailUser = email.getText().toString().trim();
-                String passUser = password.getText().toString().trim();
-                String name = nombre.getText().toString();
-                String secondName = apellidos.getText().toString();
-
-                if (name.isEmpty()) {
-                    nombre.setError("Campo vacío.");
-                } else if (name.length() < 2) {
-                    nombre.setError("El nombre debe tener al menos 2 caracteres.");
-                } else if (secondName.length() < 2) {
-                    apellidos.setError("El apellido debe tener al menos 2 caracteres.");
-                } else if (secondName.isEmpty()) {
-                    apellidos.setError("Campo vacío.");
-                } else if (emailUser.isEmpty()) {
-                    email.setError("Campo vacío.");
-                } else if (!validarEmail(emailUser)) {
-                    email.setError("Por favor ingrese una dirección de correo electrónico válida.");
-                } else if (passUser.length() < 6) {
-                    password.setError("La contraseña debe tener al menos 6 caracteres.");
-                } else if (!checkBoxState) {
-                    Toast.makeText(Registro.this, "¡Por favor, acepta los términos y condiciones de uso!", Toast.LENGTH_SHORT).show();
-                } else {
-                    mAuth.fetchSignInMethodsForEmail(emailUser).addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
-                            if (task.isSuccessful()) {
-                                SignInMethodQueryResult result = task.getResult();
-                                boolean isEmailRegistered = result.getSignInMethods().size() > 0;
-                                if (isEmailRegistered) {
-                                    Toast.makeText(Registro.this, "El correo electrónico ya está registrado", Toast.LENGTH_SHORT).show();
-                                } else {
-                                    mAuth.createUserWithEmailAndPassword(emailUser, passUser)
-                                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                                @Override
-                                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                                    if (task.isSuccessful()) {
-                                                        Toast.makeText(Registro.this, "¡Bienvenido " + name + "!", Toast.LENGTH_LONG).show();
-                                                        Intent intent = new Intent(Registro.this, MainActivity.class);
-                                                        startActivity(intent);
-                                                    } else {
-                                                        Toast.makeText(Registro.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
-                                                    }
-                                                }
-                                            });
-
-                                    db.collection("usuarios").document("dummy").get().addOnFailureListener(e -> {
-                                        if (e.getMessage() != null && e.getMessage().contains("No document exists")) {
-                                            db.collection("usuarios").document("dummy").set(new Usuario()).addOnSuccessListener(aVoid -> {
-                                                Toast.makeText(Registro.this, "Se creó la colección 'usuarios'", Toast.LENGTH_SHORT).show();
-                                            }).addOnFailureListener(error -> {
-                                                Toast.makeText(Registro.this, "Error al crear la colección 'usuarios'", Toast.LENGTH_SHORT).show();
-                                            });
-                                        } else {
-                                            Toast.makeText(Registro.this, "Error al acceder a la colección 'usuarios'", Toast.LENGTH_SHORT).show();
-                                        }
-                                    });
-
-                                    Usuario usuarioCreado = new Usuario(name, secondName, emailUser);
-                                    db.collection("usuarios").document(emailUser).set(usuarioCreado)
-                                            .addOnSuccessListener(aVoid -> {
-                                                Toast.makeText(Registro.this, "Datos creados correctamente", Toast.LENGTH_SHORT).show();
-                                                Intent intent = new Intent(Registro.this, MainActivity.class);
-                                                startActivity(intent);
-                                                finish();
-                                            })
-                                            .addOnFailureListener(e -> {
-                                                Toast.makeText(Registro.this, "Error al crear los datos del usuario", Toast.LENGTH_SHORT).show();
-                                            });
-                                }
-                            }
-                        }
-                    });
-                }
-            }
-        });
-
-        condiciones = findViewById(R.id.checkBox2);
-        condiciones.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Registro.this, Condiciones.class);
-                startActivity(intent);
-            }
-        });
-
-        politica = findViewById(R.id.checkBox4);
-        politica.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Registro.this, Condiciones.class);
-                startActivity(intent);
-            }
-        });
-    }
-
-    private boolean validarEmail(String email) {
-        Pattern pattern = Patterns.EMAIL_ADDRESS;
-        return pattern.matcher(email).matches();
-    }
-
-    @Override
-    protected void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putString(EDIT_TEXT_VALUE_KEY, email.getText().toString());
-    }
-
-    @Override
-    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        String editTextValue = savedInstanceState.getString(EDIT_TEXT_VALUE_KEY);
-        email.setText(editTextValue);
-    }
-}*/

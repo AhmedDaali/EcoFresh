@@ -8,11 +8,11 @@ public class Compra {
 
     Map<String, Object> compra = new HashMap<>();
 
-    public Compra(float cantidad, float total, Producto producto, String usuario, String vendedor, DireccionEnvio direccionEnvio ) {
+    public Compra(double cantidad, double total, Producto producto, String comprador, String vendedor, DireccionEnvio direccionEnvio ) {
         compra.put("cantidad", cantidad);
         compra.put("producto", producto);
-        compra.put("usuario", usuario);
-        compra.put("usuario", vendedor);
+        compra.put("comprador", comprador);
+        compra.put("vendedor", vendedor);
         compra.put("total", total);
         compra.put("direccion de envio", direccionEnvio);
     }
@@ -20,11 +20,11 @@ public class Compra {
         // Constructor sin argumentos requerido por Firebase Firestore
     }
 
-    public float getCantidad() {
-        return (float) compra.get("cantidad");
+    public double getCantidad() {
+        return (double) compra.get("cantidad");
     }
 
-    public void setCantidad(float cantidad) {
+    public void setCantidad(double cantidad) {
 
         compra.put("cantidad", cantidad);
     }
@@ -38,28 +38,28 @@ public class Compra {
         compra.put("producto", producto);
     }
 
-    public String getEmailUsuario() {
-        return (String) compra.get("usuario");
+    public String getComprador() {
+        return (String) compra.get("comprador");
     }
 
-    public void setEmailUsuario(String emailUsuario) {
+    public void setComprador(String comprador) {
 
-        compra.put("usuario", emailUsuario);
+        compra.put("comprador", comprador);
     }
-    public String getEmailVendedor() {
+    public String getVendedor() {
         return (String) compra.get("vendedor");
     }
 
-    public void setEmailVendedor(String vendedor) {
+    public void setVendedor(String vendedor) {
 
-        compra.put("usuario", vendedor);
+        compra.put("vendedor", vendedor);
     }
 
-    public float getTotal() {
-        return (float) compra.get("total");
+    public double getTotal() {
+        return (double) compra.get("total");
     }
 
-    public void setTotal(float total) {
+    public void setTotal(double total) {
 
         compra.put("total", total);
     }

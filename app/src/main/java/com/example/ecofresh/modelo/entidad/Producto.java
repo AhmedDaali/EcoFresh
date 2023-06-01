@@ -7,27 +7,27 @@ import java.util.Map;
 public class Producto {
 
     Map<String, Object> producto = new HashMap<>();
-    public Producto(String nombre, float precio, String categoria, String localidad, String photoUrls) {
+    public Producto(String nombre, double precio, String categoria, String localidad, String photoUrls) {
         producto.put("nombre", nombre);
         producto.put("precio", precio);
         producto.put("categoria", categoria);
         producto.put("localidad", localidad);
         producto.put("photoUrls", photoUrls);
     }
-    public Producto(String nombre, float precio,  String localidad) {
+    /*public Producto(String nombre, double precio,  String localidad) {
         producto.put("nombre", nombre);
         producto.put("precio", precio);
         producto.put("localidad", localidad);
-    }
+    }*/
     public Producto() {
     }
 
-    public float getPrecio() {
+    public double getPrecio() {
 
-        return (float) producto.get("precio");
+        return (double) producto.get("precio");
     }
 
-    public void setPrecio(float precio) {
+    public void setPrecio(double precio) {
 
         producto.put("precio", precio);
     }

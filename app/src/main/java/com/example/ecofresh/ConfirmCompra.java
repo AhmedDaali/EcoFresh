@@ -7,11 +7,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class ConfirmCompra extends AppCompatActivity {
 
-    Button botonContinuarCompra;
-    Button botonExit;
+    private Button botonContinuarCompra;
+    private Button botonExit;
+
+    private String  comprador, vendedor, total, cantidad, nombreProducto, localidadEnvio, calle, precio, cp;
+
+    private TextView  compradorTextView, vendedorTextView, totalTextView, cantidadTextView,
+            nombreProductoTextView, localidadEnvioTextView, calleTextView, precioTextView, cpTextView;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -28,6 +34,40 @@ public class ConfirmCompra extends AppCompatActivity {
         // 1 Boton para regresar a la activity_selection
 
         botonContinuarCompra = findViewById(R.id.btnContinuarComprando);
+
+        // Referencias a los elementos de la interfaz
+        compradorTextView = findViewById(R.id.textComprador);
+        vendedorTextView = findViewById(R.id.textVendedor2);
+        totalTextView = findViewById(R.id.textTotal);
+        cantidadTextView = findViewById(R.id.textCantidad2);
+        nombreProductoTextView = findViewById(R.id.textProducto2);
+        localidadEnvioTextView = findViewById(R.id.textLocalidad2);
+        calleTextView = findViewById(R.id.textCalle2);
+        precioTextView = findViewById(R.id.textPrecio2);
+        cpTextView = findViewById(R.id.textCp2);
+
+        // Obtener los datos de la compra del Intent.
+        comprador = getIntent().getStringExtra("comprador");
+        vendedor = getIntent().getStringExtra("vendedor");
+        total = getIntent().getStringExtra("total");
+        cantidad = getIntent().getStringExtra("cantidad");
+        nombreProducto= getIntent().getStringExtra("producto");
+        localidadEnvio = getIntent().getStringExtra("localidad");
+        calle = getIntent().getStringExtra("calle");
+        cp = getIntent().getStringExtra("cp");
+        precio = getIntent().getStringExtra("precio");
+
+        //Colocar los datos de la venta en los textView
+        compradorTextView.setText("Comprador:  " + comprador);
+        vendedorTextView.setText("Vendedor:    " + vendedor);
+        totalTextView.setText("Total:  " + total);
+        cantidadTextView.setText("Cantidad:    " + cantidad+"Kg");
+        nombreProductoTextView.setText("Producto:   " + nombreProducto);
+        localidadEnvioTextView.setText("Localidad:  " + localidadEnvio);
+        calleTextView.setText("calle:  " + calle);
+        precioTextView.setText("Precio:    " + precio +" €/kg" );
+        cpTextView.setText("CP:        " + cp);
+
 
         botonContinuarCompra.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -55,6 +55,8 @@ public class Verduras extends AppCompatActivity {
 
                 Intent intent = new Intent(Verduras.this,Muestrario.class);
 
+                intent.putExtra("producto", "espinacas");
+
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
 
@@ -70,6 +72,8 @@ public class Verduras extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(Verduras.this,Muestrario.class);
+
+                intent.putExtra("producto", "lechuga");
 
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
@@ -87,6 +91,8 @@ public class Verduras extends AppCompatActivity {
 
                 Intent intent = new Intent(Verduras.this,Muestrario.class);
 
+                intent.putExtra("producto", "repollo");
+
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
 
@@ -103,6 +109,8 @@ public class Verduras extends AppCompatActivity {
 
                 Intent intent = new Intent(Verduras.this,Muestrario.class);
 
+                intent.putExtra("producto", "brocoli");
+
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
 
@@ -118,6 +126,8 @@ public class Verduras extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(Verduras.this,Muestrario.class);
+
+                intent.putExtra("producto", "apio");
 
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
@@ -136,6 +146,8 @@ public class Verduras extends AppCompatActivity {
 
                 Intent intent = new Intent(Verduras.this,Muestrario.class);
 
+                intent.putExtra("producto", "grelos");
+
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);
 
@@ -150,7 +162,11 @@ public class Verduras extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                String nombreProducto =  auto.getText().toString().trim();
+
                 Intent intent = new Intent(Verduras.this,Muestrario.class);
+
+                intent.putExtra("producto", nombreProducto.toLowerCase());
 
                 // Arrancamos el evento que acabamos de crear
                 startActivity(intent);

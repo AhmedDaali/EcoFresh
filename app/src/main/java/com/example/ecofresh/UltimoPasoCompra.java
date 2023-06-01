@@ -27,6 +27,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,9 +40,9 @@ public class UltimoPasoCompra extends AppCompatActivity {
     private EditText cantidadEditText, calleEditText, localidadEditext, cpEditext;
     private TextView productoTextView, vendedorTextView, precioTextView, localidadTextView;
 
-    private String nombreProducto, vendedor, comprador, localidad, calle, cp,localidadEnvio, email;
+    private String nombreProducto, vendedor, comprador, localidad, calle, cp,localidadEnvio, imageUrl, email, categoria;
 
-    private float total, precio, cantidad;
+    private double total, precio, cantidad;
 
     private FirebaseUser currentUser;
     private FirebaseFirestore db;
@@ -75,18 +76,22 @@ public class UltimoPasoCompra extends AppCompatActivity {
         botonConfirm = findViewById(R.id.btnMenu);
 
         // Obtener los datos de la venta de la venta del Intent.
-        String cantidad = getIntent().getStringExtra("cantidad");
-        String producto = getIntent().getStringExtra("producto");
-        String precio = getIntent().getStringExtra("precio");
-        String vendedor = getIntent().getStringExtra("vendedor");
+        nombreProducto = getIntent().getStringExtra("producto");
+        localidad = getIntent().getStringExtra("localidad");
+        precio = getIntent().getDoubleExtra("precio", 0.0d);
+        vendedor = getIntent().getStringExtra("vendedor");
+        categoria = getIntent().getStringExtra("categoria");
+        imageUrl = getIntent().getStringExtra("photoUrls");
 
+        //Colocar los datos de la venta en los textView
+        productoTextView.setText("Producto:   " + nombreProducto);
+        precioTextView.setText("Precio€/kg:  " + precio );
+        localidadTextView.setText("Localidad:  " + localidad);
+        vendedorTextView.setText("Vendedor:    "+vendedor);
 
-
-        // Obtener referencia al documento del usuario en Firestore
-        //DocumentReference usuarioRef = db.collection("usuarios").document(currentUser.getEmail());
 
         // Obtener los datos del usuario desde Firestore
-        //obtenerDatosCompra();
+        obtenerDatosCompra();
 
         botonConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,14 +99,8 @@ public class UltimoPasoCompra extends AppCompatActivity {
 
 
                 if (cantidadEditText != null&& calleEditText != null && cpEditext != null && localidadEditext !=null) {
+
                     guardarCompra();
-                    Intent intent = new Intent(UltimoPasoCompra.this, ConfirmCompra.class);
-                    // Arrancamos el evento que acabamos de crear
-
-                    startActivity(intent);
-
-                    // Finalizar la actividad actual
-                    finish();
 
                 } else {
                     Toast.makeText(UltimoPasoCompra.this, "Rellene los campos antes de guardar la compra", Toast.LENGTH_SHORT).show();
@@ -109,9 +108,24 @@ public class UltimoPasoCompra extends AppCompatActivity {
             }
         });
     }
+    private void obtenerDatosCompra() {
+        DocumentReference usuarioRef = db.collection("usuarios").document(currentUser.getEmail());
+
+        usuarioRef.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                DocumentSnapshot document = task.getResult();
+                if (document.exists()) {
+                    // Obtener los datos del documento y actualizar los TextView correspondientes
+                    email = document.getString("email");
+                    comprador = document.getString("nombre")+" "+document.getString("apellidos");
+                }
+            } else {
+                Toast.makeText(UltimoPasoCompra.this, "Error al obtener los datos", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 
     private void guardarCompra() {
-
 
 
         // Comprobar si la colección "comprasRealizadas" existe, y crearla si no existe
@@ -132,26 +146,23 @@ public class UltimoPasoCompra extends AppCompatActivity {
         });
 
         // Obtener los nuevos datos del usuario desde los EditText y TextView
-        // Obtener los datos de la venta de la venta del Intent.
-        String cantidad = String.valueOf(Float.parseFloat(getIntent().getStringExtra("cantidad")));
-        String producto = getIntent().getStringExtra("producto");
-        String precio = String.valueOf(Float.parseFloat(getIntent().getStringExtra("precio")));
-        String vendedor = getIntent().getStringExtra("vendedor");
-        nombreProducto = productoTextView.getText().toString().trim();
-        localidad = localidadTextView.getText().toString().trim();
-        //precio = Float.parseFloat(precioTextView.getText().toString().trim());
-        vendedor = vendedorTextView.getText().toString().trim();
-        //cantidad = Float.parseFloat(cantidadEditText.getText().toString().trim());
+        //nombreProducto = productoTextView.getText().toString().trim();
+        //localidad = localidadTextView.getText().toString().trim();
+        //vendedor = vendedorTextView.getText().toString().trim();
+        cantidad = Double.parseDouble(cantidadEditText.getText().toString().trim());
         calle = calleEditText.getText().toString().trim();
         cp = cpEditext.getText().toString().trim();
         localidadEnvio = localidadEditext.getText().toString().trim();
 
+
         // Crea un objeto DireccionEnvio
-        /*DireccionEnvio direccionEnvio = new DireccionEnvio(calle, localidadEnvio,cp );
+        DireccionEnvio direccionEnvio = new DireccionEnvio(calle, localidadEnvio,cp );
+
         // Crea un objeto Producto
-        Producto producto = new Producto(nombreProducto, precio, localidad);
+        Producto producto = new Producto(nombreProducto, precio, categoria, localidad,imageUrl);
+
         // Crea un objeto Compra con los datos de la compra
-        total = precio*cantidad;
+        total = precio * cantidad;
         Compra compra = new Compra(cantidad, total, producto, comprador, vendedor, direccionEnvio);
 
 
@@ -168,10 +179,16 @@ public class UltimoPasoCompra extends AppCompatActivity {
                     String ventaId = documentReference.getId();
 
                     // Pasar los datos de la venta como dato extra en el Intent
-                    Intent intent = new Intent(UltimoPasoCompra.this, ConfirmVenta.class);
+                    Intent intent = new Intent(UltimoPasoCompra.this, ConfirmCompra.class);
+
+                    intent.putExtra("comprador", comprador);
+                    intent.putExtra("vendedor", vendedor);
+                    intent.putExtra("total", total);
                     intent.putExtra("cantidad", cantidad);
                     intent.putExtra("producto", nombreProducto);
-                    intent.putExtra("localidad", localidad);
+                    intent.putExtra("localidad", localidadEnvio);
+                    intent.putExtra("calle", calle);
+                    intent.putExtra("cp:", cp);
                     intent.putExtra("precio", precio);
                     startActivity(intent);
 
@@ -184,51 +201,5 @@ public class UltimoPasoCompra extends AppCompatActivity {
                 });
     }
 
-
-    private void obtenerDatosCompra() {
-        DocumentReference usuarioRef = db.collection("usuarios").document(currentUser.getEmail());
-
-
-        usuarioRef.get().addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                DocumentSnapshot document = task.getResult();
-                if (document.exists()) {
-                    // Obtener los datos del documento y actualizar los TextView correspondientes
-                    email = document.getString("email");
-                    comprador = document.getString("nombre")+" "+document.getString("apellidos");
-                }
-            } else {
-                Toast.makeText(UltimoPasoCompra.this, "Error al obtener los datos", Toast.LENGTH_SHORT).show();
-            }
-        });
-        /*db.collection("VentasRealizadas")
-                .whereEqualTo("nombre", )
-                .addSnapshotListener(new EventListener<QuerySnapshot>() {
-                    @Override
-                    public void onEvent(@Nullable QuerySnapshot value,
-                                        @Nullable FirebaseFirestoreException e) {
-                        if (e != null) {
-                            // Manejar el error aquí
-                            return;
-                        }
-
-                        for (QueryDocumentSnapshot doc : value) {
-
-                            String cantidad = doc.getString("cantidad");
-
-                            // Obtiene los datos del producto directamente del documento actual
-                            String precio = doc.getString("producto.precio");
-                            String nombre = doc.getString("producto.nombre");
-                            String categoria = doc.getString("producto.categoria");
-                            String  = doc.getString("producto.nombre");
-
-                            // Combina los datos en una sola cadena
-                            String venta = "  Producto:     " + nombre + "\n" +
-                                    "  Cantidad:     " + cantidad + "\n" +
-                                    "  Precio:          " + precio;
-
-
-                });*/
-    }
 
 }
