@@ -124,6 +124,7 @@ public class Muestrario extends AppCompatActivity {
                             precio =  doc.getDouble("producto.precio").floatValue();
                             nombre = doc.getString("producto.nombre");
                             localidad = doc.getString("producto.localidad");
+                            urlImagen = doc.getString("producto.photoUrls");
 
                             // Combina los datos en una sola cadena
                             String venta = "  Producto:     " + nombre + "\n" +
