@@ -34,7 +34,8 @@ public class Muestrario extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseFirestore db;
     private String emailUsuario, vendedor, nombre, localidad ;
-    private float cantidad, precio;
+    private double cantidad;
+    private double precio;
 
     private ListView listViewProductos;
     private List<String> listaImagenes = new ArrayList<>();
@@ -153,28 +154,52 @@ public class Muestrario extends AppCompatActivity {
 
 
 
+
                         for (QueryDocumentSnapshot doc : value) {
                             listaIdProductos.add(doc.getId());
+                            Object cantidadObj = doc.get("cantidad");
+                            Object precioObj = doc.get("cantidad");
+                            if (cantidadObj instanceof Number && precioObj instanceof Number) {
+                                cantidad = ((Number) cantidadObj).doubleValue();
+                                precio = ((Number) precioObj).doubleValue();
+                                //cantidad = doc.getDouble("cantidad");
+                                //vendedor = doc.getString("vendedor");
+
+                                // Obtiene los datos del producto directamente del documento actual
+                                precio = doc.getDouble("producto.precio");
+                                nombre = doc.getString("producto.nombre");
+                                localidad = doc.getString("producto.localidad");
+
+                                // Combina los datos en una sola cadena
+                                String venta = "  Producto:     " + nombre + "\n" +
+                                        "  Vendedor:    " + vendedor + "\n" +
+                                        "  Localidad:    " + localidad + "\n" +
+                                        "  Stock:           " + cantidad + "\n" +
+                                        "  Precio:          " + precio;
+
+                                // Agrega la cadena a la lista
+                                listaVentas.add(venta);
+                            } else {
 
 
+                                /*cantidad = doc.getDouble("cantidad");
+                                vendedor = doc.getString("vendedor");
 
-                            cantidad =  doc.getDouble("cantidad").floatValue();
-                            vendedor = doc.getString("vendedor");
+                                // Obtiene los datos del producto directamente del documento actual
+                                precio = doc.getDouble("producto.precio");
+                                nombre = doc.getString("producto.nombre");
+                                localidad = doc.getString("producto.localidad");
 
-                            // Obtiene los datos del producto directamente del documento actual
-                            precio =  doc.getDouble("producto.precio").floatValue();
-                            nombre = doc.getString("producto.nombre");
-                            localidad = doc.getString("producto.localidad");
+                                // Combina los datos en una sola cadena
+                                String venta = "  Producto:     " + nombre + "\n" +
+                                        "  Vendedor:    " + vendedor + "\n" +
+                                        "  Localidad:    " + localidad + "\n" +
+                                        "  Stock:           " + cantidad + "\n" +
+                                        "  Precio:          " + precio;
 
-                            // Combina los datos en una sola cadena
-                            String venta = "  Producto:     " + nombre + "\n" +
-                                    "  Vendedor:    " + vendedor + "\n" +
-                                    "  Localidad:    " + localidad + "\n" +
-                                    "  Stock:           " + cantidad + "\n" +
-                                    "  Precio:          " + precio;
-
-                            // Agrega la cadena a la lista
-                            listaVentas.add(venta);
+                                // Agrega la cadena a la lista
+                                listaVentas.add(venta);*/
+                            }
                         }
 
                         if (listaVentas.size() == 0) {

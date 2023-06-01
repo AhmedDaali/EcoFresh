@@ -8,7 +8,7 @@ public class Compra {
 
     Map<String, Object> compra = new HashMap<>();
 
-    public Compra(float cantidad, float total, Producto producto, String usuario, String vendedor, DireccionEnvio direccionEnvio ) {
+    public Compra(double cantidad, double total, Producto producto, String usuario, String vendedor, DireccionEnvio direccionEnvio ) {
         compra.put("cantidad", cantidad);
         compra.put("producto", producto);
         compra.put("usuario", usuario);
@@ -20,11 +20,11 @@ public class Compra {
         // Constructor sin argumentos requerido por Firebase Firestore
     }
 
-    public float getCantidad() {
-        return (float) compra.get("cantidad");
+    public double getCantidad() {
+        return (double) compra.get("cantidad");
     }
 
-    public void setCantidad(float cantidad) {
+    public void setCantidad(double cantidad) {
 
         compra.put("cantidad", cantidad);
     }
@@ -55,11 +55,11 @@ public class Compra {
         compra.put("usuario", vendedor);
     }
 
-    public float getTotal() {
-        return (float) compra.get("total");
+    public double getTotal() {
+        return (double) compra.get("total");
     }
 
-    public void setTotal(float total) {
+    public void setTotal(double total) {
 
         compra.put("total", total);
     }

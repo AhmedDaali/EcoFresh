@@ -62,7 +62,7 @@ public class VentaAguardar extends AppCompatActivity {
 
     private String nombre, apellidos, telefono, direccion, nombreProducto,categoria, localidad, email, vendedor;
 
-    private float precio, cantidad;
+    private double precio, cantidad;
 
     private static final String PRODUCTOS_KEY = "cajaProductos";
     private static final String CANTIDAD_KEY = "cajaCantidad";
@@ -225,10 +225,10 @@ public class VentaAguardar extends AppCompatActivity {
 
 
         // Obtener los nuevos datos del usuario desde los EditText
-        cantidad = Float.parseFloat(cantidadEditText.getText().toString().trim());
+        cantidad = Double.parseDouble(cantidadEditText.getText().toString().trim());
         nombreProducto = productoEditText.getText().toString().trim();
         localidad = localidadEditext.getText().toString().trim();
-        precio = Float.parseFloat(precioEditext.getText().toString().trim());
+        precio = Double.parseDouble(precioEditext.getText().toString().trim());
         categoria =  autoCategoria.getText().toString().trim();
 
         // Crea un objeto Producto

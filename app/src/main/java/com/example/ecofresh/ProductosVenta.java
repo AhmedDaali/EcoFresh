@@ -71,11 +71,11 @@ public class ProductosVenta extends AppCompatActivity {
                         for (QueryDocumentSnapshot doc : value) {
                             listaIdVentas.add(doc.getId());
 
-                            float cantidad = doc.getDouble("cantidad").floatValue();
+                            double cantidad = doc.getDouble("cantidad");
                             //precio = getIntent().getFloatExtra("precio", 0.0f);
 
                             // Obtiene los datos del producto directamente del documento actual
-                            float precio = doc.getDouble("producto.precio").floatValue();
+                            double precio = doc.getDouble("producto.precio");
                             String nombre = doc.getString("producto.nombre");
 
                             // Combina los datos en una sola cadena
