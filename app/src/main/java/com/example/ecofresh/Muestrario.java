@@ -33,8 +33,9 @@ public class Muestrario extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     FirebaseFirestore db;
-    private String emailUsuario, vendedor, nombre, localidad, urlImagen ;
-    private float cantidad, precio;
+    private String emailUsuario, vendedor, nombre, localidad, urlImagen, categoria  ;
+    private Double cantidad;
+    private Double precio;
 
     private ListView listViewProductos;
 
@@ -117,14 +118,16 @@ public class Muestrario extends AppCompatActivity {
 
 
 
-                            cantidad =  doc.getDouble("cantidad").floatValue();
-                            vendedor = doc.getString("vendedor");
+
 
                             // Obtiene los datos del producto directamente del documento actual
-                            precio =  doc.getDouble("producto.precio").floatValue();
+                            precio =  doc.getDouble("producto.precio");
                             nombre = doc.getString("producto.nombre");
                             localidad = doc.getString("producto.localidad");
                             urlImagen = doc.getString("producto.photoUrls");
+                            cantidad =  doc.getDouble("cantidad");
+                            vendedor = doc.getString("vendedor");
+                            categoria = doc.getString("categoria");
 
                             // Combina los datos en una sola cadena
                             String venta = "  Producto:     " + nombre + "\n" +
@@ -168,12 +171,13 @@ public class Muestrario extends AppCompatActivity {
         TextView ProductosTextView = parent.findViewById(R.id.textViewProducto);
         Intent intent = new Intent(Muestrario.this, ImagenCompra.class);
 
-        intent.putExtra("cantidad", cantidad);
+        //intent.putExtra("cantidad", cantidad);
         intent.putExtra("producto", nombre);
         intent.putExtra("localidad", localidad);
         intent.putExtra("precio", precio);
         intent.putExtra("vendedor", vendedor);
         intent.putExtra("photoUrls",urlImagen);
+        intent.putExtra("categoria",categoria);
 
         // Arrancamos el evento que acabamos de crear
         startActivity(intent);
