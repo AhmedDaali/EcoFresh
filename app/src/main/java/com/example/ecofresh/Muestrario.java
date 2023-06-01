@@ -38,14 +38,14 @@ public class Muestrario extends AppCompatActivity {
     private double precio;
 
     private ListView listViewProductos;
-    private List<String> listaImagenes = new ArrayList<>();
+    //private List<String> listaImagenes = new ArrayList<>();
 
     private List<String> listaIdProductos = new ArrayList<>();
     private ArrayAdapter<String> mAdapterProductos;
 
-    private ArrayAdapter<String> mAdapterImagenes;
+    //private ArrayAdapter<String> mAdapterImagenes;
 
-    private ImageView imageProducto;
+    //private ImageView imageProducto;
 
     @SuppressLint({"WrongViewCast", "MissingInflatedId"})
     @Override
@@ -57,7 +57,7 @@ public class Muestrario extends AppCompatActivity {
         String nombreProducto = getIntent().getStringExtra("producto");
 
         //Inicializamos la imágen
-        imageProducto = findViewById(R.id.imageProducto);
+        //imageProducto = findViewById(R.id.imageProducto);
 
         listViewProductos = findViewById(R.id.listViewProductos);
         listViewProductos.setAdapter(mAdapterProductos);
@@ -102,7 +102,7 @@ public class Muestrario extends AppCompatActivity {
 
 
     private void actualizarUI(String nombreProducto) {
-        mAdapterImagenes = new ArrayAdapter<String>(Muestrario.this, R.layout.item_muestrario, R.id.imageProducto, listaImagenes ) {
+        /*mAdapterImagenes = new ArrayAdapter<String>(Muestrario.this, R.layout.item_muestrario, R.id.imageProducto, listaImagenes ) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
@@ -134,7 +134,7 @@ public class Muestrario extends AppCompatActivity {
 
                 return view;
             }
-        };
+        };*/
 
         db.collection("VentasRealizadas")
                 .whereEqualTo("producto.nombre", nombreProducto)
@@ -150,7 +150,7 @@ public class Muestrario extends AppCompatActivity {
 
                        listaVentas = new ArrayList<>();
 
-                        listaImagenes.clear(); // Limpiar la lista de imágenes antes de agregar las nuevas
+                        //listaImagenes.clear(); // Limpiar la lista de imágenes antes de agregar las nuevas
 
 
 
