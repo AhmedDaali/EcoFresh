@@ -14,8 +14,10 @@ public class ConfirmCompra extends AppCompatActivity {
     private Button botonContinuarCompra;
     private Button botonExit;
 
-    private String  comprador, vendedor,  nombreProducto, localidadEnvio, calle, cp;
+
+    private String comprador, vendedor, nombreProducto, localidadEnvio, calle, cp;
     private double total, cantidad, precio;
+
 
     private TextView  compradorTextView, vendedorTextView, totalTextView, cantidadTextView,
             nombreProductoTextView, localidadEnvioTextView, calleTextView, precioTextView, cpTextView;
@@ -52,6 +54,7 @@ public class ConfirmCompra extends AppCompatActivity {
         vendedor = getIntent().getStringExtra("vendedor");
         total = getIntent().getDoubleExtra("total",0.0d);
         cantidad = getIntent().getDoubleExtra("cantidad",0.0d);
+
         nombreProducto= getIntent().getStringExtra("producto");
         localidadEnvio = getIntent().getStringExtra("localidad");
         calle = getIntent().getStringExtra("calle");

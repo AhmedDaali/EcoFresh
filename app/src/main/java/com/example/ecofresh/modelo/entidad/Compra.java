@@ -63,6 +63,13 @@ public class Compra {
 
         compra.put("total", total);
     }
+    public void setDireccionEnvio(DireccionEnvio direccionEnvio) {
+        compra.put("direccion de envio", direccionEnvio);
+    }
+
+    public DireccionEnvio getDireccionEnvio() {
+        return (DireccionEnvio) compra.get("direccion de envio");
+    }
 
     public void setDireccionEnvio(DireccionEnvio direccionEnvio) {
         compra.put("direccion de envio", direccionEnvio);
