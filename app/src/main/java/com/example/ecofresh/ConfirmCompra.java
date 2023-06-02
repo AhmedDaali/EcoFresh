@@ -14,7 +14,9 @@ public class ConfirmCompra extends AppCompatActivity {
     private Button botonContinuarCompra;
     private Button botonExit;
 
-    private String  comprador, vendedor, total, cantidad, nombreProducto, localidadEnvio, calle, precio, cp;
+    private String comprador, vendedor, nombreProducto, localidadEnvio, calle, cp;
+    private double total, cantidad, precio;
+
 
     private TextView  compradorTextView, vendedorTextView, totalTextView, cantidadTextView,
             nombreProductoTextView, localidadEnvioTextView, calleTextView, precioTextView, cpTextView;
@@ -49,24 +51,25 @@ public class ConfirmCompra extends AppCompatActivity {
         // Obtener los datos de la compra del Intent.
         comprador = getIntent().getStringExtra("comprador");
         vendedor = getIntent().getStringExtra("vendedor");
-        total = getIntent().getStringExtra("total");
-        cantidad = getIntent().getStringExtra("cantidad");
+        total = getIntent().getDoubleExtra("total",0.0d);
+        cantidad = getIntent().getDoubleExtra("cantidad",0.0d);
+
         nombreProducto= getIntent().getStringExtra("producto");
         localidadEnvio = getIntent().getStringExtra("localidad");
         calle = getIntent().getStringExtra("calle");
         cp = getIntent().getStringExtra("cp");
-        precio = getIntent().getStringExtra("precio");
+        precio = getIntent().getDoubleExtra("precio",0.0d);
 
         //Colocar los datos de la venta en los textView
         compradorTextView.setText("Comprador:  " + comprador);
-        vendedorTextView.setText("Vendedor:    " + vendedor);
-        totalTextView.setText("Total:  " + total);
-        cantidadTextView.setText("Cantidad:    " + cantidad+"Kg");
+        vendedorTextView.setText("Vendedor:     " + vendedor);
+        totalTextView.setText("Total:             " + total);
+        cantidadTextView.setText("Cantidad:      " + cantidad+"Kg");
         nombreProductoTextView.setText("Producto:   " + nombreProducto);
         localidadEnvioTextView.setText("Localidad:  " + localidadEnvio);
-        calleTextView.setText("calle:  " + calle);
+        calleTextView.setText("calle:             " + calle);
         precioTextView.setText("Precio:    " + precio +" €/kg" );
-        cpTextView.setText("CP:        " + cp);
+        cpTextView.setText("CP:                 " + cp);
 
 
         botonContinuarCompra.setOnClickListener(new View.OnClickListener() {
