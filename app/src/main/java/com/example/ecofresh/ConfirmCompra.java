@@ -64,9 +64,11 @@ public class ConfirmCompra extends AppCompatActivity {
         //Colocar los datos de la venta en los textView
         compradorTextView.setText("Comprador:  " + comprador);
         vendedorTextView.setText("Vendedor:     " + vendedor);
-        totalTextView.setText("Total:             " + total);
+        totalTextView.setText("Total:             " + total+"€");
         cantidadTextView.setText("Cantidad:      " + cantidad+"Kg");
-        nombreProductoTextView.setText("Producto:      " + nombreProducto);
+
+        nombreProductoTextView.setText("Producto:     " + nombreProducto);
+
         localidadEnvioTextView.setText("Localidad:    " + localidadEnvio);
         calleTextView.setText("calle:             " + calle);
         precioTextView.setText("Precio:          " + precio +" €/kg" );
