@@ -166,6 +166,24 @@ public class UltimoPasoCompra extends AppCompatActivity {
         total = precio * cantidad;
         Compra compra = new Compra(cantidad, total, producto, comprador, vendedor, direccionEnvio);
 
+        /*// Crea un objeto DireccionEnvio
+        DireccionEnvio direccionEnvio = new DireccionEnvio(calle, localidadEnvio, cp);
+
+        // Crea un objeto Producto
+        Producto producto = new Producto(nombreProducto, precio, categoria, localidad, imageUrl);
+
+        // Crea un objeto Compra con los datos de la compra
+        total = precio * cantidad;
+
+        Compra compra= new Compra();
+        compra.setCantidad(cantidad);
+        compra.setTotal(total);
+        compra.setProducto(producto);
+        compra.setComprador(comprador);
+        compra.setVendedor(vendedor);
+        compra.setDireccionEnvio(direccionEnvio);*/
+
+
 
         // Obtener referencia a la colección de comprasRealizadas en Firestore
         CollectionReference compraRef = db.collection("comprasRealizadas");
