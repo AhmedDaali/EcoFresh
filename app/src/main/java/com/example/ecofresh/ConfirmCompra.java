@@ -14,6 +14,7 @@ public class ConfirmCompra extends AppCompatActivity {
     private Button botonContinuarCompra;
     private Button botonExit;
 
+
     private String comprador, vendedor, nombreProducto, localidadEnvio, calle, cp;
     private double total, cantidad, precio;
 
@@ -65,10 +66,10 @@ public class ConfirmCompra extends AppCompatActivity {
         vendedorTextView.setText("Vendedor:     " + vendedor);
         totalTextView.setText("Total:             " + total);
         cantidadTextView.setText("Cantidad:      " + cantidad+"Kg");
-        nombreProductoTextView.setText("Producto:   " + nombreProducto);
-        localidadEnvioTextView.setText("Localidad:  " + localidadEnvio);
+        nombreProductoTextView.setText("Producto:      " + nombreProducto);
+        localidadEnvioTextView.setText("Localidad:    " + localidadEnvio);
         calleTextView.setText("calle:             " + calle);
-        precioTextView.setText("Precio:    " + precio +" €/kg" );
+        precioTextView.setText("Precio:          " + precio +" €/kg" );
         cpTextView.setText("CP:                 " + cp);
 
 
