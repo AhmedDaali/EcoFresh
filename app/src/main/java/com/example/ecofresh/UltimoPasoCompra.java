@@ -82,6 +82,7 @@ public class UltimoPasoCompra extends AppCompatActivity {
         vendedor = getIntent().getStringExtra("vendedor");
         categoria = getIntent().getStringExtra("categoria");
         imageUrl = getIntent().getStringExtra("photoUrls");
+        cp = getIntent().getStringExtra("cp");
 
         //Colocar los datos de la venta en los textView
         productoTextView.setText("Producto:   " + nombreProducto);
